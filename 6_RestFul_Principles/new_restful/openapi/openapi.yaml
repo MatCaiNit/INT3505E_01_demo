@@ -14,16 +14,27 @@ paths:
       parameters:
         - name: search
           in: query
-          schema: { type: string }
+          schema:
+            type: string
         - name: offset
           in: query
-          schema: { type: integer, default: 0 }
+          schema:
+            type: integer
+            default: 0
         - name: limit
           in: query
-          schema: { type: integer, default: 2 }
+          schema:
+            type: integer
+            default: 2
       responses:
         "200":
           description: Danh sách sách
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Book"
     post:
       summary: Thêm sách mới
       requestBody:
@@ -31,10 +42,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                title: { type: string }
-                author_id: { type: integer }
+              $ref: "#/components/schemas/BookInput"
       responses:
         "201":
           description: Sách được thêm thành công
@@ -46,28 +54,43 @@ paths:
         - name: book_id
           in: path
           required: true
-          schema: { type: integer }
+          schema:
+            type: integer
       responses:
-        "200": { description: OK }
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Book"
         "404": { description: Không tìm thấy }
     put:
-      summary: Cập nhật thông tin sách (title, author_id)
+      summary: Cập nhật thông tin sách
       parameters:
         - name: book_id
           in: path
           required: true
-          schema: { type: integer }
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                title: { type: string }
-                author_id: { type: integer }
+              $ref: "#/components/schemas/BookInput"
       responses:
         "200": { description: Cập nhật thành công }
+        "404": { description: Không tìm thấy sách }
+    delete:
+      summary: Xóa sách
+      parameters:
+        - name: book_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200": { description: Xóa thành công }
         "404": { description: Không tìm thấy sách }
 
   /users/{user_id}:
@@ -77,28 +100,43 @@ paths:
         - name: user_id
           in: path
           required: true
-          schema: { type: integer }
+          schema:
+            type: integer
       responses:
-        "200": { description: OK }
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
         "404": { description: Người dùng không tồn tại }
     put:
-      summary: Cập nhật thông tin người dùng (name)
+      summary: Cập nhật thông tin người dùng
       parameters:
         - name: user_id
           in: path
           required: true
-          schema: { type: integer }
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                name: { type: string }
+              $ref: "#/components/schemas/UserInput"
       responses:
         "200": { description: Cập nhật thành công }
         "404": { description: Người dùng không tồn tại }
+    delete:
+      summary: Xóa người dùng
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200": { description: Xóa thành công }
 
   /users/{user_id}/borrowings:
     get:
@@ -107,9 +145,17 @@ paths:
         - name: user_id
           in: path
           required: true
-          schema: { type: integer }
+          schema:
+            type: integer
       responses:
-        "200": { description: OK }
+        "200":
+          description: Danh sách sách đã mượn
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Borrowing"
         "404": { description: Người dùng không tồn tại }
     post:
       summary: Mượn sách
@@ -117,7 +163,8 @@ paths:
         - name: user_id
           in: path
           required: true
-          schema: { type: integer }
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
@@ -125,9 +172,10 @@ paths:
             schema:
               type: object
               properties:
-                book_id: { type: integer }
+                book_id:
+                  type: integer
       responses:
-        "200": { description: Mượn sách thành công, trả về danh sách sách đã mượn }
+        "200": { description: Mượn sách thành công }
         "400": { description: Lỗi dữ liệu hoặc sách đã mượn }
         "404": { description: User hoặc sách không tồn tại }
 
@@ -138,7 +186,8 @@ paths:
         - name: user_id
           in: path
           required: true
-          schema: { type: integer }
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
@@ -146,8 +195,125 @@ paths:
             schema:
               type: object
               properties:
-                book_id: { type: integer }
+                book_id:
+                  type: integer
       responses:
-        "200": { description: Trả sách thành công, trả về danh sách sách còn mượn }
+        "200": { description: Trả sách thành công }
         "400": { description: Lỗi dữ liệu hoặc sách chưa mượn }
         "404": { description: User hoặc sách không tồn tại }
+
+  /authors:
+    get:
+      summary: Lấy danh sách tác giả
+      responses:
+        "200":
+          description: Danh sách tác giả
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Author"
+    post:
+      summary: Thêm tác giả mới
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AuthorInput"
+      responses:
+        "201": { description: Thêm tác giả thành công }
+
+  /authors/{author_id}:
+    put:
+      summary: Cập nhật thông tin tác giả
+      parameters:
+        - name: author_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AuthorInput"
+      responses:
+        "200": { description: Cập nhật thành công }
+    delete:
+      summary: Xóa tác giả
+      parameters:
+        - name: author_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200": { description: Xóa thành công }
+
+  /authors/{author_id}/books:
+    get:
+      summary: Lấy danh sách sách theo tác giả
+      parameters:
+        - name: author_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Danh sách sách của tác giả
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Book"
+
+components:
+  schemas:
+    Book:
+      type: object
+      properties:
+        id: { type: integer, example: 1 }
+        title: { type: string, example: "Clean Code" }
+        author_id: { type: integer, example: 1 }
+        available: { type: boolean, example: true }
+
+    BookInput:
+      type: object
+      properties:
+        title: { type: string, example: "New Book" }
+        author_id: { type: integer, example: 3 }
+
+    Author:
+      type: object
+      properties:
+        id: { type: integer, example: 1 }
+        name: { type: string, example: "Robert C. Martin" }
+
+    AuthorInput:
+      type: object
+      properties:
+        name: { type: string, example: "Andrew Hunt" }
+
+    User:
+      type: object
+      properties:
+        id: { type: integer, example: 1 }
+        name: { type: string, example: "Alice" }
+
+    UserInput:
+      type: object
+      properties:
+        name: { type: string, example: "Bob" }
+
+    Borrowing:
+      type: object
+      properties:
+        user_id: { type: integer, example: 1 }
+        book_id: { type: integer, example: 2 }
+        borrow_date: { type: string, example: "2025-10-10" }
+        return_date: { type: string, nullable: true, example: null }

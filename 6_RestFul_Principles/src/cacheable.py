@@ -1,24 +1,35 @@
-import json
-import requests, time
+import requests
+import time
+from pprint import pprint
 
-base_url = "http://127.0.0.1:5000/api/books-cache"
+BASE_URL = "http://localhost:5000"
+cache = {}
 
-book_id = input("Nhập ID sách muốn xem (0 để xem tất cả): ").strip()
+def demo_self_descriptive():
+    print("=== DEMO: CACHEABLE ===")
+    url = f"{BASE_URL}/books/1"
 
-if book_id == "0":
-    url = base_url              
-else:
-    url = f"{base_url}/{book_id}"
+    # Lần 1: gọi server
+    if url in cache and (time.time() - cache[url]["time"]) < 30:
+        print("Dữ liệu từ cache:")
+        pprint(cache[url]["data"])
+    else:
+        res = requests.get(url)
+        print("Status:", res.status_code)
+        print("Headers:")
+        for k, v in res.headers.items():
+            if k.lower() in ["cache-control", "content-type"]:
+                print(f"  {k}: {v}")
+        data = res.json()
+        cache[url] = {"data": data, "time": time.time()}
+        print("Dữ liệu từ server:")
+        pprint(data)
 
-print("Lần 1:")
-r1 = requests.get(url)
-print("===== Book Data =====")
-print(json.dumps(r1.json(), indent=4, ensure_ascii=False))
-print("Cache-Control:", r1.headers.get("Cache-Control"))
+    print("\nGọi lại sau 5s...")
+    time.sleep(5)
+    if url in cache and (time.time() - cache[url]["time"]) < 30:
+        print("Dữ liệu từ cache:")
+        pprint(cache[url]["data"])
 
-time.sleep(5)
-print("\nLần 2 (sau 5s):")
-r2 = requests.get(url)
-print("===== Book Data =====")
-print(json.dumps(r2.json(), indent=4, ensure_ascii=False))
-print("Cache-Control:", r2.headers.get("Cache-Control"))
+if __name__ == "__main__":
+    demo_self_descriptive()

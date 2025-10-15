@@ -1,7 +1,7 @@
 import requests
 import json
 
-BASE_URL = "http://server:5000"
+BASE_URL = "http://localhost:5000"
 
 def print_json(data):
     print(json.dumps(data, indent=2, ensure_ascii=False))
@@ -60,7 +60,7 @@ def main():
             elif choice == "7":
                 user_id = input("Nhập ID người dùng: ")
                 book_id = input("Nhập ID sách muốn trả: ")
-                r = requests.delete(f"{BASE_URL}/users/{user_id}/borrowings/{book_id}")
+                r = requests.post(f"{BASE_URL}/users/{user_id}/return", json={"book_id": int(book_id)})
                 print_json(r.json())
 
             elif choice == "8":

@@ -1,0 +1,153 @@
+openapi: 3.0.0
+info:
+  title: Library Management API
+  version: 1.0.0
+  description: API quản lý thư viện (Books, Users, Borrowings)
+servers:
+  - url: http://localhost:5000
+    description: Flask server (host browser access)
+
+paths:
+  /books:
+    get:
+      summary: Lấy danh sách sách (có phân trang, tìm kiếm)
+      parameters:
+        - name: search
+          in: query
+          schema: { type: string }
+        - name: offset
+          in: query
+          schema: { type: integer, default: 0 }
+        - name: limit
+          in: query
+          schema: { type: integer, default: 2 }
+      responses:
+        "200":
+          description: Danh sách sách
+    post:
+      summary: Thêm sách mới
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title: { type: string }
+                author_id: { type: integer }
+      responses:
+        "201":
+          description: Sách được thêm thành công
+
+  /books/{book_id}:
+    get:
+      summary: Lấy thông tin chi tiết sách
+      parameters:
+        - name: book_id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        "200": { description: OK }
+        "404": { description: Không tìm thấy }
+    put:
+      summary: Cập nhật thông tin sách (title, author_id)
+      parameters:
+        - name: book_id
+          in: path
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title: { type: string }
+                author_id: { type: integer }
+      responses:
+        "200": { description: Cập nhật thành công }
+        "404": { description: Không tìm thấy sách }
+
+  /users/{user_id}:
+    get:
+      summary: Lấy thông tin chi tiết người dùng
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        "200": { description: OK }
+        "404": { description: Người dùng không tồn tại }
+    put:
+      summary: Cập nhật thông tin người dùng (name)
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name: { type: string }
+      responses:
+        "200": { description: Cập nhật thành công }
+        "404": { description: Người dùng không tồn tại }
+
+  /users/{user_id}/borrowings:
+    get:
+      summary: Xem danh sách sách mà người dùng đã mượn
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        "200": { description: OK }
+        "404": { description: Người dùng không tồn tại }
+    post:
+      summary: Mượn sách
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                book_id: { type: integer }
+      responses:
+        "200": { description: Mượn sách thành công, trả về danh sách sách đã mượn }
+        "400": { description: Lỗi dữ liệu hoặc sách đã mượn }
+        "404": { description: User hoặc sách không tồn tại }
+
+  /users/{user_id}/return:
+    post:
+      summary: Trả sách
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                book_id: { type: integer }
+      responses:
+        "200": { description: Trả sách thành công, trả về danh sách sách còn mượn }
+        "400": { description: Lỗi dữ liệu hoặc sách chưa mượn }
+        "404": { description: User hoặc sách không tồn tại }

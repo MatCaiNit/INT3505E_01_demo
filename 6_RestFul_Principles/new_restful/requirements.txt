@@ -2,3 +2,4 @@ flask
 flasgger
 flask_cors
 requests
+flask_jwt_extended

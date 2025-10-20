@@ -1,15 +1,11 @@
 FROM python:3.9
 WORKDIR /app
 
-# Copy requirements và cài đặt
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy source code
 COPY . .
 
-# EXPOSE port Flask
 EXPOSE 5000
 
-# CMD chạy server
 CMD ["python", "server.py"]

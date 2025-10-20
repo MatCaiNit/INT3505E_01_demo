@@ -2,14 +2,22 @@ from flask import Flask, jsonify, request
 from flasgger import Swagger
 from flask_cors import CORS
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
+
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required
 
 app = Flask(__name__)
 CORS(app)
 
+app.config["JWT_SECRET_KEY"] = "super-secret-key"  # nên để trong biến môi trường
+app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
+jwt = JWTManager(app)
+
 # Sử dụng path tuyệt đối để Flask luôn tìm được file
 swagger_path = os.path.join(os.getcwd(), "openapi", "openapi.yaml")
 swagger = Swagger(app, template_file=swagger_path)
+
+
 
 
 books = [
@@ -51,7 +59,7 @@ authors = [
 ]
 
 users = [
-    {"id": 1, "name": "Quỳnh"},
+    {"id": 1, "name": "Quynh"},
     {"id": 2, "name": "Chiến"},
     {"id": 3, "name": "Đức"},
     {"id": 4, "name": "Khánh"}
@@ -64,9 +72,22 @@ borrowings = [
     {"user_id": 4, "book_id": 15, "borrow_date": "2025-10-10", "return_date": None}
 ]
 
-# ==========================
-#   ROOT
-# ==========================
+@app.route("/login", methods=["POST"])
+def login():
+    data = request.get_json()
+    username = data.get("name")
+
+    user = next((u for u in users if u["name"].lower() == username.lower()), None)
+    if not user:
+        return jsonify({"error": "Invalid user"}), 401
+
+    access_token = create_access_token(identity=str(user["id"]))
+    return jsonify({
+        "message": "Login successful",
+        "access_token": access_token
+    })
+
+
 @app.route('/')
 def home():
     return jsonify({
@@ -79,9 +100,7 @@ def home():
         }
     })
 
-# ==========================
-#   BOOKS CRUD
-# ==========================
+
 @app.route('/books', methods=['GET'])
 def get_books():
     search = request.args.get('search', '').lower()
@@ -106,6 +125,7 @@ def get_book(book_id):
     return jsonify(book)
 
 @app.route('/books', methods=['POST'])
+@jwt_required()
 def add_book():
     data = request.get_json()
     new_id = max([b["id"] for b in books]) + 1 if books else 1
@@ -119,6 +139,7 @@ def add_book():
     return jsonify(new_book), 201
 
 @app.route('/books/<int:book_id>', methods=['PUT'])
+@jwt_required()
 def update_book(book_id):
     data = request.get_json()
     book = next((b for b in books if b['id'] == book_id), None)
@@ -129,6 +150,7 @@ def update_book(book_id):
     return jsonify(book)
 
 @app.route('/books/<int:book_id>', methods=['DELETE'])
+@jwt_required()
 def delete_book(book_id):
     global books
     before = len(books)
@@ -145,6 +167,7 @@ def get_authors():
     return jsonify(authors)
 
 @app.route('/authors', methods=['POST'])
+@jwt_required()
 def add_author():
     data = request.get_json()
     new_id = max([a["id"] for a in authors]) + 1 if authors else 1
@@ -153,6 +176,7 @@ def add_author():
     return jsonify(new_author), 201
 
 @app.route('/authors/<int:author_id>', methods=['PUT'])
+@jwt_required()
 def update_author(author_id):
     data = request.get_json()
     author = next((a for a in authors if a['id'] == author_id), None)
@@ -162,6 +186,7 @@ def update_author(author_id):
     return jsonify(author)
 
 @app.route('/authors/<int:author_id>', methods=['DELETE'])
+@jwt_required()
 def delete_author(author_id):
     global authors
     before = len(authors)
@@ -175,14 +200,13 @@ def get_books_by_author(author_id):
     author_books = [b for b in books if b['author_id'] == author_id]
     return jsonify(author_books)
 
-# ==========================
-#   USERS CRUD
-# ==========================
+
 @app.route('/users', methods=['GET'])
 def get_users():
     return jsonify(users)
 
 @app.route('/users', methods=['POST'])
+@jwt_required()
 def add_user():
     data = request.get_json()
     new_id = max([u["id"] for u in users]) + 1 if users else 1
@@ -198,6 +222,7 @@ def get_user(user_id):
     return jsonify(user)
 
 @app.route('/users/<int:user_id>', methods=['PUT'])
+@jwt_required()
 def update_user(user_id):
     data = request.get_json()
     user = next((u for u in users if u['id'] == user_id), None)
@@ -207,6 +232,7 @@ def update_user(user_id):
     return jsonify(user)
 
 @app.route('/users/<int:user_id>', methods=['DELETE'])
+@jwt_required()
 def delete_user(user_id):
     global users
     before = len(users)
@@ -215,9 +241,7 @@ def delete_user(user_id):
         return jsonify({"error": "User not found"}), 404
     return jsonify({"message": f"User {user_id} deleted"})
 
-# ==========================
-#   BORROW / RETURN
-# ==========================
+
 @app.route('/users/<int:user_id>/borrowings', methods=['GET'])
 def get_user_borrowings(user_id):
     # Tìm user theo ID
@@ -267,7 +291,7 @@ def borrow_book(user_id):
     })
     return jsonify({"message": f"{user['name']} borrowed {book['title']}"})
 
-@app.route('/users/<int:user_id>/return', methods=['POST'])
+@app.route('/users/<int:user_id>/returnings', methods=['POST'])
 def return_book(user_id):
     data = request.get_json()
     book_id = data.get('book_id')
@@ -283,8 +307,6 @@ def return_book(user_id):
 
     return jsonify({"message": "Book returned successfully", "record": record})
 
-# ==========================
-#   RUN SERVER
-# ==========================
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

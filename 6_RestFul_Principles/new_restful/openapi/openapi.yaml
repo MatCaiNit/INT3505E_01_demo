@@ -37,6 +37,8 @@ paths:
                   $ref: "#/components/schemas/Book"
     post:
       summary: Thêm sách mới
+      security:
+        - bearerAuth: []
       requestBody:
         required: true
         content:
@@ -66,6 +68,8 @@ paths:
         "404": { description: Không tìm thấy }
     put:
       summary: Cập nhật thông tin sách
+      security:
+        - bearerAuth: []
       parameters:
         - name: book_id
           in: path
@@ -83,6 +87,8 @@ paths:
         "404": { description: Không tìm thấy sách }
     delete:
       summary: Xóa sách
+      security:
+        - bearerAuth: []
       parameters:
         - name: book_id
           in: path
@@ -112,6 +118,8 @@ paths:
         "404": { description: Người dùng không tồn tại }
     put:
       summary: Cập nhật thông tin người dùng
+      security:
+        - bearerAuth: []
       parameters:
         - name: user_id
           in: path
@@ -129,6 +137,8 @@ paths:
         "404": { description: Người dùng không tồn tại }
     delete:
       summary: Xóa người dùng
+      security:
+        - bearerAuth: []
       parameters:
         - name: user_id
           in: path
@@ -179,7 +189,7 @@ paths:
         "400": { description: Lỗi dữ liệu hoặc sách đã mượn }
         "404": { description: User hoặc sách không tồn tại }
 
-  /users/{user_id}/return:
+  /users/{user_id}/returnings:
     post:
       summary: Trả sách
       parameters:
@@ -216,6 +226,8 @@ paths:
                   $ref: "#/components/schemas/Author"
     post:
       summary: Thêm tác giả mới
+      security:
+        - bearerAuth: []
       requestBody:
         required: true
         content:
@@ -228,6 +240,8 @@ paths:
   /authors/{author_id}:
     put:
       summary: Cập nhật thông tin tác giả
+      security:
+        - bearerAuth: []
       parameters:
         - name: author_id
           in: path
@@ -244,6 +258,8 @@ paths:
         "200": { description: Cập nhật thành công }
     delete:
       summary: Xóa tác giả
+      security:
+        - bearerAuth: []
       parameters:
         - name: author_id
           in: path
@@ -272,7 +288,38 @@ paths:
                 items:
                   $ref: "#/components/schemas/Book"
 
+  /login:
+    post:
+      summary: Đăng nhập để nhận token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Quỳnh"
+      responses:
+        "200":
+          description: Đăng nhập thành công
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message: { type: string, example: "Login successful" }
+                  access_token: { type: string, example: "eyJhbGciOi..." }
+        "401": { description: Đăng nhập thất bại }
+
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
   schemas:
     Book:
       type: object

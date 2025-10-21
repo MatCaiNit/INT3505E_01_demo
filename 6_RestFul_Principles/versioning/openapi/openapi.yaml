@@ -1,0 +1,199 @@
+openapi: 3.0.0
+info:
+  title: Library Management API (Versioned)
+  description: API quản lý thư viện với hai phiên bản V1 (cũ) và V2 (mới).
+  version: 2.0.0
+
+servers:
+  - url: http://localhost:5000
+    description: Local development server
+
+tags:
+  - name: Auth
+    description: Xác thực và lấy Token
+  - name: Books v1
+    description: API Sách phiên bản 1 (cũ, chỉ đọc)
+  - name: Books v2
+    description: API Sách phiên bản 2 (CRUD đầy đủ, có xác thực)
+
+paths:
+  /login:
+    post:
+      tags:
+        - Auth
+      summary: Đăng nhập để nhận token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Quynh"
+      responses:
+        '200':
+          description: Đăng nhập thành công, trả về access_token
+        '401':
+          description: Sai tên người dùng
+
+  # --- API Version 1 ---
+  /api/v1/books:
+    get:
+      tags:
+        - Books v1
+      summary: Lấy danh sách sách (V1)
+      description: Trả về một danh sách đơn giản tất cả các cuốn sách.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+
+  /api/v1/books/{book_id}:
+    get:
+      tags:
+        - Books v1
+      summary: Lấy chi tiết sách (V1)
+      parameters:
+        - name: book_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+
+  # --- API Version 2 ---
+  /api/v2/books:
+    get:
+      tags:
+        - Books v2
+      summary: Lấy danh sách sách có phân trang (V2)
+      parameters:
+        - name: search
+          in: query
+          schema:
+            type: string
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 5
+      responses:
+        '200':
+          description: Danh sách sách thành công
+
+    post:
+      tags:
+        - Books v2
+      summary: Thêm sách mới (V2)
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookInput'
+      responses:
+        '201':
+          description: Thêm sách thành công
+
+  /api/v2/books/{book_id}:
+    get:
+      tags:
+        - Books v2
+      summary: Lấy chi tiết sách (V2)
+      parameters:
+        - name: book_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+
+    put:
+      tags:
+        - Books v2
+      summary: Cập nhật sách (V2)
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: book_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookInput'
+      responses:
+        '200':
+          description: Cập nhật thành công
+
+    delete:
+      tags:
+        - Books v2
+      summary: Xóa sách (V2)
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: book_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Xóa thành công
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    Book:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        title:
+          type: string
+          example: "Clean Code"
+        author_id:
+          type: integer
+          example: 1
+        available:
+          type: boolean
+          example: true
+
+    BookInput:
+      type: object
+      properties:
+        title:
+          type: string
+          example: "New Awesome Book"
+        author_id:
+          type: integer
+          example: 2

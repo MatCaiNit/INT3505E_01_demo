@@ -3,27 +3,30 @@ from flasgger import Swagger
 from flask_cors import CORS
 import os
 from datetime import datetime, timedelta
+from functools import wraps # Thêm thư viện để tạo decorator
 
 from flask_jwt_extended import (
     JWTManager, 
     create_access_token, 
     jwt_required, 
-    create_refresh_token,  
+    create_refresh_token, 
     get_jwt_identity,
     set_refresh_cookies,
-    unset_jwt_cookies
+    unset_jwt_cookies,
+    get_jwt, # Thêm để đọc claims (payload)
+    verify_jwt_in_request # Thêm để xác thực token trong decorator
 )
 
 app = Flask(__name__)
 CORS(app)
 
-app.config["JWT_SECRET_KEY"] = "super-secret-key"
-app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(seconds=60)
-app.config["JWT_REFRESH_TOKEN_EXPIRES"] = timedelta(minutes=5)
-app.config["JWT_TOKEN_LOCATION"] = ["headers", "cookies"] # Cho phép đọc token từ header (cho AT) và cookie (cho RT)
-app.config["JWT_COOKIE_SECURE"] = False # Đặt là True khi deploy với HTTPS
-app.config["JWT_COOKIE_HTTPONLY"] = True # CỰC KỲ QUAN TRỌNG: JavaScript không thể đọc cookie này
-app.config["JWT_COOKIE_CSRF_PROTECT"] = True # Chống tấn công CSRF
+app.config["JWT_SECRET_KEY"] = "super-secret-key" # SỬA LỖI: "key" -> "KEY"
+app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(minutes=15) # Tăng thời gian AT lên 15 phút
+app.config["JWT_REFRESH_TOKEN_EXPIRES"] = timedelta(days=7) # Tăng thời gian RT lên 7 ngày
+app.config["JWT_TOKEN_LOCATION"] = ["headers", "cookies"]
+app.config["JWT_COOKIE_SECURE"] = False 
+app.config["JWT_COOKIE_HTTPONLY"] = True 
+app.config["JWT_COOKIE_CSRF_PROTECT"] = True 
 
 jwt = JWTManager(app)
 
@@ -31,8 +34,9 @@ jwt = JWTManager(app)
 swagger_path = os.path.join(os.getcwd(), "openapi", "openapi.yaml")
 swagger = Swagger(app, template_file=swagger_path)
 
-
-
+# ==========================
+#   DATABASE MOCK
+# ==========================
 
 books = [
     {"id": 1, "title": "Clean Code", "author_id": 1, "available": True},
@@ -50,7 +54,7 @@ books = [
     {"id": 13, "title": "Nhà giầu có nhất thành Babylon", "author_id": 13, "available": True},
     {"id": 14, "title": "7 thói quen của người thành đạt", "author_id": 14, "available": True},
     {"id": 15, "title": "Đừng để con rùa chết khát", "author_id": 15, "available": False},
-    {"id": 16, "title": "Dạy con làm giàu", "author_id": 16, "available": True},  
+    {"id": 16, "title": "Dạy con làm giàu", "author_id": 16, "available": True}, 
 ]
 
 authors = [
@@ -72,11 +76,12 @@ authors = [
     {"id": 16, "name": "Robert T. Kiyosaki"},
 ]
 
+# CẬP NHẬT: Thêm "role" (vai trò) vào cho user
 users = [
-    {"id": 1, "name": "Quynh"},
-    {"id": 2, "name": "Chiến"},
-    {"id": 3, "name": "Đức"},
-    {"id": 4, "name": "Khánh"}
+    {"id": 1, "name": "Quynh", "role": "admin"},
+    {"id": 2, "name": "Chiến", "role": "admin"},
+    {"id": 3, "name": "Đức", "role": "user"},
+    {"id": 4, "name": "Khánh", "role": "user"}
 ]
 
 borrowings = [
@@ -86,36 +91,77 @@ borrowings = [
     {"user_id": 4, "book_id": 15, "borrow_date": "2025-10-10", "return_date": None}
 ]
 
+# ==========================
+#   CUSTOM DECORATOR (PHÂN QUYỀN)
+# ==========================
+
+# MỚI: Tạo một decorator tùy chỉnh để kiểm tra "role"
+def admin_required():
+    def wrapper(fn):
+        @wraps(fn)
+        def decorator(*args, **kwargs):
+            # 1. Xác thực token (giống @jwt_required())
+            verify_jwt_in_request()
+            
+            # 2. Lấy payload (claims) từ token
+            claims = get_jwt()
+            
+            # 3. Kiểm tra xem "role" có phải là "admin" không
+            if claims.get("role") == "admin":
+                # 4. Nếu đúng, cho phép chạy hàm
+                return fn(*args, **kwargs)
+            else:
+                # 5. Nếu không, trả về lỗi 403 Forbidden
+                return jsonify({"error": "Admin access required"}), 403
+        return decorator
+    return wrapper
+
+# ==========================
+#   AUTHENTICATION (XÁC THỰC)
+# ==========================
+
 @app.route("/login", methods=["POST"])
 def login():
     data = request.get_json()
     username = data.get("name")
-
     user = next((u for u in users if u["name"].lower() == username.lower()), None)
+    
     if not user:
         return jsonify({"error": "Invalid user"}), 401
 
-    access_token = create_access_token(identity=str(user["id"]))
+    # CẬP NHẬT: Thêm "role" vào JWT payload (claims)
+    # "identity" là định danh chính, "additional_claims" là thông tin bổ sung
+    access_token = create_access_token(
+        identity=str(user["id"]), 
+        additional_claims={"role": user["role"]}
+    )
+    
+    # Refresh token không cần chứa role, chỉ cần identity
     refresh_token = create_refresh_token(identity=str(user["id"]))
-    # SỬA: Chỉ trả về access_token trong body
+    
     response_body = {
         "message": "Login successful",
         "access_token": access_token 
     }
-
-    # MỚI: Đặt refresh_token vào một HttpOnly cookie bảo mật
     response = jsonify(response_body)
-    set_refresh_cookies(response, refresh_token) # Tự động đặt cookie
+    set_refresh_cookies(response, refresh_token)
     return response, 200
 
 @app.route("/refresh", methods=["POST"])
-@jwt_required(refresh=True) # MỚI: Chỉ chấp nhận REFRESH token, Nó sẽ tự động đọc HttpOnly cookie
+@jwt_required(refresh=True)
 def refresh():
-    # Lấy identity từ refresh token (đã được xác thực)
     current_user_id = get_jwt_identity()
     
-    # Tạo một access token MỚI
-    new_access_token = create_access_token(identity=current_user_id)
+    # Khi refresh, chúng ta cũng cần lấy lại role từ database (hoặc từ chính refresh token nếu muốn)
+    # Ở đây, ta lấy lại từ "database" users
+    user = next((u for u in users if u['id'] == int(current_user_id)), None)
+    role = user.get("role", "user") if user else "user"
+
+    # CẬP NHẬT: Tạo AT mới cũng phải chứa role
+    new_access_token = create_access_token(
+        identity=current_user_id,
+        additional_claims={"role": role}
+    )
     
     return jsonify({
         "message": "Access token refreshed",
@@ -125,9 +171,12 @@ def refresh():
 @app.route("/logout", methods=["POST"])
 def logout():
     response = jsonify({"message": "Logout successful"})
-    unset_jwt_cookies(response) # Xóa cookie an toàn
+    unset_jwt_cookies(response) 
     return response, 200
 
+# ==========================
+#   HOME
+# ==========================
 @app.route('/')
 def home():
     return jsonify({
@@ -140,7 +189,9 @@ def home():
         }
     })
 
-
+# ==========================
+#   BOOKS CRUD
+# ==========================
 @app.route('/books', methods=['GET'])
 def get_books():
     search = request.args.get('search', '').lower()
@@ -165,7 +216,7 @@ def get_book(book_id):
     return jsonify(book)
 
 @app.route('/books', methods=['POST'])
-@jwt_required()
+@jwt_required() # Bất kỳ user nào đăng nhập cũng có thể thêm sách
 def add_book():
     data = request.get_json()
     new_id = max([b["id"] for b in books]) + 1 if books else 1
@@ -179,7 +230,7 @@ def add_book():
     return jsonify(new_book), 201
 
 @app.route('/books/<int:book_id>', methods=['PUT'])
-@jwt_required()
+@jwt_required() # Bất kỳ user nào đăng nhập cũng có thể sửa sách
 def update_book(book_id):
     data = request.get_json()
     book = next((b for b in books if b['id'] == book_id), None)
@@ -190,7 +241,7 @@ def update_book(book_id):
     return jsonify(book)
 
 @app.route('/books/<int:book_id>', methods=['DELETE'])
-@jwt_required()
+@admin_required() # CẬP NHẬT: Chỉ admin mới được phép xóa sách
 def delete_book(book_id):
     global books
     before = len(books)
@@ -200,14 +251,14 @@ def delete_book(book_id):
     return jsonify({"message": f"Book {book_id} deleted"})
 
 # ==========================
-#   AUTHORS CRUD
+#   AUTHORS CRUD
 # ==========================
 @app.route('/authors', methods=['GET'])
 def get_authors():
     return jsonify(authors)
 
 @app.route('/authors', methods=['POST'])
-@jwt_required()
+@admin_required() # CẬP NHẬT: Chỉ admin mới được thêm tác giả
 def add_author():
     data = request.get_json()
     new_id = max([a["id"] for a in authors]) + 1 if authors else 1
@@ -216,7 +267,7 @@ def add_author():
     return jsonify(new_author), 201
 
 @app.route('/authors/<int:author_id>', methods=['PUT'])
-@jwt_required()
+@admin_required() # CẬP NHẬT: Chỉ admin mới được sửa tác giả
 def update_author(author_id):
     data = request.get_json()
     author = next((a for a in authors if a['id'] == author_id), None)
@@ -226,7 +277,7 @@ def update_author(author_id):
     return jsonify(author)
 
 @app.route('/authors/<int:author_id>', methods=['DELETE'])
-@jwt_required()
+@admin_required() # CẬP NHẬT: Chỉ admin mới được xóa tác giả
 def delete_author(author_id):
     global authors
     before = len(authors)
@@ -240,21 +291,29 @@ def get_books_by_author(author_id):
     author_books = [b for b in books if b['author_id'] == author_id]
     return jsonify(author_books)
 
-
+# ==========================
+#   USERS (Chỉ admin mới được quản lý user)
+# ==========================
 @app.route('/users', methods=['GET'])
+@admin_required()
 def get_users():
     return jsonify(users)
 
 @app.route('/users', methods=['POST'])
-@jwt_required()
+@admin_required()
 def add_user():
     data = request.get_json()
     new_id = max([u["id"] for u in users]) + 1 if users else 1
-    new_user = {"id": new_id, "name": data.get("name")}
+    new_user = {
+        "id": new_id, 
+        "name": data.get("name"),
+        "role": data.get("role", "user") # Cho phép gán role khi tạo
+    }
     users.append(new_user)
     return jsonify(new_user), 201
 
 @app.route('/users/<int:user_id>', methods=['GET'])
+@admin_required() # Chỉ admin mới được xem thông tin user khác
 def get_user(user_id):
     user = next((u for u in users if u['id'] == user_id), None)
     if not user:
@@ -262,37 +321,41 @@ def get_user(user_id):
     return jsonify(user)
 
 @app.route('/users/<int:user_id>', methods=['PUT'])
-@jwt_required()
+@admin_required()
 def update_user(user_id):
     data = request.get_json()
     user = next((u for u in users if u['id'] == user_id), None)
     if not user:
         return jsonify({"error": "User not found"}), 404
     user['name'] = data.get('name', user['name'])
+    user['role'] = data.get('role', user['role']) # Cho phép admin đổi role
     return jsonify(user)
 
 @app.route('/users/<int:user_id>', methods=['DELETE'])
-@jwt_required()
+@admin_required()
 def delete_user(user_id):
     global users
+    # Ngăn admin tự xóa mình
+    current_user_id = get_jwt_identity()
+    if str(user_id) == current_user_id:
+        return jsonify({"error": "Admin cannot delete themselves"}), 400
+        
     before = len(users)
     users = [u for u in users if u['id'] != user_id]
     if len(users) == before:
         return jsonify({"error": "User not found"}), 404
     return jsonify({"message": f"User {user_id} deleted"})
 
+# ==========================
+#   BORROWINGS (Logic mượn/trả sách)
+# ==========================
 
 @app.route('/users/<int:user_id>/borrowings', methods=['GET'])
 def get_user_borrowings(user_id):
-    # Tìm user theo ID
     user = next((u for u in users if u['id'] == user_id), None)
     if not user:
         return jsonify({"error": "User not found"}), 404
-
-    # Lọc các bản ghi mượn theo user_id
     user_borrowings = [b for b in borrowings if b['user_id'] == user_id]
-
-    # Lấy thông tin chi tiết từng sách
     borrowed_books = []
     for b in user_borrowings:
         book = next((bk for bk in books if bk['id'] == b['book_id']), None)
@@ -303,14 +366,21 @@ def get_user_borrowings(user_id):
                 "borrow_date": b['borrow_date'],
                 "return_date": b['return_date']
             })
-
     return jsonify({
         "user": user['name'],
         "borrowed_books": borrowed_books
     })
 
 @app.route('/users/<int:user_id>/borrowings', methods=['POST'])
+@jwt_required() # Bất kỳ user nào đăng nhập cũng có thể mượn sách
 def borrow_book(user_id):
+    # Kiểm tra xem user có mượn sách cho chính mình không
+    current_user_id = get_jwt_identity()
+    claims = get_jwt()
+    
+    if str(user_id) != current_user_id and claims.get("role") != "admin":
+        return jsonify({"error": "Users can only borrow books for themselves"}), 403
+
     data = request.get_json()
     book_id = data.get('book_id')
 
@@ -332,7 +402,15 @@ def borrow_book(user_id):
     return jsonify({"message": f"{user['name']} borrowed {book['title']}"})
 
 @app.route('/users/<int:user_id>/returnings', methods=['POST'])
+@jwt_required() # Bất kỳ user nào đăng nhập cũng có thể trả sách
 def return_book(user_id):
+    # Kiểm tra xem user có trả sách cho chính mình không
+    current_user_id = get_jwt_identity()
+    claims = get_jwt()
+    
+    if str(user_id) != current_user_id and claims.get("role") != "admin":
+        return jsonify({"error": "Users can only return books for themselves"}), 403
+        
     data = request.get_json()
     book_id = data.get('book_id')
 
@@ -349,4 +427,8 @@ def return_book(user_id):
 
 
 if __name__ == '__main__':
+    # Tạo thư mục openapi nếu chưa tồn tại
+    if not os.path.exists('openapi'):
+        os.makedirs('openapi')
     app.run(host='0.0.0.0', port=5000, debug=True)
+

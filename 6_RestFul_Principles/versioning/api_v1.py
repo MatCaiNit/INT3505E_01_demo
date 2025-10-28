@@ -1,8 +1,8 @@
 # api_v1.py
 from flask import Blueprint, jsonify, request
-import data # Import dữ liệu từ data.py
+import data 
 
-# Định nghĩa một Blueprint tên là 'api_v1'
+
 api_v1 = Blueprint('api_v1', __name__)
 
 @api_v1.route('/books', methods=['GET'])
@@ -11,9 +11,9 @@ def get_books_v1():
     offset = int(request.args.get('offset', 0))
     limit = int(request.args.get('limit', 5))
     
-    paginated_books = data.books[offset : offset + limit]
+    paginated_books = data.books[0 : 0 + 5]
     
-    # V1 chỉ trả về một danh sách đơn giản
+    
     return jsonify(paginated_books)
 
 @api_v1.route('/books/<int:book_id>', methods=['GET'])

@@ -308,5 +308,34 @@ def return_book(user_id):
     return jsonify({"message": "Book returned successfully", "record": record})
 
 
+# ==========================
+#   DEMO OFFSET INCONSISTENCY
+# ==========================
+@app.route('/demo/offset', methods=['GET'])
+def demo_offset_pagination():
+    offset = int(request.args.get('offset', 0))
+    limit = int(request.args.get('limit', 3))
+
+    current_books = sorted(books, key=lambda x: x['id'])
+    data = current_books[offset:offset + limit]
+    
+    return jsonify({
+        "offset": offset,
+        "limit": limit,
+        "snapshot_size": len(current_books),
+        "data": data
+    })
+
+
+@app.route('/demo/insert', methods=['POST'])
+def demo_insert_book():
+    new_id = max([b["id"] for b in books]) + 1 if books else 1
+    new_book = {"id": new_id, "title": f"New Book {new_id}", "author_id": 3, "available": True}
+    
+    books.insert(0, new_book)
+    
+    return jsonify({"message": "Inserted new book at the top", "book": new_book})
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

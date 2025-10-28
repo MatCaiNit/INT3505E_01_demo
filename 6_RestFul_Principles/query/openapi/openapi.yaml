@@ -1,0 +1,385 @@
+openapi: 3.0.0
+info:
+  title: Library Management API
+  version: 1.0.0
+  description: API quản lý thư viện (Books, Users, Borrowings)
+servers:
+  - url: http://localhost:5000
+    description: Flask server (host browser access)
+
+paths:
+  /books:
+    get:
+      summary: Lấy danh sách sách (có phân trang, tìm kiếm)
+      parameters:
+        - name: search
+          in: query
+          schema:
+            type: string
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 2
+      responses:
+        "200":
+          description: Danh sách sách
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Book"
+    post:
+      summary: Thêm sách mới
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BookInput"
+      responses:
+        "201":
+          description: Sách được thêm thành công
+
+  /books/{book_id}:
+    get:
+      summary: Lấy thông tin chi tiết sách
+      parameters:
+        - name: book_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Book"
+        "404": { description: Không tìm thấy }
+    put:
+      summary: Cập nhật thông tin sách
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: book_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BookInput"
+      responses:
+        "200": { description: Cập nhật thành công }
+        "404": { description: Không tìm thấy sách }
+    delete:
+      summary: Xóa sách
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: book_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200": { description: Xóa thành công }
+        "404": { description: Không tìm thấy sách }
+
+  /users/{user_id}:
+    get:
+      summary: Lấy thông tin chi tiết người dùng
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "404": { description: Người dùng không tồn tại }
+    put:
+      summary: Cập nhật thông tin người dùng
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserInput"
+      responses:
+        "200": { description: Cập nhật thành công }
+        "404": { description: Người dùng không tồn tại }
+    delete:
+      summary: Xóa người dùng
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200": { description: Xóa thành công }
+
+  /users/{user_id}/borrowings:
+    get:
+      summary: Xem danh sách sách mà người dùng đã mượn
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Danh sách sách đã mượn
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Borrowing"
+        "404": { description: Người dùng không tồn tại }
+    post:
+      summary: Mượn sách
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                book_id:
+                  type: integer
+      responses:
+        "200": { description: Mượn sách thành công }
+        "400": { description: Lỗi dữ liệu hoặc sách đã mượn }
+        "404": { description: User hoặc sách không tồn tại }
+
+  /users/{user_id}/returnings:
+    post:
+      summary: Trả sách
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                book_id:
+                  type: integer
+      responses:
+        "200": { description: Trả sách thành công }
+        "400": { description: Lỗi dữ liệu hoặc sách chưa mượn }
+        "404": { description: User hoặc sách không tồn tại }
+
+  /authors:
+    get:
+      summary: Lấy danh sách tác giả
+      responses:
+        "200":
+          description: Danh sách tác giả
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Author"
+    post:
+      summary: Thêm tác giả mới
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AuthorInput"
+      responses:
+        "201": { description: Thêm tác giả thành công }
+
+  /authors/{author_id}:
+    put:
+      summary: Cập nhật thông tin tác giả
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: author_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AuthorInput"
+      responses:
+        "200": { description: Cập nhật thành công }
+    delete:
+      summary: Xóa tác giả
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: author_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200": { description: Xóa thành công }
+
+  /authors/{author_id}/books:
+    get:
+      summary: Lấy danh sách sách theo tác giả
+      parameters:
+        - name: author_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Danh sách sách của tác giả
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Book"
+
+  /login:
+    post:
+      summary: Đăng nhập để nhận token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Quỳnh"
+      responses:
+        "200":
+          description: Đăng nhập thành công
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message: { type: string, example: "Login successful" }
+                  access_token: { type: string, example: "eyJhbGciOi..." }
+        "401": { description: Đăng nhập thất bại }
+
+  /refresh:
+    post:
+      summary: Lấy access token mới bằng refresh token
+      description: Dùng refresh token (đã nhận khi login) để lấy access token mới. Refresh token phải được gửi trong Header Authorization.
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Cấp access token mới thành công
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message: { type: string, example: "Access token refreshed" }
+                  access_token: { type: string, example: "eyJhbGciOi..." }
+        "401":
+          description: Refresh token không hợp lệ hoặc đã hết hạn
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    Book:
+      type: object
+      properties:
+        id: { type: integer, example: 1 }
+        title: { type: string, example: "Clean Code" }
+        author_id: { type: integer, example: 1 }
+        available: { type: boolean, example: true }
+
+    BookInput:
+      type: object
+      properties:
+        title: { type: string, example: "New Book" }
+        author_id: { type: integer, example: 3 }
+
+    Author:
+      type: object
+      properties:
+        id: { type: integer, example: 1 }
+        name: { type: string, example: "Robert C. Martin" }
+
+    AuthorInput:
+      type: object
+      properties:
+        name: { type: string, example: "Andrew Hunt" }
+
+    User:
+      type: object
+      properties:
+        id: { type: integer, example: 1 }
+        name: { type: string, example: "Alice" }
+
+    UserInput:
+      type: object
+      properties:
+        name: { type: string, example: "Bob" }
+
+    Borrowing:
+      type: object
+      properties:
+        user_id: { type: integer, example: 1 }
+        book_id: { type: integer, example: 2 }
+        borrow_date: { type: string, example: "2025-10-10" }
+        return_date: { type: string, nullable: true, example: null }

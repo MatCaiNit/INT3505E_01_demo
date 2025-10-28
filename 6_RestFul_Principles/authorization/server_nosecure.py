@@ -106,7 +106,7 @@ def login():
     }), 200
 
 @app.route("/refresh", methods=["POST"])
-@jwt_required(refresh=True) # Yêu cầu refresh token
+@jwt_required(refresh=True)
 def refresh():
     current_user_id = get_jwt_identity()
     new_access_token = create_access_token(identity=current_user_id)
@@ -123,7 +123,7 @@ def get_books():
     return jsonify(books)
 
 @app.route('/books', methods=['POST'])
-@jwt_required() # Yêu cầu Access Token
+@jwt_required()
 def add_book():
     data = request.get_json()
     new_id = max([b["id"] for b in books]) + 1 if books else 1

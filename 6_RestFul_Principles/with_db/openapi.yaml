@@ -1,0 +1,375 @@
+openapi: 3.0.3
+info:
+  title: Bookstore Product API
+  version: 1.0.0
+  description: >
+    API mô tả hệ thống sản phẩm của một nhà sách online (Design-First).  
+    Bao gồm CRUD cho sản phẩm, danh mục, và hiển thị danh sách sản phẩm.
+
+servers:
+  - url: http://localhost:5000/
+    description: Local Flask Server
+
+tags:
+  - name: Auth
+    description: Xác thực người dùng (đăng ký, đăng nhập)
+  - name: Product
+    description: Quản lý sản phẩm (sách, đồ chơi, văn phòng phẩm, ...)
+  - name: Category
+    description: Danh mục sản phẩm
+
+paths:
+  /register:
+    post:
+      summary: Đăng ký tài khoản người dùng mới
+      tags: [Auth]
+      x-eov-operation-handler: controllers/authController
+      operationId: register
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RegisterRequest"
+      responses:
+        "201":
+          description: Đăng ký thành công
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthResponse"
+        "400":
+          description: Dữ liệu không hợp lệ (username hoặc password thiếu)
+        "409":
+          description: Tài khoản đã tồn tại
+
+  /login:
+    post:
+      summary: Đăng nhập vào hệ thống
+      tags: [Auth]
+      x-eov-operation-handler: controllers/authController
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequest"
+      responses:
+        "200":
+          description: Đăng nhập thành công
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthResponse"
+        "401":
+          description: Sai tên đăng nhập hoặc mật khẩu
+
+  /products:
+    get:
+      summary: Lấy danh sách tất cả sản phẩm
+      tags: [Product]
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: string
+          description: Lọc sản phẩm theo danh mục
+        - name: type
+          in: query
+          schema:
+            type: string
+            enum: [book, toy, office_supply]
+          description: Lọc theo loại sản phẩm
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+      responses:
+        "200":
+          description: Danh sách sản phẩm
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Product"
+
+    post:
+      summary: (Admin) Tạo mới sản phẩm
+      tags: [Product]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProductCreate"
+      responses:
+        "201":
+          description: Sản phẩm được tạo thành công
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+        "403":
+          description: Không có quyền truy cập
+
+  /products/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+
+    get:
+      summary: Lấy chi tiết một sản phẩm
+      tags: [Product]
+      responses:
+        "200":
+          description: Thông tin chi tiết sản phẩm
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+        "404":
+          description: Không tìm thấy sản phẩm
+
+    put:
+      summary: (Admin) Cập nhật thông tin sản phẩm
+      tags: [Product]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProductUpdate"
+      responses:
+        "200":
+          description: Cập nhật thành công
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+        "404":
+          description: Không tìm thấy sản phẩm
+        "403":
+          description: Không có quyền
+
+    delete:
+      summary: (Admin) Xóa sản phẩm
+      tags: [Product]
+      security:
+        - bearerAuth: []
+      responses:
+        "204":
+          description: Xóa thành công
+        "404":
+          description: Không tìm thấy sản phẩm
+        "403":
+          description: Không có quyền
+
+  /categories:
+    get:
+      summary: Lấy danh sách danh mục sản phẩm
+      tags: [Category]
+      responses:
+        "200":
+          description: Danh sách danh mục
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Category"
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    RegisterRequest:
+      type: object
+      required: [username, password]
+      properties:
+        username:
+          type: string
+          example: "nguyenmanhquynh"
+        password:
+          type: string
+          format: password
+          example: "123456"
+        email:
+          type: string
+          example: "quynh@example.com"
+        fullName:
+          type: string
+          example: "Nguyễn Mạnh Quỳnh"
+
+    LoginRequest:
+      type: object
+      required: [username, password]
+      properties:
+        username:
+          type: string
+          example: "nguyenmanhquynh"
+        password:
+          type: string
+          format: password
+          example: "123456"
+
+    AuthResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Login successful"
+        token:
+          type: string
+          example: "eyJhbGciOiJIUzI1NiIsInR5..."
+
+    Product:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "p123"
+        name:
+          type: string
+          example: "Đắc Nhân Tâm"
+        category:
+          type: string
+          example: "Tâm lý kỹ năng"
+        type:
+          type: string
+          example: "book"
+        price:
+          type: number
+          example: 135000
+        discount:
+          type: number
+          example: 10
+        stock:
+          type: integer
+          example: 50
+        description:
+          type: string
+          example: "Cuốn sách kinh điển về nghệ thuật giao tiếp."
+        images:
+          type: array
+          items:
+            type: string
+            example: "https://example.com/images/dacnhantam.jpg"
+        author:
+          type: string
+          example: "Dale Carnegie"
+        publisher:
+          type: string
+          example: "NXB Trẻ"
+        language:
+          type: string
+          example: "Tiếng Việt"
+        brand:
+          type: string
+        material:
+          type: string
+        size:
+          type: string
+        weight:
+          type: string
+        age_range:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    ProductCreate:
+      type: object
+      required: [name, category, type, price]
+      properties:
+        name:
+          type: string
+        category:
+          type: string
+        type:
+          type: string
+          enum: [book, toy, office_supply]
+        price:
+          type: number
+        stock:
+          type: integer
+          default: 0
+        discount:
+          type: number
+          default: 0
+        description:
+          type: string
+        images:
+          type: array
+          items:
+            type: string
+        author:
+          type: string
+        publisher:
+          type: string
+        language:
+          type: string
+        brand:
+          type: string
+        material:
+          type: string
+        size:
+          type: string
+        weight:
+          type: string
+        age_range:
+          type: string
+
+    ProductUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+        price:
+          type: number
+        stock:
+          type: integer
+        discount:
+          type: number
+        description:
+          type: string
+        images:
+          type: array
+          items:
+            type: string
+        brand:
+          type: string
+        material:
+          type: string
+        size:
+          type: string
+        weight:
+          type: string
+        age_range:
+          type: string
+
+    Category:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "c01"
+        name:
+          type: string
+          example: "Văn học"

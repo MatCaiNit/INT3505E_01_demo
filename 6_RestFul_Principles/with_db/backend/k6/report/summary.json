@@ -1,0 +1,244 @@
+{
+    "metrics": {
+        "vus": {
+            "value": 1,
+            "min": 1,
+            "max": 1
+        },
+        "group_duration": {
+            "med": 11.6064,
+            "max": 23.6428,
+            "p(90)": 21.207280000000004,
+            "p(95)": 22.42504,
+            "avg": 12.2369,
+            "min": 2.092
+        },
+        "vus_max": {
+            "value": 1,
+            "min": 1,
+            "max": 1
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 8,
+            "value": 0
+        },
+        "data_received": {
+            "count": 7180,
+            "rate": 6837.653069863387
+        },
+        "http_req_blocked": {
+            "min": 0,
+            "med": 0,
+            "max": 5.4966,
+            "p(90)": 1.648979999999999,
+            "p(95)": 3.5727899999999972,
+            "avg": 0.687075
+        },
+        "iterations": {
+            "rate": 0.9523193690617531,
+            "count": 1
+        },
+        "http_req_waiting": {
+            "min": 0.5058,
+            "med": 1.6444,
+            "max": 17.5918,
+            "p(90)": 16.14462,
+            "p(95)": 16.868209999999998,
+            "avg": 5.002025
+        },
+        "iteration_duration": {
+            "min": 1050.0679,
+            "med": 1050.0679,
+            "max": 1050.0679,
+            "p(90)": 1050.0679,
+            "p(95)": 1050.0679,
+            "avg": 1050.0679
+        },
+        "http_req_duration": {
+            "min": 0.5058,
+            "med": 1.8010000000000002,
+            "max": 18.1462,
+            "p(90)": 16.31094,
+            "p(95)": 17.228569999999998,
+            "avg": 5.2902000000000005
+        },
+        "checks": {
+            "passes": 14,
+            "fails": 0,
+            "value": 1
+        },
+        "http_reqs": {
+            "count": 8,
+            "rate": 7.618554952494025
+        },
+        "http_req_connecting": {
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "max": 0
+        },
+        "http_req_receiving": {
+            "avg": 0.288175,
+            "min": 0,
+            "med": 0,
+            "max": 0.9654,
+            "p(90)": 0.83954,
+            "p(95)": 0.9024699999999999
+        },
+        "data_sent": {
+            "count": 2492,
+            "rate": 2373.1798677018887
+        },
+        "http_req_duration{expected_response:true}": {
+            "p(90)": 16.31094,
+            "p(95)": 17.228569999999998,
+            "avg": 5.2902000000000005,
+            "min": 0.5058,
+            "med": 1.8010000000000002,
+            "max": 18.1462
+        },
+        "http_req_sending": {
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "max": 0
+        },
+        "http_req_tls_handshaking": {
+            "med": 0,
+            "max": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0,
+            "min": 0
+        }
+    },
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {
+            "register": {
+                "path": "::register",
+                "id": "7be41b407e4072a759dd42b3be494f42",
+                "groups": {},
+                "checks": {
+                        "status is 201": {
+                            "name": "status is 201",
+                            "path": "::register::status is 201",
+                            "id": "060ae25161b4ff4bd4136f9a6f78b9b2",
+                            "passes": 1,
+                            "fails": 0
+                        },
+                        "message is correct": {
+                            "name": "message is correct",
+                            "path": "::register::message is correct",
+                            "id": "ce089818fced9b4a413415c74836a5be",
+                            "passes": 1,
+                            "fails": 0
+                        },
+                        "token exists": {
+                            "id": "16c24c7e012cb3310446ffc1a8e3dc7f",
+                            "passes": 1,
+                            "fails": 0,
+                            "name": "token exists",
+                            "path": "::register::token exists"
+                        }
+                    },
+                "name": "register"
+            },
+            "login": {
+                "name": "login",
+                "path": "::login",
+                "id": "a7d10b3a6c9a385ee254f0dbc7f9c8c9",
+                "groups": {},
+                "checks": {
+                        "status is 200": {
+                            "name": "status is 200",
+                            "path": "::login::status is 200",
+                            "id": "a659066fb7eb0f38feb711d11a175611",
+                            "passes": 1,
+                            "fails": 0
+                        },
+                        "token exists": {
+                            "name": "token exists",
+                            "path": "::login::token exists",
+                            "id": "e2d4528c51c0d80d90cb71f7d833446b",
+                            "passes": 1,
+                            "fails": 0
+                        }
+                    }
+            },
+            "products": {
+                "name": "products",
+                "path": "::products",
+                "id": "16ee86295af4985aa9251d5fa6e0e9d0",
+                "groups": {},
+                "checks": {
+                        "status is 200": {
+                            "id": "3707d95c5cab9134d61e48feef11029d",
+                            "passes": 3,
+                            "fails": 0,
+                            "name": "status is 200",
+                            "path": "::products::status is 200"
+                        },
+                        "response is array": {
+                            "id": "deede729debe4eb47af223dd06f7a9e4",
+                            "passes": 1,
+                            "fails": 0,
+                            "name": "response is array",
+                            "path": "::products::response is array"
+                        },
+                        "status is 201": {
+                            "name": "status is 201",
+                            "path": "::products::status is 201",
+                            "id": "d8440eba1fc563865643a6af85f2b95f",
+                            "passes": 1,
+                            "fails": 0
+                        },
+                        "product name matches": {
+                            "name": "product name matches",
+                            "path": "::products::product name matches",
+                            "id": "a26a3b3bf765c4714534ef6ac36502af",
+                            "passes": 1,
+                            "fails": 0
+                        },
+                        "price updated": {
+                            "name": "price updated",
+                            "path": "::products::price updated",
+                            "id": "ffc7d16dbc9d514aa712b7e27312f5a9",
+                            "passes": 1,
+                            "fails": 0
+                        },
+                        "status is 204": {
+                            "name": "status is 204",
+                            "path": "::products::status is 204",
+                            "id": "002cd285a475d81668262616f3fe8b15",
+                            "passes": 1,
+                            "fails": 0
+                        }
+                    }
+            },
+            "categories": {
+                "id": "6560d1983b5898104b7f5b4b1e407e85",
+                "groups": {},
+                "checks": {
+                        "status is 200": {
+                            "fails": 0,
+                            "name": "status is 200",
+                            "path": "::categories::status is 200",
+                            "id": "f954ee1ada6b6ea7268f71f6b3279e29",
+                            "passes": 1
+                        }
+                    },
+                "name": "categories",
+                "path": "::categories"
+            }
+        },
+        "checks": {}
+    }
+}

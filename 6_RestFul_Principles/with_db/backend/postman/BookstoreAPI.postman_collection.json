@@ -1,0 +1,1308 @@
+{
+	"info": {
+		"_postman_id": "295bb5b1-fdb1-4f56-b30a-841ca0f3268b",
+		"name": "Bookstore Product API",
+		"description": "API mô tả hệ thống sản phẩm của một nhà sách online (Design-First).   Bao gồm CRUD cho sản phẩm, danh mục, và hiển thị danh sách sản phẩm.\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48459145",
+		"_collection_link": "https://manhquynha3csp-4904602.postman.co/workspace/ManhQuynh-Nguyen's-Workspace~357594c4-2487-4abd-8a35-a3e95a05fd42/collection/48459145-295bb5b1-fdb1-4f56-b30a-841ca0f3268b?action=share&source=collection_link&creator=48459145"
+	},
+	"item": [
+		{
+			"name": "register",
+			"item": [
+				{
+					"name": "Đăng ký tài khoản người dùng mới",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// dùng timestamp để chắc chắn unique\r",
+									"const timestamp = Date.now();\r",
+									"pm.environment.set(\"testUsername\", `user_${timestamp}`);\r",
+									"pm.environment.set(\"testEmail\", `user_${timestamp}@example.com`);\r",
+									"pm.environment.unset(\"jwtToken\");\r",
+									"pm.environment.unset(\"productId\");\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => pm.response.to.have.status(201));\r",
+									"\r",
+									"const json = pm.response.json();\r",
+									"\r",
+									"// Lưu token để dùng cho request sau\r",
+									"pm.environment.set(\"jwtToken\", json.token);\r",
+									"\r",
+									"// Test message và token\r",
+									"pm.test(\"User created successfully\", () => {\r",
+									"    pm.expect(json.message).to.eql(\"Đăng ký thành công\");\r",
+									"    pm.expect(json.token).to.be.a(\"string\").and.not.empty;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"{{testUsername}}\",\n  \"password\": \"123456\",\n  \"email\": \"{{testEmail}}\",\n  \"fullName\": \"Test User\"\n}\n",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Đăng ký thành công",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"123456\",\n  \"fullName\": \"Nguyễn Mạnh Quỳnh\",\n  \"email\": \"quynh@example.com\",\n  \"username\": \"nguyenmanhquynh\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"Login successful\",\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5...\"\n}"
+						},
+						{
+							"name": "Dữ liệu không hợp lệ (username hoặc password thiếu)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"123456\",\n  \"fullName\": \"Nguyễn Mạnh Quỳnh\",\n  \"email\": \"quynh@example.com\",\n  \"username\": \"nguyenmanhquynh\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Tài khoản đã tồn tại",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"123456\",\n  \"fullName\": \"Nguyễn Mạnh Quỳnh\",\n  \"email\": \"quynh@example.com\",\n  \"username\": \"nguyenmanhquynh\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "Đăng nhập vào hệ thống",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// Dùng lại username đã đăng ký ở bước register\r",
+									"const username = pm.environment.get(\"testUsername\");\r",
+									"pm.environment.set(\"loginBody\", JSON.stringify({\r",
+									"    username: username,\r",
+									"    password: \"123456\"\r",
+									"}));\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));\r",
+									"const json = pm.response.json();\r",
+									"pm.environment.set(\"jwtToken\", json.token);\r",
+									"\r",
+									"pm.test(\"JWT token is saved\", () => {\r",
+									"    pm.expect(pm.environment.get(\"jwtToken\")).to.be.a(\"string\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{{loginBody}}\n",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Đăng nhập thành công",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"123456\",\n  \"username\": \"nguyenmanhquynh\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"Login successful\",\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5...\"\n}"
+						},
+						{
+							"name": "Sai tên đăng nhập hoặc mật khẩu",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"123456\",\n  \"username\": \"nguyenmanhquynh\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Lấy danh sách tất cả sản phẩm",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));\r",
+											"pm.test(\"Response is an array\", () => {\r",
+											"    pm.expect(Array.isArray(pm.response.json())).to.be.true;\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MDlmY2NkY2ZiMTFlM2VmYjI1ZDJkZCIsInVzZXJuYW1lIjoibmd1eWVubWFuaHF1eW5oIiwiaWF0IjoxNzYyODIyODI0LCJleHAiOjE3NjI4MjY0MjR9.Oq2lNg4JMTFvCxbxYOxXNd6IUQgYg51_qt8SARypLtc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Danh sách sản phẩm",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products?category=string&type=office_supply&limit=20",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products"
+											],
+											"query": [
+												{
+													"key": "category",
+													"value": "string",
+													"description": "Lọc sản phẩm theo danh mục"
+												},
+												{
+													"key": "type",
+													"value": "office_supply",
+													"description": "Lọc theo loại sản phẩm"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"images\": [\n      \"https://example.com/images/dacnhantam.jpg\",\n      \"https://example.com/images/dacnhantam.jpg\"\n    ],\n    \"author\": \"Dale Carnegie\",\n    \"discount\": 10,\n    \"description\": \"Cuốn sách kinh điển về nghệ thuật giao tiếp.\",\n    \"weight\": \"weight\",\n    \"language\": \"Tiếng Việt\",\n    \"type\": \"book\",\n    \"age_range\": \"age_range\",\n    \"createdAt\": \"2000-01-23T04:56:07.000+00:00\",\n    \"material\": \"material\",\n    \"size\": \"size\",\n    \"price\": 135000,\n    \"name\": \"Đắc Nhân Tâm\",\n    \"publisher\": \"NXB Trẻ\",\n    \"category\": \"Tâm lý kỹ năng\",\n    \"stock\": 50,\n    \"brand\": \"brand\",\n    \"updatedAt\": \"2000-01-23T04:56:07.000+00:00\"\n  },\n  {\n    \"images\": [\n      \"https://example.com/images/dacnhantam.jpg\",\n      \"https://example.com/images/dacnhantam.jpg\"\n    ],\n    \"author\": \"Dale Carnegie\",\n    \"discount\": 10,\n    \"description\": \"Cuốn sách kinh điển về nghệ thuật giao tiếp.\",\n    \"weight\": \"weight\",\n    \"language\": \"Tiếng Việt\",\n    \"type\": \"book\",\n    \"age_range\": \"age_range\",\n    \"createdAt\": \"2000-01-23T04:56:07.000+00:00\",\n    \"material\": \"material\",\n    \"size\": \"size\",\n    \"price\": 135000,\n    \"name\": \"Đắc Nhân Tâm\",\n    \"publisher\": \"NXB Trẻ\",\n    \"category\": \"Tâm lý kỹ năng\",\n    \"stock\": 50,\n    \"brand\": \"brand\",\n    \"updatedAt\": \"2000-01-23T04:56:07.000+00:00\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "(Admin) Tạo mới sản phẩm",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"// Gắn token vào header Authorization\r",
+											"pm.request.headers.add({\r",
+											"    key: \"Authorization\",\r",
+											"    value: `Bearer ${pm.environment.get(\"jwtToken\")}`\r",
+											"});\r",
+											"// dùng timestamp để chắc chắn unique\r",
+											"const timestamp = Date.now();\r",
+											"pm.environment.set(\"testProductName\", `Sách Test ${timestamp}`);\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Kiểm tra status code 201\r",
+											"pm.test(\"Status code is 201\", () => pm.response.to.have.status(201));\r",
+											"\r",
+											"// Lấy response JSON\r",
+											"const json = pm.response.json();\r",
+											"pm.environment.set(\"productId\", json._id);\r",
+											"\r",
+											"// Lưu productId vào environment\r",
+											"if (json._id) {\r",
+											"    pm.environment.set(\"productId\", json._id);\r",
+											"    console.log(\"Saved productId:\", json._id);\r",
+											"} else {\r",
+											"    pm.environment.set(\"productId\", null);\r",
+											"    console.warn(\"No productId returned!\");\r",
+											"}\r",
+											"\r",
+											"// Kiểm tra tên product\r",
+											"pm.test(\"Product created successfully\", () => {\r",
+											"    pm.expect(json.name).to.eql(pm.environment.get(\"testProductName\"));\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"{{testProductName}}\",\n  \"category\": \"Tâm lý kỹ năng\",\n  \"type\": \"book\",\n  \"price\": 135000,\n  \"stock\": 10,\n  \"description\": \"Sách test tự động\",\n  \"images\": [\"https://example.com/images/test.jpg\"]\n}\n",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Sản phẩm được tạo thành công",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"images\": [\n    \"images\",\n    \"images\"\n  ],\n  \"author\": \"author\",\n  \"discount\": 1.4658129805029452,\n  \"description\": \"description\",\n  \"weight\": \"weight\",\n  \"language\": \"language\",\n  \"type\": \"book\",\n  \"age_range\": \"age_range\",\n  \"material\": \"material\",\n  \"size\": \"size\",\n  \"price\": 0.8008281904610115,\n  \"name\": \"name\",\n  \"publisher\": \"publisher\",\n  \"category\": \"category\",\n  \"stock\": 6,\n  \"brand\": \"brand\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"images\": [\n    \"https://example.com/images/dacnhantam.jpg\",\n    \"https://example.com/images/dacnhantam.jpg\"\n  ],\n  \"author\": \"Dale Carnegie\",\n  \"discount\": 10,\n  \"description\": \"Cuốn sách kinh điển về nghệ thuật giao tiếp.\",\n  \"weight\": \"weight\",\n  \"language\": \"Tiếng Việt\",\n  \"type\": \"book\",\n  \"age_range\": \"age_range\",\n  \"createdAt\": \"2000-01-23T04:56:07.000+00:00\",\n  \"material\": \"material\",\n  \"size\": \"size\",\n  \"price\": 135000,\n  \"name\": \"Đắc Nhân Tâm\",\n  \"publisher\": \"NXB Trẻ\",\n  \"id\": \"p123\",\n  \"category\": \"Tâm lý kỹ năng\",\n  \"stock\": 50,\n  \"brand\": \"brand\",\n  \"updatedAt\": \"2000-01-23T04:56:07.000+00:00\"\n}"
+								},
+								{
+									"name": "Không có quyền truy cập",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"images\": [\n    \"images\",\n    \"images\"\n  ],\n  \"author\": \"author\",\n  \"discount\": 1.4658129805029452,\n  \"description\": \"description\",\n  \"weight\": \"weight\",\n  \"language\": \"language\",\n  \"type\": \"book\",\n  \"age_range\": \"age_range\",\n  \"material\": \"material\",\n  \"size\": \"size\",\n  \"price\": 0.8008281904610115,\n  \"name\": \"name\",\n  \"publisher\": \"publisher\",\n  \"category\": \"category\",\n  \"stock\": 6,\n  \"brand\": \"brand\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Lấy chi tiết một sản phẩm",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let productId = pm.environment.get(\"productId\");\r",
+											"\r",
+											"// Kiểm tra\r",
+											"if (!productId || productId === \"null\") {\r",
+											"    console.warn(\"No productId, skipping request\");\r",
+											"    pm.environment.set(\"skipProductRequest\", true);\r",
+											"} else {\r",
+											"    pm.environment.set(\"skipProductRequest\", false);\r",
+											"    pm.variables.set(\"productId\", productId); // Cập nhật URL\r",
+											"}\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Kiểm tra flag từ pre-request\r",
+											"let skipRequest = pm.environment.get(\"skipProductRequest\");\r",
+											"\r",
+											"if (skipRequest === \"true\") {\r",
+											"    console.log(\"Request skipped, no response to parse\");\r",
+											"} else {\r",
+											"    try {\r",
+											"        let jsonData = pm.response.json();\r",
+											"        console.log(\"Response JSON:\", jsonData);\r",
+											"\r",
+											"        // Thêm assertion\r",
+											"        pm.test(\"Status code is 200\", function () {\r",
+											"            pm.response.to.have.status(200);\r",
+											"        });\r",
+											"    } catch (e) {\r",
+											"        console.error(\"JSON parse error:\", e);\r",
+											"        pm.test(\"Response is valid JSON\", function () {\r",
+											"            pm.expect(false).to.be.true;\r",
+											"        });\r",
+											"    }\r",
+											"}\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/{{productId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"{{productId}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Thông tin chi tiết sản phẩm",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"images\": [\n    \"https://example.com/images/dacnhantam.jpg\",\n    \"https://example.com/images/dacnhantam.jpg\"\n  ],\n  \"author\": \"Dale Carnegie\",\n  \"discount\": 10,\n  \"description\": \"Cuốn sách kinh điển về nghệ thuật giao tiếp.\",\n  \"weight\": \"weight\",\n  \"language\": \"Tiếng Việt\",\n  \"type\": \"book\",\n  \"age_range\": \"age_range\",\n  \"createdAt\": \"2000-01-23T04:56:07.000+00:00\",\n  \"material\": \"material\",\n  \"size\": \"size\",\n  \"price\": 135000,\n  \"name\": \"Đắc Nhân Tâm\",\n  \"publisher\": \"NXB Trẻ\",\n  \"id\": \"p123\",\n  \"category\": \"Tâm lý kỹ năng\",\n  \"stock\": 50,\n  \"brand\": \"brand\",\n  \"updatedAt\": \"2000-01-23T04:56:07.000+00:00\"\n}"
+								},
+								{
+									"name": "Không tìm thấy sản phẩm",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "(Admin) Cập nhật thông tin sản phẩm",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.request.headers.add({\r",
+											"    key: \"Authorization\",\r",
+											"    value: `Bearer ${pm.environment.get(\"jwtToken\")}`\r",
+											"});\r",
+											"const productId = pm.environment.get(\"productId\");\r",
+											"if (!productId) {\r",
+											"    console.log(\"No productId, skipping request to avoid CastError\");\r",
+											"    postman.setNextRequest(null); // bỏ qua request\r",
+											"}\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));\r",
+											"\r",
+											"const json = pm.response.json();\r",
+											"pm.test(\"Price updated\", () => {\r",
+											"    pm.expect(json.price).to.eql(150000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"price\": 150000,\n  \"stock\": 5\n}\n",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products/{{productId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"{{productId}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Cập nhật thành công",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"age_range\": \"age_range\",\n  \"images\": [\n    \"images\",\n    \"images\"\n  ],\n  \"material\": \"material\",\n  \"size\": \"size\",\n  \"price\": 0.8008281904610115,\n  \"name\": \"name\",\n  \"discount\": 1.4658129805029452,\n  \"description\": \"description\",\n  \"weight\": \"weight\",\n  \"stock\": 6,\n  \"brand\": \"brand\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"images\": [\n    \"https://example.com/images/dacnhantam.jpg\",\n    \"https://example.com/images/dacnhantam.jpg\"\n  ],\n  \"author\": \"Dale Carnegie\",\n  \"discount\": 10,\n  \"description\": \"Cuốn sách kinh điển về nghệ thuật giao tiếp.\",\n  \"weight\": \"weight\",\n  \"language\": \"Tiếng Việt\",\n  \"type\": \"book\",\n  \"age_range\": \"age_range\",\n  \"createdAt\": \"2000-01-23T04:56:07.000+00:00\",\n  \"material\": \"material\",\n  \"size\": \"size\",\n  \"price\": 135000,\n  \"name\": \"Đắc Nhân Tâm\",\n  \"publisher\": \"NXB Trẻ\",\n  \"id\": \"p123\",\n  \"category\": \"Tâm lý kỹ năng\",\n  \"stock\": 50,\n  \"brand\": \"brand\",\n  \"updatedAt\": \"2000-01-23T04:56:07.000+00:00\"\n}"
+								},
+								{
+									"name": "Không có quyền",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"age_range\": \"age_range\",\n  \"images\": [\n    \"images\",\n    \"images\"\n  ],\n  \"material\": \"material\",\n  \"size\": \"size\",\n  \"price\": 0.8008281904610115,\n  \"name\": \"name\",\n  \"discount\": 1.4658129805029452,\n  \"description\": \"description\",\n  \"weight\": \"weight\",\n  \"stock\": 6,\n  \"brand\": \"brand\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Không tìm thấy sản phẩm",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"age_range\": \"age_range\",\n  \"images\": [\n    \"images\",\n    \"images\"\n  ],\n  \"material\": \"material\",\n  \"size\": \"size\",\n  \"price\": 0.8008281904610115,\n  \"name\": \"name\",\n  \"discount\": 1.4658129805029452,\n  \"description\": \"description\",\n  \"weight\": \"weight\",\n  \"stock\": 6,\n  \"brand\": \"brand\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "(Admin) Xóa sản phẩm",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.request.headers.add({\r",
+											"    key: \"Authorization\",\r",
+											"    value: `Bearer ${pm.environment.get(\"jwtToken\")}`\r",
+											"});\r",
+											"const productId = pm.environment.get(\"productId\");\r",
+											"if (!productId) {\r",
+											"    console.log(\"No productId, skipping request to avoid CastError\");\r",
+											"    postman.setNextRequest(null); // bỏ qua request\r",
+											"}\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 204\", () => pm.response.to.have.status(204));\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products/{{productId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"{{productId}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Xóa thành công",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Không có quyền",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Không tìm thấy sản phẩm",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "Lấy danh sách danh mục sản phẩm",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Danh sách danh mục",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"name\": \"Văn học\"\n  },\n  {\n    \"name\": \"Văn học\"\n  }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000"
+		}
+	]
+}

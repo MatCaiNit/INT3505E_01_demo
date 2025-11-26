@@ -1,0 +1,849 @@
+swagger: "2.0"
+info:
+  title: Library Management API (Multi-Strategy Versioning)
+  version: 3.0.0
+  description: |
+    API quản lý thư viện với nhiều chiến lược versioning
+    
+    ## Versioning Strategies
+    
+    ### 1. URL Versioning (Books)
+    - **v1**: `/api/v1/books` (deprecated)
+    - **v2**: `/api/v2/books` (current)
+    
+    ### 2. Header Versioning (Authors)
+    - Header: `API-Version: 1` hoặc `API-Version: 2`
+    - Endpoint: `/api/authors`
+    
+    ### 3. Query Parameter Versioning (Users)
+    - Query: `?version=1` hoặc `?version=2`
+    - Endpoint: `/api/users`
+    
+    ### 4. Content Negotiation (Reports)
+    - Header: `Accept: application/vnd.library.v1+json`
+    - Header: `Accept: application/vnd.library.v2+json`
+    - Endpoint: `/api/reports/borrowings`
+    
+    ## Migration Guide
+    See: https://docs.library.com/migration-guide
+
+servers:
+  - url: http://localhost:5000
+    description: Library Management API Server
+
+tags:
+  - name: Authentication
+    description: Login and token management
+  - name: Books (URL Versioning)
+    description: URL-based versioning - /api/v1/books vs /api/v2/books
+  - name: Authors (Header Versioning)
+    description: Header-based versioning - API-Version header
+  - name: Users (Query Versioning)
+    description: Query parameter versioning - ?version=1 or ?version=2
+  - name: Reports (Content Negotiation)
+    description: Content type versioning - Accept header
+  - name: Borrowings
+    description: Book borrowing operations
+
+paths:
+  # ==========================================
+  # AUTH ENDPOINTS
+  # ==========================================
+  
+  /login:
+    post:
+      summary: Đăng nhập để nhận token
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  example: "Quynh"
+      responses:
+        '200':
+          description: Đăng nhập thành công
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  access_token:
+                    type: string
+
+  /refresh:
+    post:
+      summary: Refresh access token
+      tags:
+        - Authentication
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Token refreshed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  access_token:
+                    type: string
+
+  /logout:
+    post:
+      summary: Đăng xuất
+      tags:
+        - Authentication
+      responses:
+        '200':
+          description: Đăng xuất thành công
+
+  # ==========================================
+  # STRATEGY 1: URL VERSIONING (BOOKS)
+  # ==========================================
+  
+  /api/v1/books:
+    get:
+      summary: "[URL v1 DEPRECATED] Lấy danh sách sách"
+      deprecated: true
+      tags:
+        - Books (URL Versioning)
+      parameters:
+        - name: search
+          in: query
+          schema:
+            type: string
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 5
+      responses:
+        '200':
+          description: V1 response with offset/limit
+          headers:
+            Deprecation:
+              schema:
+                type: string
+              example: "Sun, 01 Dec 2025 00:00:00 GMT"
+            Warning:
+              schema:
+                type: string
+              example: '299 - "API v1 is deprecated"'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total:
+                    type: integer
+                  offset:
+                    type: integer
+                  limit:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/BookV1"
+
+  /api/v2/books:
+    get:
+      summary: "[URL v2 CURRENT] Lấy danh sách sách"
+      tags:
+        - Books (URL Versioning)
+      parameters:
+        - name: search
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+        - name: per_page
+          in: query
+          schema:
+            type: integer
+            default: 10
+      responses:
+        '200':
+          description: V2 response with page-based pagination
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/BookV2"
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                      per_page:
+                        type: integer
+                      total_items:
+                        type: integer
+                      total_pages:
+                        type: integer
+
+  # ==========================================
+  # STRATEGY 2: HEADER VERSIONING (AUTHORS)
+  # ==========================================
+  
+  /api/authors:
+    get:
+      summary: "[HEADER VERSIONING] Lấy danh sách tác giả"
+      description: |
+        Sử dụng header `API-Version: 1` hoặc `API-Version: 2`
+        - V1: Trả về thông tin cơ bản
+        - V2: Trả về thông tin chi tiết với bio và book_count
+      tags:
+        - Authors (Header Versioning)
+      parameters:
+        - name: API-Version
+          in: header
+          required: false
+          description: Version của API (1 hoặc 2, mặc định là 2)
+          schema:
+            type: string
+            enum: ["1", "2"]
+            default: "2"
+          example: "2"
+      responses:
+        '200':
+          description: Danh sách tác giả (format tùy version)
+          headers:
+            API-Version:
+              schema:
+                type: string
+              description: Version được sử dụng
+              example: "2"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/AuthorsResponseV1"
+                  - $ref: "#/components/schemas/AuthorsResponseV2"
+    
+    post:
+      summary: "[HEADER VERSIONING] Thêm tác giả mới"
+      tags:
+        - Authors (Header Versioning)
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: API-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            enum: ["1", "2"]
+            default: "2"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: "#/components/schemas/AuthorInputV1"
+                - $ref: "#/components/schemas/AuthorInputV2"
+      responses:
+        '201':
+          description: Tác giả được tạo thành công
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    oneOf:
+                      - $ref: "#/components/schemas/AuthorV1"
+                      - $ref: "#/components/schemas/AuthorV2"
+                  message:
+                    type: string
+
+  /api/authors/{author_id}:
+    get:
+      summary: "[HEADER VERSIONING] Lấy chi tiết tác giả"
+      tags:
+        - Authors (Header Versioning)
+      parameters:
+        - name: author_id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: API-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            enum: ["1", "2"]
+            default: "2"
+      responses:
+        '200':
+          description: Chi tiết tác giả
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    oneOf:
+                      - $ref: "#/components/schemas/AuthorV1"
+                      - $ref: "#/components/schemas/AuthorV2"
+    
+    put:
+      summary: "[HEADER VERSIONING] Cập nhật tác giả"
+      tags:
+        - Authors (Header Versioning)
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: author_id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: API-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            enum: ["1", "2"]
+            default: "2"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: "#/components/schemas/AuthorInputV1"
+                - $ref: "#/components/schemas/AuthorInputV2"
+      responses:
+        '200':
+          description: Cập nhật thành công
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    oneOf:
+                      - $ref: "#/components/schemas/AuthorV1"
+                      - $ref: "#/components/schemas/AuthorV2"
+
+  # ==========================================
+  # STRATEGY 3: QUERY PARAMETER VERSIONING (USERS)
+  # ==========================================
+  
+  /api/users:
+    get:
+      summary: "[QUERY VERSIONING] Lấy danh sách users"
+      description: |
+        Sử dụng query parameter `?version=1` hoặc `?version=2`
+        - V1: Trả về thông tin cơ bản
+        - V2: Trả về thông tin chi tiết với created_at, last_login
+      tags:
+        - Users (Query Versioning)
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: version
+          in: query
+          required: false
+          description: Version của API (1 hoặc 2, mặc định là 2)
+          schema:
+            type: integer
+            enum: [1, 2]
+            default: 2
+          example: 2
+      responses:
+        '200':
+          description: Danh sách users
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/UsersResponseV1"
+                  - $ref: "#/components/schemas/UsersResponseV2"
+
+  /api/users/{user_id}:
+    get:
+      summary: "[QUERY VERSIONING] Lấy thông tin user"
+      tags:
+        - Users (Query Versioning)
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: version
+          in: query
+          required: false
+          schema:
+            type: integer
+            enum: [1, 2]
+            default: 2
+      responses:
+        '200':
+          description: Chi tiết user
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    oneOf:
+                      - $ref: "#/components/schemas/UserV1"
+                      - $ref: "#/components/schemas/UserV2"
+
+  # ==========================================
+  # STRATEGY 4: CONTENT NEGOTIATION (REPORTS)
+  # ==========================================
+  
+  /api/reports/borrowings:
+    get:
+      summary: "[CONTENT NEGOTIATION] Báo cáo mượn sách"
+      description: |
+        Sử dụng Accept header để chọn version:
+        - `Accept: application/vnd.library.v1+json` - Format cơ bản
+        - `Accept: application/vnd.library.v2+json` - Format chi tiết với analytics
+      tags:
+        - Reports (Content Negotiation)
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          required: false
+          description: Content type với version
+          schema:
+            type: string
+            enum: 
+              - "application/vnd.library.v1+json"
+              - "application/vnd.library.v2+json"
+            default: "application/vnd.library.v2+json"
+          example: "application/vnd.library.v2+json"
+        - name: start_date
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: end_date
+          in: query
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Báo cáo mượn sách
+          headers:
+            Content-Type:
+              schema:
+                type: string
+              description: Content type response
+          content:
+            application/vnd.library.v1+json:
+              schema:
+                $ref: "#/components/schemas/BorrowingReportV1"
+            application/vnd.library.v2+json:
+              schema:
+                $ref: "#/components/schemas/BorrowingReportV2"
+
+  /api/reports/books:
+    get:
+      summary: "[CONTENT NEGOTIATION] Báo cáo sách"
+      tags:
+        - Reports (Content Negotiation)
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          required: false
+          schema:
+            type: string
+            enum:
+              - "application/vnd.library.v1+json"
+              - "application/vnd.library.v2+json"
+            default: "application/vnd.library.v2+json"
+      responses:
+        '200':
+          description: Báo cáo sách
+          content:
+            application/vnd.library.v1+json:
+              schema:
+                $ref: "#/components/schemas/BookReportV1"
+            application/vnd.library.v2+json:
+              schema:
+                $ref: "#/components/schemas/BookReportV2"
+
+  # ==========================================
+  # BORROWINGS (Keep original)
+  # ==========================================
+  
+  /users/{user_id}/borrowings:
+    get:
+      summary: Lấy danh sách sách đã mượn
+      tags:
+        - Borrowings
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Danh sách sách đã mượn
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: string
+                  borrowed_books:
+                    type: array
+                    items:
+                      type: object
+    
+    post:
+      summary: Mượn sách
+      tags:
+        - Borrowings
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                book_id:
+                  type: integer
+      responses:
+        '200':
+          description: Mượn sách thành công
+
+  /users/{user_id}/returnings:
+    post:
+      summary: Trả sách
+      tags:
+        - Borrowings
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                book_id:
+                  type: integer
+      responses:
+        '200':
+          description: Trả sách thành công
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    # ==========================================
+    # BOOKS SCHEMAS (URL Versioning)
+    # ==========================================
+    
+    BookV1:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        author_id:
+          type: integer
+        available:
+          type: boolean
+        published_year:
+          type: integer
+
+    BookV2:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        author:
+          $ref: "#/components/schemas/AuthorV2"
+        published_year:
+          type: integer
+        available:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    # ==========================================
+    # AUTHORS SCHEMAS (Header Versioning)
+    # ==========================================
+    
+    AuthorV1:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "Robert C. Martin"
+
+    AuthorV2:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "Robert C. Martin"
+        bio:
+          type: string
+          example: "Software engineer and author"
+        book_count:
+          type: integer
+          example: 5
+
+    AuthorInputV1:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+
+    AuthorInputV2:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+        bio:
+          type: string
+
+    AuthorsResponseV1:
+      type: array
+      items:
+        $ref: "#/components/schemas/AuthorV1"
+
+    AuthorsResponseV2:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/AuthorV2"
+        meta:
+          type: object
+          properties:
+            total:
+              type: integer
+            version:
+              type: string
+
+    # ==========================================
+    # USERS SCHEMAS (Query Versioning)
+    # ==========================================
+    
+    UserV1:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        role:
+          type: string
+          enum: [admin, user]
+
+    UserV2:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        role:
+          type: string
+          enum: [admin, user]
+        email:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        last_login:
+          type: string
+          format: date-time
+
+    UsersResponseV1:
+      type: array
+      items:
+        $ref: "#/components/schemas/UserV1"
+
+    UsersResponseV2:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/UserV2"
+        meta:
+          type: object
+          properties:
+            total:
+              type: integer
+            active_users:
+              type: integer
+
+    # ==========================================
+    # REPORTS SCHEMAS (Content Negotiation)
+    # ==========================================
+    
+    BorrowingReportV1:
+      type: object
+      properties:
+        total_borrowings:
+          type: integer
+        active_borrowings:
+          type: integer
+        borrowings:
+          type: array
+          items:
+            type: object
+            properties:
+              user_name:
+                type: string
+              book_title:
+                type: string
+              borrow_date:
+                type: string
+
+    BorrowingReportV2:
+      type: object
+      properties:
+        summary:
+          type: object
+          properties:
+            total_borrowings:
+              type: integer
+            active_borrowings:
+              type: integer
+            returned_borrowings:
+              type: integer
+            average_borrow_days:
+              type: number
+        analytics:
+          type: object
+          properties:
+            most_borrowed_books:
+              type: array
+              items:
+                type: object
+            most_active_users:
+              type: array
+              items:
+                type: object
+        borrowings:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              user:
+                $ref: "#/components/schemas/UserV2"
+              book:
+                $ref: "#/components/schemas/BookV2"
+              borrow_date:
+                type: string
+              return_date:
+                type: string
+              days_borrowed:
+                type: integer
+
+    BookReportV1:
+      type: object
+      properties:
+        total_books:
+          type: integer
+        available_books:
+          type: integer
+
+    BookReportV2:
+      type: object
+      properties:
+        summary:
+          type: object
+          properties:
+            total_books:
+              type: integer
+            available_books:
+              type: integer
+            borrowed_books:
+              type: integer
+            availability_rate:
+              type: number
+        by_author:
+          type: array
+          items:
+            type: object
+        by_year:
+          type: array
+          items:
+            type: object

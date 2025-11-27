@@ -1,0 +1,2 @@
+2025-11-27 13:15:00,045 - AUDIT - USER_ID=1 | ACTION=LOGIN | DETAILS=User Quynh logged in successfully | IP=127.0.0.1
+2025-11-27 13:26:18,696 - AUDIT - USER_ID=1 | ACTION=LOGIN | DETAILS=User Quynh logged in successfully | IP=127.0.0.1

@@ -1,0 +1,1266 @@
+2025-11-27 13:14:17,948 - app - INFO - ============================================================
+2025-11-27 13:14:17,948 - app - INFO - Library Management API Starting...
+2025-11-27 13:14:17,949 - app - INFO - Environment: development
+2025-11-27 13:14:17,949 - app - INFO - ============================================================
+2025-11-27 13:14:19,207 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+2025-11-27 13:14:19,209 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-27 13:14:19,236 - werkzeug - INFO -  * Restarting with stat
+2025-11-27 13:14:21,304 - app - INFO - ============================================================
+2025-11-27 13:14:21,305 - app - INFO - Library Management API Starting...
+2025-11-27 13:14:21,306 - app - INFO - Environment: development
+2025-11-27 13:14:21,307 - app - INFO - ============================================================
+2025-11-27 13:14:21,358 - werkzeug - WARNING -  * Debugger is active!
+2025-11-27 13:14:21,402 - werkzeug - INFO -  * Debugger PIN: 955-837-932
+2025-11-27 13:14:24,567 - app - INFO - REQUEST_ID=c4681e54-3f45-46ba-8f56-eff8cc4d47a7 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:14:24,569 - app - INFO - RESPONSE_ID=c4681e54-3f45-46ba-8f56-eff8cc4d47a7 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:14:24,571 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:14:24] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:14:33,164 - app - INFO - REQUEST_ID=89338c05-b944-4cd8-8251-761cb3a1a75e | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:14:33,167 - app - INFO - RESPONSE_ID=89338c05-b944-4cd8-8251-761cb3a1a75e | STATUS=200 | DURATION=0.004s
+2025-11-27 13:14:33,169 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:14:33] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:14:43,168 - app - INFO - REQUEST_ID=2b3307fe-4a92-49c2-beaf-c4426b6a5355 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:14:43,170 - app - INFO - RESPONSE_ID=2b3307fe-4a92-49c2-beaf-c4426b6a5355 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:14:43,171 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:14:43] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:14:53,166 - app - INFO - REQUEST_ID=fa38b278-4ce5-452e-9e07-54aea7eafb21 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:14:53,168 - app - INFO - RESPONSE_ID=fa38b278-4ce5-452e-9e07-54aea7eafb21 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:14:53,170 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:14:53] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:15:00,040 - app - INFO - REQUEST_ID=139b47f4-19a5-4cd0-9b21-ac0a791a6cf8 | METHOD=POST | PATH=/login | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:15:00,045 - audit - INFO - USER_ID=1 | ACTION=LOGIN | DETAILS=User Quynh logged in successfully | IP=127.0.0.1
+2025-11-27 13:15:00,046 - security - INFO - Successful login for user_id=1 from IP: 127.0.0.1
+2025-11-27 13:15:00,046 - app - INFO - RESPONSE_ID=139b47f4-19a5-4cd0-9b21-ac0a791a6cf8 | STATUS=200 | DURATION=0.006s
+2025-11-27 13:15:00,049 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:00] "POST /login HTTP/1.1" 200 -
+2025-11-27 13:15:03,164 - app - INFO - REQUEST_ID=ca6986fe-b638-43e5-9d3f-08e2a0c09018 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:15:03,167 - app - INFO - RESPONSE_ID=ca6986fe-b638-43e5-9d3f-08e2a0c09018 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:15:03,168 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:03] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:15:12,117 - app - INFO - REQUEST_ID=85a30422-d216-4a92-ae63-7dc49d2904c8 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:15:12,119 - app - INFO - RESPONSE_ID=85a30422-d216-4a92-ae63-7dc49d2904c8 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:15:12,121 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:12] "GET /api/v2/books?page=1&per_page=5 HTTP/1.1" 200 -
+2025-11-27 13:15:13,178 - app - INFO - REQUEST_ID=eb1a18be-8880-4772-bfe9-e737bcfda900 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:15:13,187 - app - INFO - RESPONSE_ID=eb1a18be-8880-4772-bfe9-e737bcfda900 | STATUS=200 | DURATION=0.009s
+2025-11-27 13:15:13,189 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:13] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:15:15,951 - app - INFO - REQUEST_ID=8c4921d6-4c7a-4089-a81e-dbacf67fd8c9 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:15:15,952 - app - INFO - RESPONSE_ID=8c4921d6-4c7a-4089-a81e-dbacf67fd8c9 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:15:15,953 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:15] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:15:18,728 - app - INFO - REQUEST_ID=4e767397-1b41-47ee-9615-738eb45a09a2 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:15:18,729 - app - INFO - RESPONSE_ID=4e767397-1b41-47ee-9615-738eb45a09a2 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:15:18,731 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:18] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:15:22,179 - app - INFO - REQUEST_ID=e87a8905-1fba-4c47-b918-e1ca7d3d6426 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:15:22,180 - app - INFO - RESPONSE_ID=e87a8905-1fba-4c47-b918-e1ca7d3d6426 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:15:22,181 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:22] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:15:23,179 - app - INFO - REQUEST_ID=b302e7a6-a087-41e7-a649-70fbffa6a6f9 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:15:23,186 - app - INFO - RESPONSE_ID=b302e7a6-a087-41e7-a649-70fbffa6a6f9 | STATUS=200 | DURATION=0.007s
+2025-11-27 13:15:23,187 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:23] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:15:25,866 - app - INFO - REQUEST_ID=fdce873b-d20f-4af1-b9c1-66b0631d433a | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:15:25,867 - app - INFO - RESPONSE_ID=fdce873b-d20f-4af1-b9c1-66b0631d433a | STATUS=200 | DURATION=0.001s
+2025-11-27 13:15:25,867 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:25] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:15:29,678 - app - INFO - REQUEST_ID=eff6bf17-d7b1-4ade-b8ac-dff7e26ab1e3 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:15:29,682 - app - INFO - RESPONSE_ID=eff6bf17-d7b1-4ade-b8ac-dff7e26ab1e3 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:15:29,685 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:29] "GET /api/v2/books?search=Design HTTP/1.1" 200 -
+2025-11-27 13:15:33,165 - app - INFO - REQUEST_ID=166be070-2760-4cd4-acfe-08053c6dbe4e | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:15:33,172 - app - INFO - RESPONSE_ID=166be070-2760-4cd4-acfe-08053c6dbe4e | STATUS=200 | DURATION=0.008s
+2025-11-27 13:15:33,175 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:33] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:15:33,517 - app - INFO - REQUEST_ID=366f1aec-9cf7-4fba-b501-ac6d996fe49c | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:15:33,519 - app - INFO - RESPONSE_ID=366f1aec-9cf7-4fba-b501-ac6d996fe49c | STATUS=200 | DURATION=0.002s
+2025-11-27 13:15:33,521 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:33] "GET /api/v2/books?page=2&per_page=3 HTTP/1.1" 200 -
+2025-11-27 13:15:36,196 - app - INFO - REQUEST_ID=158a8911-400e-4976-b658-aa8daab95336 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:15:36,197 - app - INFO - RESPONSE_ID=158a8911-400e-4976-b658-aa8daab95336 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:15:36,198 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:36] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:15:39,850 - app - INFO - REQUEST_ID=d0db19f0-d586-4452-9c99-405310886d8e | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:15:39,852 - app - INFO - RESPONSE_ID=d0db19f0-d586-4452-9c99-405310886d8e | STATUS=200 | DURATION=0.002s
+2025-11-27 13:15:39,853 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:39] "GET /api/v2/books?search=Code HTTP/1.1" 200 -
+2025-11-27 13:15:42,908 - app - INFO - REQUEST_ID=3ff157fc-980f-4465-a6b2-3105b83bb8af | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:15:42,909 - app - INFO - RESPONSE_ID=3ff157fc-980f-4465-a6b2-3105b83bb8af | STATUS=200 | DURATION=0.001s
+2025-11-27 13:15:42,911 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:42] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:15:43,175 - app - INFO - REQUEST_ID=03a8cd7d-0178-4e4d-95ab-b88ee25bc3a1 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:15:43,185 - app - INFO - RESPONSE_ID=03a8cd7d-0178-4e4d-95ab-b88ee25bc3a1 | STATUS=200 | DURATION=0.010s
+2025-11-27 13:15:43,192 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:43] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:15:46,374 - app - INFO - REQUEST_ID=fbda7cf8-9607-4d05-864b-5634748674c3 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:15:46,376 - app - INFO - RESPONSE_ID=fbda7cf8-9607-4d05-864b-5634748674c3 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:15:46,380 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:46] "GET /api/v2/books?search=Python HTTP/1.1" 200 -
+2025-11-27 13:15:50,138 - app - INFO - REQUEST_ID=fcd0f410-d1cc-4469-b1c3-a2ce395a3792 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:15:50,140 - app - INFO - RESPONSE_ID=fcd0f410-d1cc-4469-b1c3-a2ce395a3792 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:15:50,142 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:50] "GET /api/v2/books?search=Code HTTP/1.1" 200 -
+2025-11-27 13:15:53,165 - app - INFO - REQUEST_ID=c283cdb0-e36a-43b2-96ee-60b8fb1cf14d | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:15:53,171 - app - INFO - RESPONSE_ID=c283cdb0-e36a-43b2-96ee-60b8fb1cf14d | STATUS=200 | DURATION=0.006s
+2025-11-27 13:15:53,172 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:53] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:15:54,114 - app - INFO - REQUEST_ID=35d686c2-b0e3-4a59-9a08-419098f2351f | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:15:54,116 - app - INFO - RESPONSE_ID=35d686c2-b0e3-4a59-9a08-419098f2351f | STATUS=200 | DURATION=0.002s
+2025-11-27 13:15:54,118 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:54] "GET /api/v2/books?page=1&per_page=3 HTTP/1.1" 200 -
+2025-11-27 13:15:57,687 - app - INFO - REQUEST_ID=f679026a-adb1-4f03-9ba8-f5d04a0bcbb2 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:15:57,688 - app - INFO - RESPONSE_ID=f679026a-adb1-4f03-9ba8-f5d04a0bcbb2 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:15:57,689 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:15:57] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:16:01,265 - app - INFO - REQUEST_ID=e24b0be8-23f5-49f6-b1db-4d0305a2a498 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:16:01,266 - app - INFO - RESPONSE_ID=e24b0be8-23f5-49f6-b1db-4d0305a2a498 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:16:01,267 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:16:01] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:16:03,166 - app - INFO - REQUEST_ID=5cdbea0f-2d79-4c0b-8217-ef31d71d5154 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:16:03,173 - app - INFO - RESPONSE_ID=5cdbea0f-2d79-4c0b-8217-ef31d71d5154 | STATUS=200 | DURATION=0.007s
+2025-11-27 13:16:03,174 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:16:03] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:16:04,744 - app - INFO - REQUEST_ID=e6b3175b-4ed8-4c13-a591-ca4f2e6663a6 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:16:04,746 - app - INFO - RESPONSE_ID=e6b3175b-4ed8-4c13-a591-ca4f2e6663a6 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:16:04,748 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:16:04] "GET /api/v2/books?page=1&per_page=3 HTTP/1.1" 200 -
+2025-11-27 13:16:08,549 - app - INFO - REQUEST_ID=4ccabcba-cd13-422c-9c1d-d7f0492d0f10 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:16:08,551 - app - INFO - RESPONSE_ID=4ccabcba-cd13-422c-9c1d-d7f0492d0f10 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:16:08,552 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:16:08] "GET /api/v2/books?page=1&per_page=3 HTTP/1.1" 200 -
+2025-11-27 13:16:11,483 - app - INFO - REQUEST_ID=fa87f327-55ff-4b3d-b989-ef017cddf467 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:16:11,484 - app - INFO - RESPONSE_ID=fa87f327-55ff-4b3d-b989-ef017cddf467 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:16:11,485 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:16:11] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:16:13,167 - app - INFO - REQUEST_ID=2488abc7-5cbf-4331-9ba2-d5c60748d42f | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:16:13,174 - app - INFO - RESPONSE_ID=2488abc7-5cbf-4331-9ba2-d5c60748d42f | STATUS=200 | DURATION=0.006s
+2025-11-27 13:16:13,176 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:16:13] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:16:14,589 - app - INFO - REQUEST_ID=0c433219-0d91-4bd5-a3f1-601de3f1c792 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:16:14,594 - app - INFO - RESPONSE_ID=0c433219-0d91-4bd5-a3f1-601de3f1c792 | STATUS=200 | DURATION=0.006s
+2025-11-27 13:16:14,596 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:16:14] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:16:23,171 - app - INFO - REQUEST_ID=835270ab-d457-4861-8dfc-2e4e76dc0c1b | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:16:23,257 - app - INFO - RESPONSE_ID=835270ab-d457-4861-8dfc-2e4e76dc0c1b | STATUS=200 | DURATION=0.086s
+2025-11-27 13:16:23,258 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:16:23] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:16:33,168 - app - INFO - REQUEST_ID=498ea07f-b6aa-4701-bae7-f5611aebe5b1 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:16:33,175 - app - INFO - RESPONSE_ID=498ea07f-b6aa-4701-bae7-f5611aebe5b1 | STATUS=200 | DURATION=0.007s
+2025-11-27 13:16:33,177 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:16:33] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:16:43,169 - app - INFO - REQUEST_ID=848caa72-2337-4950-9352-c7f72464d8e4 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:16:43,177 - app - INFO - RESPONSE_ID=848caa72-2337-4950-9352-c7f72464d8e4 | STATUS=200 | DURATION=0.007s
+2025-11-27 13:16:43,178 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:16:43] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:16:53,171 - app - INFO - REQUEST_ID=41f6676d-7f13-4837-af5a-3b7090fe61a6 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:16:53,176 - app - INFO - RESPONSE_ID=41f6676d-7f13-4837-af5a-3b7090fe61a6 | STATUS=200 | DURATION=0.006s
+2025-11-27 13:16:53,178 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:16:53] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:17:03,168 - app - INFO - REQUEST_ID=225af796-724b-4358-a432-542ced2ac124 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:17:03,175 - app - INFO - RESPONSE_ID=225af796-724b-4358-a432-542ced2ac124 | STATUS=200 | DURATION=0.007s
+2025-11-27 13:17:03,177 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:17:03] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:17:13,163 - app - INFO - REQUEST_ID=eaff9324-cc30-442d-ab8f-dde2760a5700 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:17:13,169 - app - INFO - RESPONSE_ID=eaff9324-cc30-442d-ab8f-dde2760a5700 | STATUS=200 | DURATION=0.005s
+2025-11-27 13:17:13,170 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:17:13] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:17:23,174 - app - INFO - REQUEST_ID=af8db1ba-1e25-4c44-8b04-7c8b74eb0ddc | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:17:23,185 - app - INFO - RESPONSE_ID=af8db1ba-1e25-4c44-8b04-7c8b74eb0ddc | STATUS=200 | DURATION=0.011s
+2025-11-27 13:17:23,187 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:17:23] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:17:33,169 - app - INFO - REQUEST_ID=8ee65d64-383d-4a5c-b2f0-646247685250 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:17:33,178 - app - INFO - RESPONSE_ID=8ee65d64-383d-4a5c-b2f0-646247685250 | STATUS=200 | DURATION=0.009s
+2025-11-27 13:17:33,180 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:17:33] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:17:43,163 - app - INFO - REQUEST_ID=6c9ea039-8e7a-411d-9559-310dacfd68f7 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:17:43,167 - app - INFO - RESPONSE_ID=6c9ea039-8e7a-411d-9559-310dacfd68f7 | STATUS=200 | DURATION=0.005s
+2025-11-27 13:17:43,169 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:17:43] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:17:53,167 - app - INFO - REQUEST_ID=c21ff5ef-5d4d-4e99-b4fd-5653b708f12b | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:17:53,174 - app - INFO - RESPONSE_ID=c21ff5ef-5d4d-4e99-b4fd-5653b708f12b | STATUS=200 | DURATION=0.007s
+2025-11-27 13:17:53,175 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:17:53] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:18:03,165 - app - INFO - REQUEST_ID=fe0d4f56-70c2-4b2c-b319-6c2cebb564a5 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:18:03,173 - app - INFO - RESPONSE_ID=fe0d4f56-70c2-4b2c-b319-6c2cebb564a5 | STATUS=200 | DURATION=0.008s
+2025-11-27 13:18:03,175 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:18:03] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:18:13,165 - app - INFO - REQUEST_ID=0e11b5c5-ee18-4a01-af1c-351bcbf0cf69 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:18:13,171 - app - INFO - RESPONSE_ID=0e11b5c5-ee18-4a01-af1c-351bcbf0cf69 | STATUS=200 | DURATION=0.006s
+2025-11-27 13:18:13,172 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:18:13] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:18:23,166 - app - INFO - REQUEST_ID=b614b578-1fd5-40ba-b8c4-b98befaea8ad | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:18:23,172 - app - INFO - RESPONSE_ID=b614b578-1fd5-40ba-b8c4-b98befaea8ad | STATUS=200 | DURATION=0.006s
+2025-11-27 13:18:23,174 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:18:23] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:18:33,168 - app - INFO - REQUEST_ID=d9d4b3c5-d7fb-47f4-bc99-352e2b770cc1 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:18:33,176 - app - INFO - RESPONSE_ID=d9d4b3c5-d7fb-47f4-bc99-352e2b770cc1 | STATUS=200 | DURATION=0.008s
+2025-11-27 13:18:33,177 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:18:33] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:18:43,164 - app - INFO - REQUEST_ID=39e977d5-f153-4fd8-895b-0a9dffbba26c | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:18:43,169 - app - INFO - RESPONSE_ID=39e977d5-f153-4fd8-895b-0a9dffbba26c | STATUS=200 | DURATION=0.005s
+2025-11-27 13:18:43,170 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:18:43] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:18:53,171 - app - INFO - REQUEST_ID=bf2ac7ff-ee08-498b-b228-6f96b23ccc32 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:18:53,178 - app - INFO - RESPONSE_ID=bf2ac7ff-ee08-498b-b228-6f96b23ccc32 | STATUS=200 | DURATION=0.006s
+2025-11-27 13:18:53,180 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:18:53] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:19:03,172 - app - INFO - REQUEST_ID=8deb6b86-e5cd-4f37-88ae-ef86fca5e8af | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:19:03,184 - app - INFO - RESPONSE_ID=8deb6b86-e5cd-4f37-88ae-ef86fca5e8af | STATUS=200 | DURATION=0.011s
+2025-11-27 13:19:03,185 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:19:03] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:19:13,166 - app - INFO - REQUEST_ID=1f1dc8cc-f8b4-436a-8d03-a82642dc4ff0 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:19:13,171 - app - INFO - RESPONSE_ID=1f1dc8cc-f8b4-436a-8d03-a82642dc4ff0 | STATUS=200 | DURATION=0.005s
+2025-11-27 13:19:13,173 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:19:13] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:19:23,165 - app - INFO - REQUEST_ID=a650d8a7-eb6f-4c4f-8706-20a38adc0a07 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:19:23,171 - app - INFO - RESPONSE_ID=a650d8a7-eb6f-4c4f-8706-20a38adc0a07 | STATUS=200 | DURATION=0.006s
+2025-11-27 13:19:23,172 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:19:23] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:19:33,164 - app - INFO - REQUEST_ID=3f909138-5d16-43ac-b504-a1fd2a5ec398 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:19:33,171 - app - INFO - RESPONSE_ID=3f909138-5d16-43ac-b504-a1fd2a5ec398 | STATUS=200 | DURATION=0.007s
+2025-11-27 13:19:33,172 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:19:33] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:19:43,164 - app - INFO - REQUEST_ID=2cec3948-6971-477c-a39f-703974295520 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:19:43,171 - app - INFO - RESPONSE_ID=2cec3948-6971-477c-a39f-703974295520 | STATUS=200 | DURATION=0.007s
+2025-11-27 13:19:43,172 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:19:43] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:19:53,168 - app - INFO - REQUEST_ID=eff03d63-e124-4020-80ce-b737d4f206b6 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:19:53,176 - app - INFO - RESPONSE_ID=eff03d63-e124-4020-80ce-b737d4f206b6 | STATUS=200 | DURATION=0.008s
+2025-11-27 13:19:53,177 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:19:53] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:20:03,167 - app - INFO - REQUEST_ID=9eeb5d5f-1154-433e-8b80-a45a6e117b97 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:20:03,173 - app - INFO - RESPONSE_ID=9eeb5d5f-1154-433e-8b80-a45a6e117b97 | STATUS=200 | DURATION=0.006s
+2025-11-27 13:20:03,174 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:20:03] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:20:13,163 - app - INFO - REQUEST_ID=aabff02a-24fe-4acb-bee4-53b5e3c17e41 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:20:13,170 - app - INFO - RESPONSE_ID=aabff02a-24fe-4acb-bee4-53b5e3c17e41 | STATUS=200 | DURATION=0.006s
+2025-11-27 13:20:13,171 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:20:13] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:20:22,576 - app - INFO - REQUEST_ID=32681963-78ac-4d60-960c-fc6e28973947 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0
+2025-11-27 13:20:22,585 - app - INFO - RESPONSE_ID=32681963-78ac-4d60-960c-fc6e28973947 | STATUS=200 | DURATION=0.009s
+2025-11-27 13:20:22,588 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:20:22] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:20:22,720 - app - INFO - REQUEST_ID=b1abcd06-30a4-49ae-8d96-497a82a5b778 | METHOD=GET | PATH=/favicon.ico | IP=127.0.0.1 | USER_AGENT=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0
+2025-11-27 13:20:22,722 - app - INFO - RESPONSE_ID=b1abcd06-30a4-49ae-8d96-497a82a5b778 | STATUS=404 | DURATION=0.002s
+2025-11-27 13:20:22,723 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:20:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-27 13:20:23,169 - app - INFO - REQUEST_ID=db81e021-313e-462f-961d-a927b414d16a | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:20:23,178 - app - INFO - RESPONSE_ID=db81e021-313e-462f-961d-a927b414d16a | STATUS=200 | DURATION=0.008s
+2025-11-27 13:20:23,182 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:20:23] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:20:33,164 - app - INFO - REQUEST_ID=bdf83ad3-b916-4b73-98b3-b74083d48236 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:20:33,171 - app - INFO - RESPONSE_ID=bdf83ad3-b916-4b73-98b3-b74083d48236 | STATUS=200 | DURATION=0.006s
+2025-11-27 13:20:33,172 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:20:33] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:20:43,164 - app - INFO - REQUEST_ID=4960fabb-8937-43bd-af70-4e1cccda84da | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:20:43,171 - app - INFO - RESPONSE_ID=4960fabb-8937-43bd-af70-4e1cccda84da | STATUS=200 | DURATION=0.007s
+2025-11-27 13:20:43,173 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:20:43] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:20:53,166 - app - INFO - REQUEST_ID=1be9b641-948b-475f-8a54-cab78f11957e | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:20:53,174 - app - INFO - RESPONSE_ID=1be9b641-948b-475f-8a54-cab78f11957e | STATUS=200 | DURATION=0.007s
+2025-11-27 13:20:53,175 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:20:53] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:21:03,168 - app - INFO - REQUEST_ID=40cfc46b-ef23-448b-8865-7aa09fa33ba2 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:21:03,174 - app - INFO - RESPONSE_ID=40cfc46b-ef23-448b-8865-7aa09fa33ba2 | STATUS=200 | DURATION=0.007s
+2025-11-27 13:21:03,177 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:21:03] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:21:13,164 - app - INFO - REQUEST_ID=829e1b7e-21f9-49d4-a7ae-4aff5aa96732 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:21:13,170 - app - INFO - RESPONSE_ID=829e1b7e-21f9-49d4-a7ae-4aff5aa96732 | STATUS=200 | DURATION=0.005s
+2025-11-27 13:21:13,171 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:21:13] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:21:23,167 - app - INFO - REQUEST_ID=6204c0eb-f1d2-4f7b-9b1b-9549d1850b34 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:21:23,174 - app - INFO - RESPONSE_ID=6204c0eb-f1d2-4f7b-9b1b-9549d1850b34 | STATUS=200 | DURATION=0.007s
+2025-11-27 13:21:23,175 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:21:23] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:21:33,168 - app - INFO - REQUEST_ID=79163f1e-cf3b-4f30-bd32-9a69e389ced2 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:21:33,174 - app - INFO - RESPONSE_ID=79163f1e-cf3b-4f30-bd32-9a69e389ced2 | STATUS=200 | DURATION=0.005s
+2025-11-27 13:21:33,175 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:21:33] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:21:43,169 - app - INFO - REQUEST_ID=18978a3e-309f-4bc3-a997-68056e937152 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:21:43,176 - app - INFO - RESPONSE_ID=18978a3e-309f-4bc3-a997-68056e937152 | STATUS=200 | DURATION=0.007s
+2025-11-27 13:21:43,178 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:21:43] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:21:53,171 - app - INFO - REQUEST_ID=bd72365f-b5e6-4c33-a7bd-56053ddb6307 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:21:53,177 - app - INFO - RESPONSE_ID=bd72365f-b5e6-4c33-a7bd-56053ddb6307 | STATUS=200 | DURATION=0.006s
+2025-11-27 13:21:53,178 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:21:53] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:22:03,167 - app - INFO - REQUEST_ID=a3b3b647-6564-446a-8692-e006722e3c39 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:22:03,175 - app - INFO - RESPONSE_ID=a3b3b647-6564-446a-8692-e006722e3c39 | STATUS=200 | DURATION=0.008s
+2025-11-27 13:22:03,176 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:22:03] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:22:13,164 - app - INFO - REQUEST_ID=c3370774-65d3-432f-89bd-b90b830d5442 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:22:13,170 - app - INFO - RESPONSE_ID=c3370774-65d3-432f-89bd-b90b830d5442 | STATUS=200 | DURATION=0.007s
+2025-11-27 13:22:13,171 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:22:13] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:22:23,163 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:22:23,165 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:22:23,167 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:22:23] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:22:33,173 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:22:33,174 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:22:33,175 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:22:33] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:22:43,171 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:22:43,172 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:22:43,175 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:22:43] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:22:53,168 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:22:53,169 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:22:53,171 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:22:53] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:23:03,167 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:23:03,168 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:23:03,170 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:23:03] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:23:13,165 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:23:13,166 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:23:13,167 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:23:13] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:23:23,165 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:23:23,166 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:23:23,167 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:23:23] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:23:33,180 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:23:33,182 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:23:33,188 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:23:33] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:23:43,199 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:23:43,200 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:23:43,202 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:23:43] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:23:53,171 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:23:53,172 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:23:53,173 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:23:53] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:24:03,168 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:24:03,169 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:24:03,170 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:24:03] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:24:13,163 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:24:13,164 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:24:13,167 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:24:13] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:24:23,166 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:24:23,167 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:24:23,168 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:24:23] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:24:33,165 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:24:33,166 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:24:33,168 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:24:33] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:24:43,163 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:24:43,164 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:24:43,167 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:24:43] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:24:53,174 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:24:53,174 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:24:53,176 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:24:53] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:25:03,165 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:25:03,166 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:25:03,168 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:25:03] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:25:13,166 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:25:13,167 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:25:13,172 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:25:13] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:25:23,163 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:25:23,164 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:25:23,166 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:25:23] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:25:33,165 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:25:33,166 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:25:33,167 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:25:33] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:25:43,166 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:25:43,167 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:25:43,168 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:25:43] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:25:53,175 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:25:53,176 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:25:53,178 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:25:53] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:26:03,165 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:26:03,166 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:26:03,168 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:03] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:26:13,174 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:26:13,176 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:26:13,178 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:13] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:26:18,692 - app - INFO - REQUEST_ID=3d3c7272-64a2-4b0d-8013-6bc4ba53c97b | METHOD=POST | PATH=/login | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:26:18,696 - audit - INFO - USER_ID=1 | ACTION=LOGIN | DETAILS=User Quynh logged in successfully | IP=127.0.0.1
+2025-11-27 13:26:18,697 - security - INFO - Successful login for user_id=1 from IP: 127.0.0.1
+2025-11-27 13:26:18,698 - app - INFO - RESPONSE_ID=3d3c7272-64a2-4b0d-8013-6bc4ba53c97b | STATUS=200 | DURATION=0.006s
+2025-11-27 13:26:18,700 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:18] "POST /login HTTP/1.1" 200 -
+2025-11-27 13:26:23,168 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:26:23,169 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:26:23,171 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:23] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:26:23,323 - app - INFO - REQUEST_ID=1adde76e-614b-41ae-82cc-2f2092d8cee2 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:26:23,326 - app - INFO - RESPONSE_ID=1adde76e-614b-41ae-82cc-2f2092d8cee2 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:26:23,327 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:23] "GET /api/v2/books?search=Python HTTP/1.1" 200 -
+2025-11-27 13:26:26,967 - app - INFO - REQUEST_ID=563dff38-5421-4e9f-9485-b44040a023c8 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:26:26,973 - app - INFO - RESPONSE_ID=563dff38-5421-4e9f-9485-b44040a023c8 | STATUS=200 | DURATION=0.005s
+2025-11-27 13:26:26,975 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:26] "GET /api/v2/books?page=2&per_page=5 HTTP/1.1" 200 -
+2025-11-27 13:26:29,759 - app - INFO - REQUEST_ID=b87177d4-bb1d-436e-adf8-71a2a6f0da85 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:26:29,762 - app - INFO - RESPONSE_ID=b87177d4-bb1d-436e-adf8-71a2a6f0da85 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:26:29,763 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:29] "GET /api/v2/books?page=2&per_page=5 HTTP/1.1" 200 -
+2025-11-27 13:26:33,102 - app - INFO - REQUEST_ID=980389a1-2b8c-454c-ad34-e8dd2488c0e2 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:26:33,103 - app - INFO - RESPONSE_ID=980389a1-2b8c-454c-ad34-e8dd2488c0e2 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:26:33,105 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:33] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:26:33,170 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:26:33,170 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:26:33,172 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:33] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:26:35,859 - app - INFO - REQUEST_ID=9802d081-b484-4a8e-b3df-3d94c54eca21 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:26:35,862 - app - INFO - RESPONSE_ID=9802d081-b484-4a8e-b3df-3d94c54eca21 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:26:35,866 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:35] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:26:39,715 - app - INFO - REQUEST_ID=b4a8e1e4-083d-47a1-8d98-14cfc92ebba2 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:26:39,718 - app - INFO - RESPONSE_ID=b4a8e1e4-083d-47a1-8d98-14cfc92ebba2 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:26:39,720 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:39] "GET /api/v2/books?search=Python HTTP/1.1" 200 -
+2025-11-27 13:26:42,815 - app - INFO - REQUEST_ID=a1942fbc-8be9-47a4-85e5-bfc546a04f6b | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:26:42,818 - app - INFO - RESPONSE_ID=a1942fbc-8be9-47a4-85e5-bfc546a04f6b | STATUS=200 | DURATION=0.003s
+2025-11-27 13:26:42,820 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:42] "GET /api/v2/books?page=1&per_page=4 HTTP/1.1" 200 -
+2025-11-27 13:26:43,165 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:26:43,166 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:26:43,168 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:43] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:26:45,394 - app - INFO - REQUEST_ID=dd9741a9-af02-41c5-a58b-f0a1d5625865 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:26:45,395 - app - INFO - RESPONSE_ID=dd9741a9-af02-41c5-a58b-f0a1d5625865 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:26:45,398 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:45] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:26:48,496 - app - INFO - REQUEST_ID=7587bfa5-0635-4c51-ab38-d3e2868e2ab4 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:26:48,499 - app - INFO - RESPONSE_ID=7587bfa5-0635-4c51-ab38-d3e2868e2ab4 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:26:48,500 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:48] "GET /api/v2/books?page=1&per_page=4 HTTP/1.1" 200 -
+2025-11-27 13:26:51,695 - app - INFO - REQUEST_ID=0d11dda6-9868-4466-9e33-d6b284e169dc | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:26:51,696 - app - INFO - RESPONSE_ID=0d11dda6-9868-4466-9e33-d6b284e169dc | STATUS=200 | DURATION=0.001s
+2025-11-27 13:26:51,697 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:51] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:26:53,165 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:26:53,166 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:26:53,167 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:53] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:26:54,973 - app - INFO - REQUEST_ID=dae1862a-a849-472c-861c-24bbedec90c4 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:26:54,974 - app - INFO - RESPONSE_ID=dae1862a-a849-472c-861c-24bbedec90c4 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:26:54,976 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:54] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:26:58,163 - app - INFO - REQUEST_ID=768794b9-63ca-43d6-b406-75fa06416227 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:26:58,164 - app - INFO - RESPONSE_ID=768794b9-63ca-43d6-b406-75fa06416227 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:26:58,166 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:26:58] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:27:01,234 - app - INFO - REQUEST_ID=1ea7bfcb-da1a-4386-97a5-8bf2f4469267 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:27:01,235 - app - INFO - RESPONSE_ID=1ea7bfcb-da1a-4386-97a5-8bf2f4469267 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:27:01,236 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:27:01] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:27:03,165 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:27:03,165 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:27:03,167 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:27:03] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:27:04,115 - app - INFO - REQUEST_ID=a56f7c02-f6eb-463a-8757-b4f3756a8cf2 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:27:04,117 - app - INFO - RESPONSE_ID=a56f7c02-f6eb-463a-8757-b4f3756a8cf2 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:27:04,119 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:27:04] "GET /api/v2/books?search=Code HTTP/1.1" 200 -
+2025-11-27 13:27:07,593 - app - INFO - REQUEST_ID=6ae9c9e0-5e65-430a-bf80-e99755228543 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:27:07,595 - app - INFO - RESPONSE_ID=6ae9c9e0-5e65-430a-bf80-e99755228543 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:27:07,597 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:27:07] "GET /api/v2/books?search=Code HTTP/1.1" 200 -
+2025-11-27 13:27:11,534 - app - INFO - REQUEST_ID=7e8b09d5-d983-46ea-83f7-a7921b683677 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:27:11,537 - app - INFO - RESPONSE_ID=7e8b09d5-d983-46ea-83f7-a7921b683677 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:27:11,539 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:27:11] "GET /api/v2/books?page=1&per_page=3 HTTP/1.1" 200 -
+2025-11-27 13:27:13,167 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:27:13,168 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:27:13,170 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:27:13] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:27:14,808 - app - INFO - REQUEST_ID=e9278c81-908a-414e-a558-f96cb5f2a455 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:27:14,811 - app - INFO - RESPONSE_ID=e9278c81-908a-414e-a558-f96cb5f2a455 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:27:14,812 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:27:14] "GET /api/v2/books?search=Python HTTP/1.1" 200 -
+2025-11-27 13:27:17,682 - app - INFO - REQUEST_ID=69f71e1d-371d-4fb9-9a10-4af4dd9b7325 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:27:17,685 - app - INFO - RESPONSE_ID=69f71e1d-371d-4fb9-9a10-4af4dd9b7325 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:27:17,686 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:27:17] "GET /api/v2/books?page=1&per_page=4 HTTP/1.1" 200 -
+2025-11-27 13:27:20,581 - app - INFO - REQUEST_ID=19526330-45ec-46a5-8cee-ef06afb61fb1 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:27:20,584 - app - INFO - RESPONSE_ID=19526330-45ec-46a5-8cee-ef06afb61fb1 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:27:20,585 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:27:20] "GET /api/v2/books?page=1&per_page=5 HTTP/1.1" 200 -
+2025-11-27 13:27:23,168 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:27:23,170 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:27:23,172 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:27:23] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:27:24,269 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:27:24,270 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:27:24,271 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:27:24] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:27:33,165 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:27:33,166 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:27:33,167 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:27:33] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:27:43,166 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:27:43,167 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:27:43,168 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:27:43] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:27:53,166 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:27:53,167 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:27:53,169 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:27:53] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:28:03,163 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:28:03,164 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:28:03,166 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:28:03] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:28:13,164 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:28:13,165 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:28:13,167 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:28:13] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:28:23,164 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:28:23,166 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:28:23,167 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:28:23] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:28:33,168 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:28:33,169 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:28:33,171 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:28:33] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:28:43,167 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:28:43,171 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:28:43,172 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:28:43] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:28:53,184 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:28:53,187 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:28:53,190 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:28:53] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:29:03,170 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:29:03,171 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:29:03,173 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:29:03] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:29:13,174 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:29:13,180 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:29:13,181 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:29:13] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:29:23,176 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:29:23,177 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:29:23,179 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:29:23] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:29:33,170 - flask-limiter - INFO - ratelimit 50 per 1 hour (127.0.0.1) exceeded at endpoint: metrics_endpoint
+2025-11-27 13:29:33,171 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:29:33,174 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:29:33] "[31m[1mGET /metrics HTTP/1.1[0m" 429 -
+2025-11-27 13:29:40,162 - werkzeug - INFO -  * Detected change in 'D:\\INT3505E_01_demo\\6_RestFul_Principles\\monitoring\\test_api.py', reloading
+2025-11-27 13:29:40,307 - werkzeug - INFO -  * Restarting with stat
+2025-11-27 13:29:42,455 - app - INFO - ============================================================
+2025-11-27 13:29:42,456 - app - INFO - Library Management API Starting...
+2025-11-27 13:29:42,457 - app - INFO - Environment: development
+2025-11-27 13:29:42,458 - app - INFO - ============================================================
+2025-11-27 13:29:42,512 - werkzeug - WARNING -  * Debugger is active!
+2025-11-27 13:29:42,549 - werkzeug - INFO -  * Debugger PIN: 955-837-932
+2025-11-27 13:29:43,715 - app - INFO - REQUEST_ID=faa990d8-19b4-44e0-91c9-981bb6c732a4 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:29:43,718 - app - INFO - RESPONSE_ID=faa990d8-19b4-44e0-91c9-981bb6c732a4 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:29:43,720 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:29:43] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:29:53,172 - app - INFO - REQUEST_ID=7a50ba8a-d8f8-4481-bd7e-a671d6712210 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:29:53,175 - app - INFO - RESPONSE_ID=7a50ba8a-d8f8-4481-bd7e-a671d6712210 | STATUS=200 | DURATION=0.004s
+2025-11-27 13:29:53,177 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:29:53] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:29:55,311 - app - INFO - REQUEST_ID=964d0275-d386-4544-90b5-8ea33296f276 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:29:55,313 - app - INFO - RESPONSE_ID=964d0275-d386-4544-90b5-8ea33296f276 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:29:55,315 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:29:55] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:29:57,395 - app - INFO - REQUEST_ID=6a7ecfcf-6abd-42e0-a2cf-47f2cb8c877d | METHOD=POST | PATH=/login | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:29:57,398 - security - WARNING - Failed login attempt for username: hacker123 from IP: 127.0.0.1
+2025-11-27 13:29:57,400 - app - INFO - RESPONSE_ID=6a7ecfcf-6abd-42e0-a2cf-47f2cb8c877d | STATUS=401 | DURATION=0.005s
+2025-11-27 13:29:57,402 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:29:57] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 13:29:59,673 - app - INFO - REQUEST_ID=4a95e96e-e03f-4188-b4bd-a4e7c37ba478 | METHOD=POST | PATH=/login | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:29:59,675 - security - WARNING - Failed login attempt for username: admin from IP: 127.0.0.1
+2025-11-27 13:29:59,676 - app - INFO - RESPONSE_ID=4a95e96e-e03f-4188-b4bd-a4e7c37ba478 | STATUS=401 | DURATION=0.003s
+2025-11-27 13:29:59,678 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:29:59] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 13:30:01,950 - app - INFO - REQUEST_ID=91b50758-2d36-4b49-bafb-5d7f0e175623 | METHOD=POST | PATH=/login | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:01,952 - security - WARNING - Failed login attempt for username: root from IP: 127.0.0.1
+2025-11-27 13:30:01,953 - app - INFO - RESPONSE_ID=91b50758-2d36-4b49-bafb-5d7f0e175623 | STATUS=401 | DURATION=0.003s
+2025-11-27 13:30:01,954 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:01] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 13:30:03,174 - app - INFO - REQUEST_ID=3f9e8544-376b-47f6-bd1e-336ea9150a6b | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:30:03,180 - app - INFO - RESPONSE_ID=3f9e8544-376b-47f6-bd1e-336ea9150a6b | STATUS=200 | DURATION=0.007s
+2025-11-27 13:30:03,182 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:03] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:30:04,194 - app - INFO - REQUEST_ID=dad91a25-a8ae-4dd0-bde3-48f87919e49c | METHOD=POST | PATH=/login | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:04,196 - security - WARNING - Failed login attempt for username: test from IP: 127.0.0.1
+2025-11-27 13:30:04,197 - app - INFO - RESPONSE_ID=dad91a25-a8ae-4dd0-bde3-48f87919e49c | STATUS=401 | DURATION=0.003s
+2025-11-27 13:30:04,198 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:04] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 13:30:06,494 - app - INFO - REQUEST_ID=bdc00995-f676-4e1b-8e3d-64e579cf01a9 | METHOD=POST | PATH=/login | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:06,497 - security - WARNING - Failed login attempt for username: anonymous from IP: 127.0.0.1
+2025-11-27 13:30:06,498 - app - INFO - RESPONSE_ID=bdc00995-f676-4e1b-8e3d-64e579cf01a9 | STATUS=401 | DURATION=0.004s
+2025-11-27 13:30:06,499 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:06] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 13:30:08,758 - app - INFO - REQUEST_ID=ed5a6529-da46-41ff-af7b-306e7f0ae793 | METHOD=POST | PATH=/login | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:08,760 - flask-limiter - INFO - ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: login
+2025-11-27 13:30:08,761 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:30:08,762 - app - INFO - RESPONSE_ID=ed5a6529-da46-41ff-af7b-306e7f0ae793 | STATUS=429 | DURATION=0.004s
+2025-11-27 13:30:08,764 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:08] "[31m[1mPOST /login HTTP/1.1[0m" 429 -
+2025-11-27 13:30:11,817 - app - INFO - REQUEST_ID=000f4d06-7643-443f-ad33-da2f33105fa0 | METHOD=POST | PATH=/login | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:11,819 - flask-limiter - INFO - ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: login
+2025-11-27 13:30:11,820 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:30:11,822 - app - INFO - RESPONSE_ID=000f4d06-7643-443f-ad33-da2f33105fa0 | STATUS=429 | DURATION=0.005s
+2025-11-27 13:30:11,823 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:11] "[31m[1mPOST /login HTTP/1.1[0m" 429 -
+2025-11-27 13:30:13,171 - app - INFO - REQUEST_ID=680d4b30-ef16-4d25-95c3-c442c7c888b4 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:30:13,180 - app - INFO - RESPONSE_ID=680d4b30-ef16-4d25-95c3-c442c7c888b4 | STATUS=200 | DURATION=0.009s
+2025-11-27 13:30:13,183 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:13] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:30:14,178 - app - INFO - REQUEST_ID=a7468b8e-d06a-4274-b17e-caf0ad17c04a | METHOD=POST | PATH=/login | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:14,180 - flask-limiter - INFO - ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: login
+2025-11-27 13:30:14,181 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:30:14,183 - app - INFO - RESPONSE_ID=a7468b8e-d06a-4274-b17e-caf0ad17c04a | STATUS=429 | DURATION=0.005s
+2025-11-27 13:30:14,184 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:14] "[31m[1mPOST /login HTTP/1.1[0m" 429 -
+2025-11-27 13:30:16,540 - app - INFO - REQUEST_ID=3b2e53d8-ebc4-49ce-ac73-3cd0f3100b5d | METHOD=POST | PATH=/login | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:16,543 - flask-limiter - INFO - ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: login
+2025-11-27 13:30:16,543 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:30:16,545 - app - INFO - RESPONSE_ID=3b2e53d8-ebc4-49ce-ac73-3cd0f3100b5d | STATUS=429 | DURATION=0.004s
+2025-11-27 13:30:16,546 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:16] "[31m[1mPOST /login HTTP/1.1[0m" 429 -
+2025-11-27 13:30:18,900 - app - INFO - REQUEST_ID=dd4713f9-cf14-4386-9d10-48d242cd536b | METHOD=POST | PATH=/login | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:18,902 - flask-limiter - INFO - ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: login
+2025-11-27 13:30:18,903 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:30:18,904 - app - INFO - RESPONSE_ID=dd4713f9-cf14-4386-9d10-48d242cd536b | STATUS=429 | DURATION=0.005s
+2025-11-27 13:30:18,906 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:18] "[31m[1mPOST /login HTTP/1.1[0m" 429 -
+2025-11-27 13:30:22,280 - app - INFO - REQUEST_ID=08f77f80-f186-45c4-8b76-3c6b180ce210 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:22,283 - app - INFO - RESPONSE_ID=08f77f80-f186-45c4-8b76-3c6b180ce210 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:30:22,284 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:22] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:30:23,173 - app - INFO - REQUEST_ID=5720c5b3-8ef7-4768-b11a-2364400d34dc | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:30:23,183 - app - INFO - RESPONSE_ID=5720c5b3-8ef7-4768-b11a-2364400d34dc | STATUS=200 | DURATION=0.010s
+2025-11-27 13:30:23,188 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:23] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:30:24,432 - app - INFO - REQUEST_ID=5f314058-c0ae-4516-bc1f-4ae874f99e2f | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:24,434 - app - INFO - RESPONSE_ID=5f314058-c0ae-4516-bc1f-4ae874f99e2f | STATUS=200 | DURATION=0.003s
+2025-11-27 13:30:24,437 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:24] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:30:26,584 - app - INFO - REQUEST_ID=f2261ee8-4ed5-4da5-b2b3-ff8d6af9fa76 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:26,587 - app - INFO - RESPONSE_ID=f2261ee8-4ed5-4da5-b2b3-ff8d6af9fa76 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:30:26,589 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:26] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:30:28,752 - app - INFO - REQUEST_ID=1c250a81-7fcc-462c-9e33-b29ecdcb9db2 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:28,756 - app - INFO - RESPONSE_ID=1c250a81-7fcc-462c-9e33-b29ecdcb9db2 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:30:28,757 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:28] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:30:30,916 - app - INFO - REQUEST_ID=53321dec-0ce9-49cb-8ea5-e8d8b4f07516 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:30,921 - app - INFO - RESPONSE_ID=53321dec-0ce9-49cb-8ea5-e8d8b4f07516 | STATUS=200 | DURATION=0.004s
+2025-11-27 13:30:30,923 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:30] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:30:33,072 - app - INFO - REQUEST_ID=05825092-76bb-4620-ba13-024786eba6c3 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:33,074 - app - INFO - RESPONSE_ID=05825092-76bb-4620-ba13-024786eba6c3 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:30:33,075 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:33] "GET /api/v2/books?page=1&per_page=5 HTTP/1.1" 200 -
+2025-11-27 13:30:33,168 - app - INFO - REQUEST_ID=10309125-da9b-4bce-b41b-31b43cc6b0d3 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:30:33,178 - app - INFO - RESPONSE_ID=10309125-da9b-4bce-b41b-31b43cc6b0d3 | STATUS=200 | DURATION=0.010s
+2025-11-27 13:30:33,179 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:33] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:30:35,224 - app - INFO - REQUEST_ID=a459cdf7-6b6b-4b71-ad4e-7bb8669ebcd3 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:35,226 - app - INFO - RESPONSE_ID=a459cdf7-6b6b-4b71-ad4e-7bb8669ebcd3 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:30:35,228 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:35] "GET /api/v2/books?page=1&per_page=5 HTTP/1.1" 200 -
+2025-11-27 13:30:37,410 - app - INFO - REQUEST_ID=dc334bfb-0aae-4d88-920b-f2996330cbd4 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:37,413 - app - INFO - RESPONSE_ID=dc334bfb-0aae-4d88-920b-f2996330cbd4 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:30:37,414 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:37] "GET /api/v2/books?page=1&per_page=5 HTTP/1.1" 200 -
+2025-11-27 13:30:39,565 - app - INFO - REQUEST_ID=6882ef7a-ce42-4751-85f1-252f73f62c42 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:39,567 - app - INFO - RESPONSE_ID=6882ef7a-ce42-4751-85f1-252f73f62c42 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:30:39,569 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:39] "GET /api/v2/books?page=1&per_page=5 HTTP/1.1" 200 -
+2025-11-27 13:30:41,763 - app - INFO - REQUEST_ID=8d702731-de44-4437-b634-c5d75eebb025 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:41,766 - app - INFO - RESPONSE_ID=8d702731-de44-4437-b634-c5d75eebb025 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:30:41,767 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:41] "GET /api/v2/books?page=1&per_page=5 HTTP/1.1" 200 -
+2025-11-27 13:30:43,166 - app - INFO - REQUEST_ID=2208c048-ec08-4bd8-ad5b-97f34a05a814 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:30:43,172 - app - INFO - RESPONSE_ID=2208c048-ec08-4bd8-ad5b-97f34a05a814 | STATUS=200 | DURATION=0.006s
+2025-11-27 13:30:43,173 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:43] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:30:43,907 - app - INFO - REQUEST_ID=1ba45f97-240e-49c0-b680-efe9b63a36e0 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:43,911 - app - INFO - RESPONSE_ID=1ba45f97-240e-49c0-b680-efe9b63a36e0 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:30:43,912 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:43] "GET /api/v2/books?search=clean HTTP/1.1" 200 -
+2025-11-27 13:30:46,078 - app - INFO - REQUEST_ID=0ef91b98-66d8-429d-9510-eb6d46871c4c | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:46,080 - app - INFO - RESPONSE_ID=0ef91b98-66d8-429d-9510-eb6d46871c4c | STATUS=200 | DURATION=0.003s
+2025-11-27 13:30:46,082 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:46] "GET /api/v2/books?search=clean HTTP/1.1" 200 -
+2025-11-27 13:30:48,231 - app - INFO - REQUEST_ID=b59cf64f-6b21-4cef-88c0-c6562c76598c | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:48,234 - app - INFO - RESPONSE_ID=b59cf64f-6b21-4cef-88c0-c6562c76598c | STATUS=200 | DURATION=0.002s
+2025-11-27 13:30:48,235 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:48] "GET /api/v2/books?search=clean HTTP/1.1" 200 -
+2025-11-27 13:30:50,402 - app - INFO - REQUEST_ID=83c0693b-cffb-497b-b4dc-72b00b8e042b | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:50,405 - app - INFO - RESPONSE_ID=83c0693b-cffb-497b-b4dc-72b00b8e042b | STATUS=200 | DURATION=0.003s
+2025-11-27 13:30:50,407 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:50] "GET /api/v2/books?search=clean HTTP/1.1" 200 -
+2025-11-27 13:30:52,556 - app - INFO - REQUEST_ID=c7f42125-4a88-4d29-8005-aa187e4a13df | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:52,560 - app - INFO - RESPONSE_ID=c7f42125-4a88-4d29-8005-aa187e4a13df | STATUS=200 | DURATION=0.004s
+2025-11-27 13:30:52,561 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:52] "GET /api/v2/books?search=clean HTTP/1.1" 200 -
+2025-11-27 13:30:53,175 - app - INFO - REQUEST_ID=6699339d-2c97-4754-b317-74c649bdacc3 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:30:53,186 - app - INFO - RESPONSE_ID=6699339d-2c97-4754-b317-74c649bdacc3 | STATUS=200 | DURATION=0.012s
+2025-11-27 13:30:53,189 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:53] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:30:54,726 - app - INFO - REQUEST_ID=2ff6c646-31f6-4c97-9de0-061b9d0a0cee | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:54,727 - app - INFO - RESPONSE_ID=2ff6c646-31f6-4c97-9de0-061b9d0a0cee | STATUS=200 | DURATION=0.001s
+2025-11-27 13:30:54,729 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:54] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:30:56,893 - app - INFO - REQUEST_ID=5b21a02d-c407-400d-8b07-6d7ab47b2988 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:56,894 - app - INFO - RESPONSE_ID=5b21a02d-c407-400d-8b07-6d7ab47b2988 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:30:56,896 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:56] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:30:59,071 - app - INFO - REQUEST_ID=7bcde289-9b50-441e-b885-71523228d412 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:30:59,072 - app - INFO - RESPONSE_ID=7bcde289-9b50-441e-b885-71523228d412 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:30:59,074 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:30:59] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:01,210 - app - INFO - REQUEST_ID=11875acd-2760-45f8-96b2-d64fd39c29e6 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:01,211 - app - INFO - RESPONSE_ID=11875acd-2760-45f8-96b2-d64fd39c29e6 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:31:01,212 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:01] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:03,165 - app - INFO - REQUEST_ID=44ccd5ac-08c5-493f-ad96-b534b05d3343 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:31:03,175 - app - INFO - RESPONSE_ID=44ccd5ac-08c5-493f-ad96-b534b05d3343 | STATUS=200 | DURATION=0.011s
+2025-11-27 13:31:03,177 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:03] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:31:03,376 - app - INFO - REQUEST_ID=6a7d2bb5-d18f-4dac-85c4-638b55b5e28d | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:03,376 - app - INFO - RESPONSE_ID=6a7d2bb5-d18f-4dac-85c4-638b55b5e28d | STATUS=200 | DURATION=0.001s
+2025-11-27 13:31:03,378 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:03] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:05,529 - app - INFO - REQUEST_ID=e1536b1b-8def-4236-a236-4918cd56e9dc | METHOD=GET | PATH=/ | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:05,530 - app - INFO - RESPONSE_ID=e1536b1b-8def-4236-a236-4918cd56e9dc | STATUS=200 | DURATION=0.001s
+2025-11-27 13:31:05,532 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:05] "GET / HTTP/1.1" 200 -
+2025-11-27 13:31:07,698 - app - INFO - REQUEST_ID=28693f31-5c60-4732-acea-484d9a7f789f | METHOD=GET | PATH=/ | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:07,699 - app - INFO - RESPONSE_ID=28693f31-5c60-4732-acea-484d9a7f789f | STATUS=200 | DURATION=0.001s
+2025-11-27 13:31:07,702 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:07] "GET / HTTP/1.1" 200 -
+2025-11-27 13:31:09,862 - app - INFO - REQUEST_ID=3f47103e-ff7b-4dde-bdc0-9f10b7e639b0 | METHOD=GET | PATH=/ | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:09,863 - app - INFO - RESPONSE_ID=3f47103e-ff7b-4dde-bdc0-9f10b7e639b0 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:31:09,864 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:09] "GET / HTTP/1.1" 200 -
+2025-11-27 13:31:12,025 - app - INFO - REQUEST_ID=1c3a4b97-dd4d-414d-9801-1e76ae7d7eb4 | METHOD=GET | PATH=/ | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:12,027 - app - INFO - RESPONSE_ID=1c3a4b97-dd4d-414d-9801-1e76ae7d7eb4 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:31:12,028 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:12] "GET / HTTP/1.1" 200 -
+2025-11-27 13:31:13,165 - app - INFO - REQUEST_ID=0c2753bc-9ab6-4723-a845-a23be999f86c | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:31:13,172 - app - INFO - RESPONSE_ID=0c2753bc-9ab6-4723-a845-a23be999f86c | STATUS=200 | DURATION=0.007s
+2025-11-27 13:31:13,173 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:13] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:31:14,167 - app - INFO - REQUEST_ID=62b54dcf-4330-43ab-9154-5760e26b2551 | METHOD=GET | PATH=/ | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:14,168 - app - INFO - RESPONSE_ID=62b54dcf-4330-43ab-9154-5760e26b2551 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:31:14,170 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:14] "GET / HTTP/1.1" 200 -
+2025-11-27 13:31:17,345 - app - INFO - REQUEST_ID=4b53addc-eb3a-4bc3-bec9-5f0c5a56d08b | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:17,347 - app - INFO - RESPONSE_ID=4b53addc-eb3a-4bc3-bec9-5f0c5a56d08b | STATUS=200 | DURATION=0.002s
+2025-11-27 13:31:17,348 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:17] "GET /api/v2/books?page=2 HTTP/1.1" 200 -
+2025-11-27 13:31:17,363 - app - INFO - REQUEST_ID=f8b6b74c-55a5-45ce-b83c-0217963edda1 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:17,369 - app - INFO - RESPONSE_ID=f8b6b74c-55a5-45ce-b83c-0217963edda1 | STATUS=200 | DURATION=0.006s
+2025-11-27 13:31:17,370 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:17] "GET /api/v2/books?page=2 HTTP/1.1" 200 -
+2025-11-27 13:31:17,376 - app - INFO - REQUEST_ID=6a89e537-be62-436b-a70f-6bc24bffd357 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:17,378 - app - INFO - REQUEST_ID=6897695d-1b63-48ca-b429-d50dd587c0d6 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:17,392 - app - INFO - RESPONSE_ID=6a89e537-be62-436b-a70f-6bc24bffd357 | STATUS=200 | DURATION=0.016s
+2025-11-27 13:31:17,395 - app - INFO - RESPONSE_ID=6897695d-1b63-48ca-b429-d50dd587c0d6 | STATUS=200 | DURATION=0.017s
+2025-11-27 13:31:17,396 - app - INFO - REQUEST_ID=cad7078f-28bf-4a2c-ae26-0c3d7410abb6 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:17,396 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:17] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:17,399 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:17] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:17,400 - app - INFO - REQUEST_ID=06108aa8-2dbd-4a97-b711-c3265971a719 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:17,401 - app - INFO - RESPONSE_ID=cad7078f-28bf-4a2c-ae26-0c3d7410abb6 | STATUS=200 | DURATION=0.005s
+2025-11-27 13:31:17,405 - app - INFO - REQUEST_ID=6c9cd041-cde9-468f-bfdb-f7f429e4a7df | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:17,415 - app - INFO - RESPONSE_ID=06108aa8-2dbd-4a97-b711-c3265971a719 | STATUS=200 | DURATION=0.014s
+2025-11-27 13:31:17,416 - app - INFO - REQUEST_ID=910fcbc3-6379-478d-9c55-4b6deb628212 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:17,418 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:17] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:17,422 - app - INFO - RESPONSE_ID=6c9cd041-cde9-468f-bfdb-f7f429e4a7df | STATUS=200 | DURATION=0.017s
+2025-11-27 13:31:17,425 - app - INFO - REQUEST_ID=9dc1ba89-3b92-41d3-b124-0ce91c07c7a9 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:17,426 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:17] "GET /api/v2/books?page=2 HTTP/1.1" 200 -
+2025-11-27 13:31:17,429 - app - INFO - REQUEST_ID=839e4622-1826-42f8-b086-ccd67ac8548f | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:17,430 - app - INFO - RESPONSE_ID=910fcbc3-6379-478d-9c55-4b6deb628212 | STATUS=200 | DURATION=0.014s
+2025-11-27 13:31:17,432 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:17] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:17,435 - app - INFO - RESPONSE_ID=9dc1ba89-3b92-41d3-b124-0ce91c07c7a9 | STATUS=200 | DURATION=0.010s
+2025-11-27 13:31:17,444 - app - INFO - RESPONSE_ID=839e4622-1826-42f8-b086-ccd67ac8548f | STATUS=200 | DURATION=0.015s
+2025-11-27 13:31:17,450 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:17] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:17,452 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:17] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:17,463 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:17] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:19,393 - app - INFO - REQUEST_ID=b4e7903a-5323-4041-8529-915f24a46fb8 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:19,395 - app - INFO - RESPONSE_ID=b4e7903a-5323-4041-8529-915f24a46fb8 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:31:19,396 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:19] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:19,424 - app - INFO - REQUEST_ID=a1b30daa-52fe-42b3-ab9b-6e18631e6d4e | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:19,426 - app - INFO - RESPONSE_ID=a1b30daa-52fe-42b3-ab9b-6e18631e6d4e | STATUS=200 | DURATION=0.003s
+2025-11-27 13:31:19,428 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:19] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:19,452 - app - INFO - REQUEST_ID=57421f07-e5ca-4d6f-8a11-266fab80be5f | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:19,454 - app - INFO - REQUEST_ID=b97515bb-1a93-4a4c-b8bd-8cd40f764c36 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:19,456 - app - INFO - RESPONSE_ID=57421f07-e5ca-4d6f-8a11-266fab80be5f | STATUS=200 | DURATION=0.004s
+2025-11-27 13:31:19,457 - app - INFO - RESPONSE_ID=b97515bb-1a93-4a4c-b8bd-8cd40f764c36 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:31:19,458 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:19] "GET /api/v2/books?page=2 HTTP/1.1" 200 -
+2025-11-27 13:31:19,459 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:19] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:19,482 - app - INFO - REQUEST_ID=56b43cd7-2633-41b2-8c19-c2b159150912 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:19,484 - app - INFO - REQUEST_ID=0d597bd3-f60a-4201-903b-f14802d24211 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:19,486 - app - INFO - RESPONSE_ID=56b43cd7-2633-41b2-8c19-c2b159150912 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:31:19,487 - app - INFO - RESPONSE_ID=0d597bd3-f60a-4201-903b-f14802d24211 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:31:19,489 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:19] "GET /api/v2/books?page=2 HTTP/1.1" 200 -
+2025-11-27 13:31:19,491 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:19] "GET /api/v2/books?page=2 HTTP/1.1" 200 -
+2025-11-27 13:31:19,513 - app - INFO - REQUEST_ID=ffbb83e3-b2f7-431e-a3d6-a5ba74d4eb07 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:19,516 - app - INFO - REQUEST_ID=6679af5d-eb6a-454f-9183-19a1dc202bf9 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:19,517 - app - INFO - RESPONSE_ID=ffbb83e3-b2f7-431e-a3d6-a5ba74d4eb07 | STATUS=200 | DURATION=0.005s
+2025-11-27 13:31:19,518 - app - INFO - RESPONSE_ID=6679af5d-eb6a-454f-9183-19a1dc202bf9 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:31:19,520 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:19] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:19,521 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:19] "GET /api/v2/books?page=2 HTTP/1.1" 200 -
+2025-11-27 13:31:19,538 - app - INFO - REQUEST_ID=8adc7df3-d650-422c-9a1a-9296d1fab26b | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:19,540 - app - INFO - REQUEST_ID=0d96937b-23fb-46ff-b09f-74462f824f00 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:19,541 - app - INFO - RESPONSE_ID=8adc7df3-d650-422c-9a1a-9296d1fab26b | STATUS=200 | DURATION=0.003s
+2025-11-27 13:31:19,542 - flask-limiter - INFO - ratelimit 30 per 1 minute (127.0.0.1) exceeded at endpoint: get_books_v2
+2025-11-27 13:31:19,543 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:19] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:19,545 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:31:19,548 - app - INFO - RESPONSE_ID=0d96937b-23fb-46ff-b09f-74462f824f00 | STATUS=429 | DURATION=0.008s
+2025-11-27 13:31:19,553 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:19] "[31m[1mGET /api/v2/books HTTP/1.1[0m" 429 -
+2025-11-27 13:31:21,436 - app - INFO - REQUEST_ID=89c916ce-4ff5-4bd0-b57b-1a1e834cb4bb | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:21,437 - flask-limiter - INFO - ratelimit 30 per 1 minute (127.0.0.1) exceeded at endpoint: get_books_v2
+2025-11-27 13:31:21,438 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:31:21,441 - app - INFO - RESPONSE_ID=89c916ce-4ff5-4bd0-b57b-1a1e834cb4bb | STATUS=429 | DURATION=0.005s
+2025-11-27 13:31:21,442 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:21] "[31m[1mGET /api/v2/books?page=2 HTTP/1.1[0m" 429 -
+2025-11-27 13:31:21,483 - app - INFO - REQUEST_ID=7c207a51-b012-47b5-ae96-aa5ef30707e0 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:21,484 - flask-limiter - INFO - ratelimit 30 per 1 minute (127.0.0.1) exceeded at endpoint: get_books_v2
+2025-11-27 13:31:21,485 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:31:21,486 - app - INFO - RESPONSE_ID=7c207a51-b012-47b5-ae96-aa5ef30707e0 | STATUS=429 | DURATION=0.003s
+2025-11-27 13:31:21,490 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:21] "[31m[1mGET /api/v2/books?page=2 HTTP/1.1[0m" 429 -
+2025-11-27 13:31:21,529 - app - INFO - REQUEST_ID=6ef8918a-f38c-4164-99d6-382a124701eb | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:21,532 - flask-limiter - INFO - ratelimit 30 per 1 minute (127.0.0.1) exceeded at endpoint: get_books_v2
+2025-11-27 13:31:21,533 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:31:21,534 - app - INFO - RESPONSE_ID=6ef8918a-f38c-4164-99d6-382a124701eb | STATUS=429 | DURATION=0.005s
+2025-11-27 13:31:21,535 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:21] "[31m[1mGET /api/v2/books?page=2 HTTP/1.1[0m" 429 -
+2025-11-27 13:31:21,547 - app - INFO - REQUEST_ID=ec318331-b8b3-4146-87dc-603637c8c5fd | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:21,548 - flask-limiter - INFO - ratelimit 30 per 1 minute (127.0.0.1) exceeded at endpoint: get_books_v2
+2025-11-27 13:31:21,550 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:31:21,551 - app - INFO - RESPONSE_ID=ec318331-b8b3-4146-87dc-603637c8c5fd | STATUS=429 | DURATION=0.005s
+2025-11-27 13:31:21,552 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:21] "[31m[1mGET /api/v2/books?page=2 HTTP/1.1[0m" 429 -
+2025-11-27 13:31:21,561 - app - INFO - REQUEST_ID=b965e56c-2f1d-4eb4-9dff-470206b3df87 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:21,563 - app - INFO - REQUEST_ID=461b6f27-df98-41c7-bf71-58a187af5382 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:21,582 - app - INFO - RESPONSE_ID=461b6f27-df98-41c7-bf71-58a187af5382 | STATUS=200 | DURATION=0.019s
+2025-11-27 13:31:21,584 - flask-limiter - INFO - ratelimit 30 per 1 minute (127.0.0.1) exceeded at endpoint: get_books_v2
+2025-11-27 13:31:21,595 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:21] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:21,597 - app - INFO - REQUEST_ID=996c71e7-dde0-42c4-b6d0-363ab2b4aaa6 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:21,598 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:31:21,603 - app - INFO - REQUEST_ID=265fde1e-cbda-4264-9e9a-033067fb36f6 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:21,605 - flask-limiter - INFO - ratelimit 30 per 1 minute (127.0.0.1) exceeded at endpoint: get_books_v2
+2025-11-27 13:31:21,606 - app - INFO - RESPONSE_ID=b965e56c-2f1d-4eb4-9dff-470206b3df87 | STATUS=429 | DURATION=0.045s
+2025-11-27 13:31:21,610 - app - INFO - REQUEST_ID=c1f16377-1d13-4c74-890b-5e521f60479f | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:21,611 - flask-limiter - INFO - ratelimit 30 per 1 minute (127.0.0.1) exceeded at endpoint: get_books_v2
+2025-11-27 13:31:21,618 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:21] "[31m[1mGET /api/v2/books?page=2 HTTP/1.1[0m" 429 -
+2025-11-27 13:31:21,611 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:31:21,622 - app - INFO - REQUEST_ID=94531de6-03bc-45df-8f91-b5deb8ebbafa | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:21,622 - flask-limiter - INFO - ratelimit 30 per 1 minute (127.0.0.1) exceeded at endpoint: get_books_v2
+2025-11-27 13:31:21,623 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:31:21,632 - app - INFO - RESPONSE_ID=996c71e7-dde0-42c4-b6d0-363ab2b4aaa6 | STATUS=429 | DURATION=0.035s
+2025-11-27 13:31:21,633 - app - INFO - RESPONSE_ID=94531de6-03bc-45df-8f91-b5deb8ebbafa | STATUS=200 | DURATION=0.011s
+2025-11-27 13:31:21,636 - app - INFO - RESPONSE_ID=265fde1e-cbda-4264-9e9a-033067fb36f6 | STATUS=429 | DURATION=0.033s
+2025-11-27 13:31:21,634 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:31:21,638 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:21] "[31m[1mGET /api/v2/books?page=2 HTTP/1.1[0m" 429 -
+2025-11-27 13:31:21,639 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:21] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:21,640 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:21] "[31m[1mGET /api/v2/books HTTP/1.1[0m" 429 -
+2025-11-27 13:31:21,643 - app - INFO - RESPONSE_ID=c1f16377-1d13-4c74-890b-5e521f60479f | STATUS=429 | DURATION=0.033s
+2025-11-27 13:31:21,646 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:21] "[31m[1mGET /api/v2/books HTTP/1.1[0m" 429 -
+2025-11-27 13:31:23,163 - app - INFO - REQUEST_ID=da2a4201-8010-4574-a5dc-b0a7112e9eec | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:31:23,171 - app - INFO - RESPONSE_ID=da2a4201-8010-4574-a5dc-b0a7112e9eec | STATUS=200 | DURATION=0.008s
+2025-11-27 13:31:23,173 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:23] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:31:23,524 - app - INFO - REQUEST_ID=418afef2-9e7c-4ab2-ba97-8029abab8d82 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:23,525 - app - INFO - RESPONSE_ID=418afef2-9e7c-4ab2-ba97-8029abab8d82 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:31:23,526 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:23] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:23,541 - app - INFO - REQUEST_ID=45fd7409-6851-436d-a1cb-222efd96e44d | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:23,544 - app - INFO - RESPONSE_ID=45fd7409-6851-436d-a1cb-222efd96e44d | STATUS=200 | DURATION=0.003s
+2025-11-27 13:31:23,545 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:23] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:23,603 - app - INFO - REQUEST_ID=69afc512-781b-41ac-9c57-934e8e5271bd | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:23,605 - app - INFO - REQUEST_ID=e0635c15-0ed2-4928-9112-1bc20fb5bb43 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:23,606 - app - INFO - RESPONSE_ID=69afc512-781b-41ac-9c57-934e8e5271bd | STATUS=200 | DURATION=0.003s
+2025-11-27 13:31:23,607 - app - INFO - RESPONSE_ID=e0635c15-0ed2-4928-9112-1bc20fb5bb43 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:31:23,609 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:23] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:23,610 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:23] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:23,665 - app - INFO - REQUEST_ID=fe427d05-d3a7-4386-bb46-afc386f384be | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:23,667 - app - INFO - RESPONSE_ID=fe427d05-d3a7-4386-bb46-afc386f384be | STATUS=200 | DURATION=0.002s
+2025-11-27 13:31:23,669 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:23] "GET /api/v2/books?page=2 HTTP/1.1" 200 -
+2025-11-27 13:31:23,680 - app - INFO - REQUEST_ID=193e3a91-d027-4cb4-bd97-f36a882844e2 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:23,683 - app - INFO - RESPONSE_ID=193e3a91-d027-4cb4-bd97-f36a882844e2 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:31:23,684 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:23] "GET /api/v2/books?page=2 HTTP/1.1" 200 -
+2025-11-27 13:31:23,714 - app - INFO - REQUEST_ID=de8a4cb1-936f-4406-9290-2fe5e7e456a2 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:23,715 - app - INFO - REQUEST_ID=282aea46-ee83-482b-80d4-5242583c7f98 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:23,718 - app - INFO - REQUEST_ID=d05b6e86-363f-455e-b62c-f6f929adb81a | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:23,719 - app - INFO - RESPONSE_ID=de8a4cb1-936f-4406-9290-2fe5e7e456a2 | STATUS=200 | DURATION=0.005s
+2025-11-27 13:31:23,720 - app - INFO - RESPONSE_ID=282aea46-ee83-482b-80d4-5242583c7f98 | STATUS=200 | DURATION=0.005s
+2025-11-27 13:31:23,721 - app - INFO - RESPONSE_ID=d05b6e86-363f-455e-b62c-f6f929adb81a | STATUS=200 | DURATION=0.004s
+2025-11-27 13:31:23,723 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:23] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:23,724 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:23] "GET /api/v2/books?page=2 HTTP/1.1" 200 -
+2025-11-27 13:31:23,726 - app - INFO - REQUEST_ID=60b94797-af22-438a-89e9-18163044dbac | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:23,726 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:23] "GET /api/v2/books?page=2 HTTP/1.1" 200 -
+2025-11-27 13:31:23,730 - app - INFO - RESPONSE_ID=60b94797-af22-438a-89e9-18163044dbac | STATUS=200 | DURATION=0.004s
+2025-11-27 13:31:23,742 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:23] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:25,585 - app - INFO - REQUEST_ID=2394be34-2c25-4e5d-8b87-06c6669e06d4 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:25,587 - app - INFO - RESPONSE_ID=2394be34-2c25-4e5d-8b87-06c6669e06d4 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:31:25,589 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:25] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:25,616 - app - INFO - REQUEST_ID=b46a8fd9-2b76-4e2d-b1ba-1a845160708b | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:25,618 - app - INFO - RESPONSE_ID=b46a8fd9-2b76-4e2d-b1ba-1a845160708b | STATUS=200 | DURATION=0.002s
+2025-11-27 13:31:25,620 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:25] "GET /api/v2/books?page=2 HTTP/1.1" 200 -
+2025-11-27 13:31:25,669 - app - INFO - REQUEST_ID=2ff594cd-4298-4f9d-b454-7892e33f235d | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:25,672 - app - INFO - REQUEST_ID=acd4019b-534c-4b48-8eac-c8c981e26ee1 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:25,672 - app - INFO - RESPONSE_ID=2ff594cd-4298-4f9d-b454-7892e33f235d | STATUS=200 | DURATION=0.004s
+2025-11-27 13:31:25,673 - app - INFO - RESPONSE_ID=acd4019b-534c-4b48-8eac-c8c981e26ee1 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:31:25,675 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:25] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:25,676 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:25] "GET /api/v2/books?page=2 HTTP/1.1" 200 -
+2025-11-27 13:31:25,728 - app - INFO - REQUEST_ID=eb957c83-b56f-41d5-a7f5-6c9bfc1b09fa | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:25,731 - app - INFO - RESPONSE_ID=eb957c83-b56f-41d5-a7f5-6c9bfc1b09fa | STATUS=200 | DURATION=0.003s
+2025-11-27 13:31:25,732 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:25] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:25,745 - app - INFO - REQUEST_ID=11bdbf83-8fc8-4fd6-a429-9f7331194897 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:25,746 - app - INFO - RESPONSE_ID=11bdbf83-8fc8-4fd6-a429-9f7331194897 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:31:25,747 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:25] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:25,793 - app - INFO - REQUEST_ID=76dc84a0-3f58-4ddd-81bd-2e1dbbd75960 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:25,794 - app - INFO - REQUEST_ID=5ff6ae7a-329d-4a56-bfc4-290c9e04959c | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:25,795 - app - INFO - RESPONSE_ID=76dc84a0-3f58-4ddd-81bd-2e1dbbd75960 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:31:25,797 - app - INFO - RESPONSE_ID=5ff6ae7a-329d-4a56-bfc4-290c9e04959c | STATUS=200 | DURATION=0.002s
+2025-11-27 13:31:25,798 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:25] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:25,800 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:25] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:25,805 - app - INFO - REQUEST_ID=6017f188-2b28-486d-addc-8a816d6e0131 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:25,806 - app - INFO - REQUEST_ID=bca9d6c2-b558-4e01-aa43-21795d80e3d8 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:25,817 - app - INFO - RESPONSE_ID=6017f188-2b28-486d-addc-8a816d6e0131 | STATUS=200 | DURATION=0.012s
+2025-11-27 13:31:25,818 - app - INFO - RESPONSE_ID=bca9d6c2-b558-4e01-aa43-21795d80e3d8 | STATUS=200 | DURATION=0.012s
+2025-11-27 13:31:25,819 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:25] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:31:25,822 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:25] "GET /api/v2/books?page=2 HTTP/1.1" 200 -
+2025-11-27 13:31:29,886 - app - INFO - REQUEST_ID=1bb3dca1-d434-405c-972c-44e042078027 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:29,888 - app - INFO - RESPONSE_ID=1bb3dca1-d434-405c-972c-44e042078027 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:31:29,890 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:29] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:32,045 - app - INFO - REQUEST_ID=29ee53bb-dde2-4ec8-a42d-6e53f9e666f7 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:32,049 - app - INFO - RESPONSE_ID=29ee53bb-dde2-4ec8-a42d-6e53f9e666f7 | STATUS=200 | DURATION=0.004s
+2025-11-27 13:31:32,051 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:32] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:33,168 - app - INFO - REQUEST_ID=32252f07-9ca1-4762-a690-26cd0eea7e21 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:31:33,177 - app - INFO - RESPONSE_ID=32252f07-9ca1-4762-a690-26cd0eea7e21 | STATUS=200 | DURATION=0.009s
+2025-11-27 13:31:33,184 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:33] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:31:34,214 - app - INFO - REQUEST_ID=6ca0a19d-0ec0-4db9-b890-331246bb2e03 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:34,216 - app - INFO - RESPONSE_ID=6ca0a19d-0ec0-4db9-b890-331246bb2e03 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:31:34,218 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:34] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:36,377 - app - INFO - REQUEST_ID=d4ff8712-9e1c-4e33-be18-8bebb23e52d4 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:36,378 - app - INFO - RESPONSE_ID=d4ff8712-9e1c-4e33-be18-8bebb23e52d4 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:31:36,380 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:36] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:38,540 - app - INFO - REQUEST_ID=b840fb8b-30b0-4893-a6a4-f1f562081c57 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:38,541 - app - INFO - RESPONSE_ID=b840fb8b-30b0-4893-a6a4-f1f562081c57 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:31:38,542 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:38] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:40,700 - app - INFO - REQUEST_ID=0483f0ac-d760-43e6-9373-9a846bf294cf | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:40,700 - app - INFO - RESPONSE_ID=0483f0ac-d760-43e6-9373-9a846bf294cf | STATUS=200 | DURATION=0.001s
+2025-11-27 13:31:40,702 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:40] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:42,855 - app - INFO - REQUEST_ID=f7d146fe-5ea5-494c-8a50-140a31114a59 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:42,856 - app - INFO - RESPONSE_ID=f7d146fe-5ea5-494c-8a50-140a31114a59 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:31:42,858 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:42] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:43,168 - app - INFO - REQUEST_ID=8372df8a-e9b6-43d6-8c9b-9ec30b2b4335 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:31:43,175 - app - INFO - RESPONSE_ID=8372df8a-e9b6-43d6-8c9b-9ec30b2b4335 | STATUS=200 | DURATION=0.007s
+2025-11-27 13:31:43,176 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:43] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:31:45,029 - app - INFO - REQUEST_ID=988c2cbc-bac1-4be5-b034-809ae1e6e5ff | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:45,031 - app - INFO - RESPONSE_ID=988c2cbc-bac1-4be5-b034-809ae1e6e5ff | STATUS=200 | DURATION=0.002s
+2025-11-27 13:31:45,033 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:45] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:47,208 - app - INFO - REQUEST_ID=37c3cb7c-9ce2-4190-8044-6472eaad8954 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:47,209 - app - INFO - RESPONSE_ID=37c3cb7c-9ce2-4190-8044-6472eaad8954 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:31:47,211 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:47] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:49,373 - app - INFO - REQUEST_ID=44461154-cddd-4e7b-a265-338f99377890 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:49,374 - app - INFO - RESPONSE_ID=44461154-cddd-4e7b-a265-338f99377890 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:31:49,378 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:49] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:31:51,561 - app - INFO - REQUEST_ID=e8ba604c-d7dc-4f91-92d1-2a4d8a4f7d14 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:51,565 - app - INFO - RESPONSE_ID=e8ba604c-d7dc-4f91-92d1-2a4d8a4f7d14 | STATUS=200 | DURATION=0.004s
+2025-11-27 13:31:51,566 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:51] "GET /api/v2/books?page=1&per_page=10 HTTP/1.1" 200 -
+2025-11-27 13:31:53,184 - app - INFO - REQUEST_ID=b401e8a7-e2ec-4ecf-a709-cf21b2b18a1c | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:31:53,195 - app - INFO - RESPONSE_ID=b401e8a7-e2ec-4ecf-a709-cf21b2b18a1c | STATUS=200 | DURATION=0.011s
+2025-11-27 13:31:53,197 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:53] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:31:53,811 - app - INFO - REQUEST_ID=f548d632-e0fe-4d7f-a63a-4a6437f15623 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:53,818 - app - INFO - RESPONSE_ID=f548d632-e0fe-4d7f-a63a-4a6437f15623 | STATUS=200 | DURATION=0.007s
+2025-11-27 13:31:53,821 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:53] "GET /api/v2/books?page=1&per_page=10 HTTP/1.1" 200 -
+2025-11-27 13:31:56,035 - app - INFO - REQUEST_ID=244df96e-352e-4d68-b15d-5a8d4a793cf3 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:56,037 - app - INFO - RESPONSE_ID=244df96e-352e-4d68-b15d-5a8d4a793cf3 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:31:56,038 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:56] "GET /api/v2/books?page=1&per_page=10 HTTP/1.1" 200 -
+2025-11-27 13:31:58,274 - app - INFO - REQUEST_ID=5165f8d0-f62a-4e2b-92a9-d7f6ee6095db | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:31:58,276 - app - INFO - RESPONSE_ID=5165f8d0-f62a-4e2b-92a9-d7f6ee6095db | STATUS=200 | DURATION=0.002s
+2025-11-27 13:31:58,277 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:31:58] "GET /api/v2/books?page=1&per_page=10 HTTP/1.1" 200 -
+2025-11-27 13:32:00,493 - app - INFO - REQUEST_ID=3afbe4da-4c5c-4642-8b16-eef74cb72025 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:00,495 - app - INFO - RESPONSE_ID=3afbe4da-4c5c-4642-8b16-eef74cb72025 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:32:00,498 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:00] "GET /api/v2/books?page=1&per_page=10 HTTP/1.1" 200 -
+2025-11-27 13:32:02,741 - app - INFO - REQUEST_ID=cfc8f0c2-9ec1-4719-92d6-e7dd77c75487 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:02,744 - app - INFO - RESPONSE_ID=cfc8f0c2-9ec1-4719-92d6-e7dd77c75487 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:32:02,745 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:02] "GET /api/v2/books?page=1&per_page=10 HTTP/1.1" 200 -
+2025-11-27 13:32:03,173 - app - INFO - REQUEST_ID=52c51b38-6ead-4540-8f2e-7a3c86ccc7f3 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:32:03,201 - app - INFO - RESPONSE_ID=52c51b38-6ead-4540-8f2e-7a3c86ccc7f3 | STATUS=200 | DURATION=0.028s
+2025-11-27 13:32:03,203 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:03] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:32:04,948 - app - INFO - REQUEST_ID=54eecc2f-ec07-400a-ae44-7e4245f6230d | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:04,951 - app - INFO - RESPONSE_ID=54eecc2f-ec07-400a-ae44-7e4245f6230d | STATUS=200 | DURATION=0.003s
+2025-11-27 13:32:04,952 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:04] "GET /api/v2/books?page=1&per_page=10 HTTP/1.1" 200 -
+2025-11-27 13:32:07,143 - app - INFO - REQUEST_ID=cd0f0ad9-b716-4cfe-b436-542e22b7d046 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:07,145 - app - INFO - RESPONSE_ID=cd0f0ad9-b716-4cfe-b436-542e22b7d046 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:32:07,147 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:07] "GET /api/v2/books?page=1&per_page=10 HTTP/1.1" 200 -
+2025-11-27 13:32:09,357 - app - INFO - REQUEST_ID=6d9266bf-e3c5-4508-9d88-6e8aca38ce5c | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:09,360 - app - INFO - RESPONSE_ID=6d9266bf-e3c5-4508-9d88-6e8aca38ce5c | STATUS=200 | DURATION=0.003s
+2025-11-27 13:32:09,361 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:09] "GET /api/v2/books?page=1&per_page=10 HTTP/1.1" 200 -
+2025-11-27 13:32:11,572 - app - INFO - REQUEST_ID=15827ac5-8a13-47d3-b79a-562c29aae9fd | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:11,574 - app - INFO - RESPONSE_ID=15827ac5-8a13-47d3-b79a-562c29aae9fd | STATUS=200 | DURATION=0.002s
+2025-11-27 13:32:11,575 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:11] "GET /api/v2/books?page=1&per_page=10 HTTP/1.1" 200 -
+2025-11-27 13:32:13,170 - app - INFO - REQUEST_ID=34edd3b0-8cf8-4bbc-9df5-296c53a22aaf | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:32:13,179 - app - INFO - RESPONSE_ID=34edd3b0-8cf8-4bbc-9df5-296c53a22aaf | STATUS=200 | DURATION=0.009s
+2025-11-27 13:32:13,180 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:13] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:32:14,797 - app - INFO - REQUEST_ID=8d064b24-c486-4d66-9bc8-c72546fe8c15 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:14,800 - app - INFO - RESPONSE_ID=8d064b24-c486-4d66-9bc8-c72546fe8c15 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:32:14,801 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:14] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:32:16,864 - app - INFO - REQUEST_ID=7e2dd2c1-6861-43f0-a56c-df93a0f6c337 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:16,866 - app - INFO - RESPONSE_ID=7e2dd2c1-6861-43f0-a56c-df93a0f6c337 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:32:16,867 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:16] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:32:18,914 - app - INFO - REQUEST_ID=420f797e-532a-401a-8427-67183095db0b | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:18,920 - app - INFO - RESPONSE_ID=420f797e-532a-401a-8427-67183095db0b | STATUS=200 | DURATION=0.005s
+2025-11-27 13:32:18,922 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:18] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:32:21,021 - app - INFO - REQUEST_ID=10bdcdde-60c5-4690-8a08-f69a272ebeef | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:21,023 - app - INFO - RESPONSE_ID=10bdcdde-60c5-4690-8a08-f69a272ebeef | STATUS=200 | DURATION=0.002s
+2025-11-27 13:32:21,024 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:21] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:32:23,070 - app - INFO - REQUEST_ID=60f8fd3b-edff-420e-a65d-dec52509fbbf | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:23,072 - flask-limiter - INFO - ratelimit 30 per 1 minute (127.0.0.1) exceeded at endpoint: get_books_v2
+2025-11-27 13:32:23,072 - security - WARNING - Rate limit exceeded for IP: 127.0.0.1
+2025-11-27 13:32:23,074 - app - INFO - RESPONSE_ID=60f8fd3b-edff-420e-a65d-dec52509fbbf | STATUS=429 | DURATION=0.004s
+2025-11-27 13:32:23,076 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:23] "[31m[1mGET /api/v2/books HTTP/1.1[0m" 429 -
+2025-11-27 13:32:23,168 - app - INFO - REQUEST_ID=01c02662-64b3-45fe-a809-d7aa26f4d1f7 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:32:23,183 - app - INFO - RESPONSE_ID=01c02662-64b3-45fe-a809-d7aa26f4d1f7 | STATUS=200 | DURATION=0.015s
+2025-11-27 13:32:23,184 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:23] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:32:25,125 - app - INFO - REQUEST_ID=607dc415-74fc-47f8-8796-08e8935dbee5 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:25,127 - app - INFO - RESPONSE_ID=607dc415-74fc-47f8-8796-08e8935dbee5 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:32:25,129 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:25] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:32:27,172 - app - INFO - REQUEST_ID=5babfe60-ff1e-4e88-b5a4-fb19e5544629 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:27,174 - app - INFO - RESPONSE_ID=5babfe60-ff1e-4e88-b5a4-fb19e5544629 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:32:27,176 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:27] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:32:29,231 - app - INFO - REQUEST_ID=099d3c47-f8e4-4a54-a954-373401417f1b | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:29,233 - app - INFO - RESPONSE_ID=099d3c47-f8e4-4a54-a954-373401417f1b | STATUS=200 | DURATION=0.002s
+2025-11-27 13:32:29,234 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:29] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:32:31,287 - app - INFO - REQUEST_ID=84a7f1cc-c29c-44a1-ae9a-67ee55583aea | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:31,289 - app - INFO - RESPONSE_ID=84a7f1cc-c29c-44a1-ae9a-67ee55583aea | STATUS=200 | DURATION=0.002s
+2025-11-27 13:32:31,290 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:31] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:32:33,167 - app - INFO - REQUEST_ID=d8700329-5d73-471e-ab2f-2127764152fa | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:32:33,181 - app - INFO - RESPONSE_ID=d8700329-5d73-471e-ab2f-2127764152fa | STATUS=200 | DURATION=0.013s
+2025-11-27 13:32:33,182 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:33] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:32:33,356 - app - INFO - REQUEST_ID=01580939-fcc5-487b-be26-eca0c8e4eb17 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:33,359 - app - INFO - RESPONSE_ID=01580939-fcc5-487b-be26-eca0c8e4eb17 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:32:33,361 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:33] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:32:35,433 - app - INFO - REQUEST_ID=36fd819a-78be-4eaa-a555-b341fd244b2c | METHOD=GET | PATH=/api/v2/books/99999 | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:35,434 - app - INFO - RESPONSE_ID=36fd819a-78be-4eaa-a555-b341fd244b2c | STATUS=404 | DURATION=0.001s
+2025-11-27 13:32:35,435 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:35] "[33mGET /api/v2/books/99999 HTTP/1.1[0m" 404 -
+2025-11-27 13:32:37,479 - app - INFO - REQUEST_ID=9a81fc1b-78a5-4cfb-b3d2-f54d4b727cbd | METHOD=GET | PATH=/nonexistent/endpoint | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:37,481 - app - INFO - RESPONSE_ID=9a81fc1b-78a5-4cfb-b3d2-f54d4b727cbd | STATUS=404 | DURATION=0.002s
+2025-11-27 13:32:37,482 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:37] "[33mGET /nonexistent/endpoint HTTP/1.1[0m" 404 -
+2025-11-27 13:32:39,549 - app - INFO - REQUEST_ID=d81faff0-88f3-40bd-ba04-3fe64688bfd4 | METHOD=GET | PATH=/api/v2/books/99999 | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:39,550 - app - INFO - RESPONSE_ID=d81faff0-88f3-40bd-ba04-3fe64688bfd4 | STATUS=404 | DURATION=0.001s
+2025-11-27 13:32:39,551 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:39] "[33mGET /api/v2/books/99999 HTTP/1.1[0m" 404 -
+2025-11-27 13:32:41,569 - app - INFO - REQUEST_ID=3cf5a523-5f0e-4d9a-ac6f-94a5f795885e | METHOD=GET | PATH=/nonexistent/endpoint | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:41,570 - app - INFO - RESPONSE_ID=3cf5a523-5f0e-4d9a-ac6f-94a5f795885e | STATUS=404 | DURATION=0.001s
+2025-11-27 13:32:41,571 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:41] "[33mGET /nonexistent/endpoint HTTP/1.1[0m" 404 -
+2025-11-27 13:32:43,163 - app - INFO - REQUEST_ID=d01cae54-81f5-4d63-acef-a91eda5eab4b | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:32:43,172 - app - INFO - RESPONSE_ID=d01cae54-81f5-4d63-acef-a91eda5eab4b | STATUS=200 | DURATION=0.009s
+2025-11-27 13:32:43,173 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:43] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:32:43,641 - app - INFO - REQUEST_ID=c58e6c79-6c01-4270-9b44-6c8f4a60ba74 | METHOD=GET | PATH=/api/v2/books/99999 | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:43,642 - app - INFO - RESPONSE_ID=c58e6c79-6c01-4270-9b44-6c8f4a60ba74 | STATUS=404 | DURATION=0.001s
+2025-11-27 13:32:43,643 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:43] "[33mGET /api/v2/books/99999 HTTP/1.1[0m" 404 -
+2025-11-27 13:32:45,698 - app - INFO - REQUEST_ID=9b01a139-3330-471d-a597-1c4a5db6eeb6 | METHOD=GET | PATH=/nonexistent/endpoint | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:45,701 - app - INFO - RESPONSE_ID=9b01a139-3330-471d-a597-1c4a5db6eeb6 | STATUS=404 | DURATION=0.003s
+2025-11-27 13:32:45,702 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:45] "[33mGET /nonexistent/endpoint HTTP/1.1[0m" 404 -
+2025-11-27 13:32:47,770 - app - INFO - REQUEST_ID=3e72c40a-27d6-40fb-84cb-1a480912bc17 | METHOD=GET | PATH=/api/v2/books/99999 | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:47,771 - app - INFO - RESPONSE_ID=3e72c40a-27d6-40fb-84cb-1a480912bc17 | STATUS=404 | DURATION=0.001s
+2025-11-27 13:32:47,773 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:47] "[33mGET /api/v2/books/99999 HTTP/1.1[0m" 404 -
+2025-11-27 13:32:49,804 - app - INFO - REQUEST_ID=f7cac916-27e9-41f3-8184-3596ef30673c | METHOD=GET | PATH=/nonexistent/endpoint | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:49,805 - app - INFO - RESPONSE_ID=f7cac916-27e9-41f3-8184-3596ef30673c | STATUS=404 | DURATION=0.001s
+2025-11-27 13:32:49,806 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:49] "[33mGET /nonexistent/endpoint HTTP/1.1[0m" 404 -
+2025-11-27 13:32:51,858 - app - INFO - REQUEST_ID=1941bbb2-bfe5-4e22-a94e-e1a9b301c281 | METHOD=GET | PATH=/api/v2/books/99999 | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:51,860 - app - INFO - RESPONSE_ID=1941bbb2-bfe5-4e22-a94e-e1a9b301c281 | STATUS=404 | DURATION=0.002s
+2025-11-27 13:32:51,861 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:51] "[33mGET /api/v2/books/99999 HTTP/1.1[0m" 404 -
+2025-11-27 13:32:53,166 - app - INFO - REQUEST_ID=faa2aa49-cb7f-4b5c-a67b-5c795ffcc406 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:32:53,176 - app - INFO - RESPONSE_ID=faa2aa49-cb7f-4b5c-a67b-5c795ffcc406 | STATUS=200 | DURATION=0.011s
+2025-11-27 13:32:53,178 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:53] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:32:53,914 - app - INFO - REQUEST_ID=21f36fb9-2320-44e6-af08-12695bf38fe1 | METHOD=GET | PATH=/nonexistent/endpoint | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:53,915 - app - INFO - RESPONSE_ID=21f36fb9-2320-44e6-af08-12695bf38fe1 | STATUS=404 | DURATION=0.001s
+2025-11-27 13:32:53,917 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:53] "[33mGET /nonexistent/endpoint HTTP/1.1[0m" 404 -
+2025-11-27 13:32:55,946 - app - INFO - REQUEST_ID=f3efa1cb-ca3e-4f88-96ad-610c3049983d | METHOD=POST | PATH=/users/1/borrowings | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:55,948 - app - INFO - RESPONSE_ID=f3efa1cb-ca3e-4f88-96ad-610c3049983d | STATUS=401 | DURATION=0.002s
+2025-11-27 13:32:55,950 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:55] "[31m[1mPOST /users/1/borrowings HTTP/1.1[0m" 401 -
+2025-11-27 13:32:58,026 - app - INFO - REQUEST_ID=019d9dec-986e-453b-84c8-8d326a84cef0 | METHOD=POST | PATH=/users/1/borrowings | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:32:58,028 - app - INFO - RESPONSE_ID=019d9dec-986e-453b-84c8-8d326a84cef0 | STATUS=401 | DURATION=0.002s
+2025-11-27 13:32:58,029 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:32:58] "[31m[1mPOST /users/1/borrowings HTTP/1.1[0m" 401 -
+2025-11-27 13:33:00,068 - app - INFO - REQUEST_ID=98ebb4ee-2b06-41a7-8bfb-e275020236d4 | METHOD=POST | PATH=/users/1/borrowings | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:00,070 - app - INFO - RESPONSE_ID=98ebb4ee-2b06-41a7-8bfb-e275020236d4 | STATUS=401 | DURATION=0.001s
+2025-11-27 13:33:00,071 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:00] "[31m[1mPOST /users/1/borrowings HTTP/1.1[0m" 401 -
+2025-11-27 13:33:02,145 - app - INFO - REQUEST_ID=40092199-e86c-4d0b-bb17-8f843cda7743 | METHOD=POST | PATH=/users/1/borrowings | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:02,147 - app - INFO - RESPONSE_ID=40092199-e86c-4d0b-bb17-8f843cda7743 | STATUS=401 | DURATION=0.002s
+2025-11-27 13:33:02,149 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:02] "[31m[1mPOST /users/1/borrowings HTTP/1.1[0m" 401 -
+2025-11-27 13:33:03,169 - app - INFO - REQUEST_ID=146859ba-9c44-474a-8c9e-d55ce9dd806d | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:33:03,184 - app - INFO - RESPONSE_ID=146859ba-9c44-474a-8c9e-d55ce9dd806d | STATUS=200 | DURATION=0.015s
+2025-11-27 13:33:03,188 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:03] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:33:04,214 - app - INFO - REQUEST_ID=5c1bf966-c71b-43a9-b4a6-af404f2925ad | METHOD=POST | PATH=/users/1/borrowings | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:04,215 - app - INFO - RESPONSE_ID=5c1bf966-c71b-43a9-b4a6-af404f2925ad | STATUS=401 | DURATION=0.002s
+2025-11-27 13:33:04,217 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:04] "[31m[1mPOST /users/1/borrowings HTTP/1.1[0m" 401 -
+2025-11-27 13:33:07,295 - app - INFO - REQUEST_ID=73b7b085-d7b0-457c-917d-57aa3220e9f1 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:07,298 - app - INFO - RESPONSE_ID=73b7b085-d7b0-457c-917d-57aa3220e9f1 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:33:07,299 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:07] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:09,418 - app - INFO - REQUEST_ID=1de62328-b626-4201-843e-1ea2be1dd96e | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:09,421 - app - INFO - RESPONSE_ID=1de62328-b626-4201-843e-1ea2be1dd96e | STATUS=200 | DURATION=0.003s
+2025-11-27 13:33:09,422 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:09] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:11,535 - app - INFO - REQUEST_ID=68bf7104-c606-4369-9b8b-29348ed575b8 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:11,537 - app - INFO - RESPONSE_ID=68bf7104-c606-4369-9b8b-29348ed575b8 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:33:11,538 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:11] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:13,168 - app - INFO - REQUEST_ID=1e200e6b-2ba6-48fb-bd37-ae311aef6a8d | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:33:13,178 - app - INFO - RESPONSE_ID=1e200e6b-2ba6-48fb-bd37-ae311aef6a8d | STATUS=200 | DURATION=0.010s
+2025-11-27 13:33:13,180 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:13] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:33:13,650 - app - INFO - REQUEST_ID=6507b10e-2a3c-41f4-a68b-c71116604ce2 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:13,653 - app - INFO - RESPONSE_ID=6507b10e-2a3c-41f4-a68b-c71116604ce2 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:33:13,654 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:13] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:15,768 - app - INFO - REQUEST_ID=fd8b8f8d-1b57-406c-8c12-0230e5353784 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:15,770 - app - INFO - RESPONSE_ID=fd8b8f8d-1b57-406c-8c12-0230e5353784 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:33:15,771 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:15] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:17,888 - app - INFO - REQUEST_ID=c88909e2-3058-4851-9313-f140d02a418e | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:17,890 - app - INFO - RESPONSE_ID=c88909e2-3058-4851-9313-f140d02a418e | STATUS=200 | DURATION=0.002s
+2025-11-27 13:33:17,892 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:17] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:20,006 - app - INFO - REQUEST_ID=22098f7d-167b-4ab5-a74b-6119571fe896 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:20,008 - app - INFO - RESPONSE_ID=22098f7d-167b-4ab5-a74b-6119571fe896 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:33:20,010 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:20] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:22,109 - app - INFO - REQUEST_ID=c958fc1e-0bb7-45e5-854b-ab847c5bae12 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:22,114 - app - INFO - RESPONSE_ID=c958fc1e-0bb7-45e5-854b-ab847c5bae12 | STATUS=200 | DURATION=0.004s
+2025-11-27 13:33:22,116 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:22] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:23,166 - app - INFO - REQUEST_ID=fdb5e8ef-4c9d-4c93-b3a9-d1aac17afbf8 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:33:23,181 - app - INFO - RESPONSE_ID=fdb5e8ef-4c9d-4c93-b3a9-d1aac17afbf8 | STATUS=200 | DURATION=0.015s
+2025-11-27 13:33:23,183 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:23] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:33:24,215 - app - INFO - REQUEST_ID=1f177b8f-7830-4925-a773-8258d185aeba | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:24,217 - app - INFO - RESPONSE_ID=1f177b8f-7830-4925-a773-8258d185aeba | STATUS=200 | DURATION=0.003s
+2025-11-27 13:33:24,219 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:24] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:26,330 - app - INFO - REQUEST_ID=69898b25-72d8-4bb5-a79a-705277e24b20 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:26,332 - app - INFO - RESPONSE_ID=69898b25-72d8-4bb5-a79a-705277e24b20 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:33:26,333 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:26] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:28,454 - app - INFO - REQUEST_ID=8e92c987-7414-4079-803c-641ddfdb46b4 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:28,456 - app - INFO - RESPONSE_ID=8e92c987-7414-4079-803c-641ddfdb46b4 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:33:28,457 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:28] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:30,558 - app - INFO - REQUEST_ID=3040b7d0-9063-4d00-b057-99b6e8b450c4 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:30,560 - app - INFO - RESPONSE_ID=3040b7d0-9063-4d00-b057-99b6e8b450c4 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:33:30,561 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:30] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:32,660 - app - INFO - REQUEST_ID=b780441d-b7ee-45f6-b969-09caff0216a8 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:32,663 - app - INFO - RESPONSE_ID=b780441d-b7ee-45f6-b969-09caff0216a8 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:33:32,664 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:32] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:33,165 - app - INFO - REQUEST_ID=2201a696-b848-4af0-8ca3-a3fd5e91fd0b | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:33:33,180 - app - INFO - RESPONSE_ID=2201a696-b848-4af0-8ca3-a3fd5e91fd0b | STATUS=200 | DURATION=0.015s
+2025-11-27 13:33:33,181 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:33] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:33:34,794 - app - INFO - REQUEST_ID=72e539b8-6c40-4fb7-9200-5a2246dd21d7 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:34,797 - app - INFO - RESPONSE_ID=72e539b8-6c40-4fb7-9200-5a2246dd21d7 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:33:34,798 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:34] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:36,927 - app - INFO - REQUEST_ID=c0396a33-1fb0-4398-8da3-a05013ffeab3 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:36,931 - app - INFO - RESPONSE_ID=c0396a33-1fb0-4398-8da3-a05013ffeab3 | STATUS=200 | DURATION=0.004s
+2025-11-27 13:33:36,932 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:36] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:39,063 - app - INFO - REQUEST_ID=046a0cb6-f750-4326-bd95-f31234f47eb5 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:39,068 - app - INFO - RESPONSE_ID=046a0cb6-f750-4326-bd95-f31234f47eb5 | STATUS=200 | DURATION=0.005s
+2025-11-27 13:33:39,070 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:39] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:41,193 - app - INFO - REQUEST_ID=5d2cd200-3dea-4f6c-85f4-bbc3b135aa4e | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:41,195 - app - INFO - RESPONSE_ID=5d2cd200-3dea-4f6c-85f4-bbc3b135aa4e | STATUS=200 | DURATION=0.002s
+2025-11-27 13:33:41,199 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:41] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:43,164 - app - INFO - REQUEST_ID=bc39df5a-a4a1-483b-b436-7978af16f799 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:33:43,175 - app - INFO - RESPONSE_ID=bc39df5a-a4a1-483b-b436-7978af16f799 | STATUS=200 | DURATION=0.011s
+2025-11-27 13:33:43,178 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:43] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:33:43,320 - app - INFO - REQUEST_ID=f77609b1-473d-4393-9f1a-155b6cdd734e | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:43,324 - app - INFO - RESPONSE_ID=f77609b1-473d-4393-9f1a-155b6cdd734e | STATUS=200 | DURATION=0.004s
+2025-11-27 13:33:43,326 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:43] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:45,464 - app - INFO - REQUEST_ID=00de18cb-28d6-4d91-b677-8febb80f4f05 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:45,468 - app - INFO - RESPONSE_ID=00de18cb-28d6-4d91-b677-8febb80f4f05 | STATUS=200 | DURATION=0.004s
+2025-11-27 13:33:45,469 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:45] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:47,598 - app - INFO - REQUEST_ID=8f9729e2-3522-4113-abf2-ea1cc176ea7d | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:47,602 - app - INFO - RESPONSE_ID=8f9729e2-3522-4113-abf2-ea1cc176ea7d | STATUS=200 | DURATION=0.004s
+2025-11-27 13:33:47,603 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:47] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:33:49,702 - app - INFO - REQUEST_ID=36ffc90e-7ca3-47e6-bd29-234c3615c533 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:49,704 - app - INFO - RESPONSE_ID=36ffc90e-7ca3-47e6-bd29-234c3615c533 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:33:49,707 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:49] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:33:51,842 - app - INFO - REQUEST_ID=ef642fc8-950e-4089-b973-151529548d22 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:51,844 - app - INFO - RESPONSE_ID=ef642fc8-950e-4089-b973-151529548d22 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:33:51,845 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:51] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:33:53,166 - app - INFO - REQUEST_ID=a182120e-31d1-4407-97ec-1bbadfe62264 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:33:53,177 - app - INFO - RESPONSE_ID=a182120e-31d1-4407-97ec-1bbadfe62264 | STATUS=200 | DURATION=0.011s
+2025-11-27 13:33:53,180 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:53] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:33:53,967 - app - INFO - REQUEST_ID=2dfac445-ffd9-4a75-808c-9e1411a775b7 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:53,968 - app - INFO - RESPONSE_ID=2dfac445-ffd9-4a75-808c-9e1411a775b7 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:33:53,970 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:53] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:33:56,088 - app - INFO - REQUEST_ID=a43b6f74-f56b-4715-851a-65818553381f | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:56,090 - app - INFO - RESPONSE_ID=a43b6f74-f56b-4715-851a-65818553381f | STATUS=200 | DURATION=0.002s
+2025-11-27 13:33:56,092 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:56] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:33:58,218 - app - INFO - REQUEST_ID=1720256d-0320-46b3-85f2-8005556ad752 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:33:58,221 - app - INFO - RESPONSE_ID=1720256d-0320-46b3-85f2-8005556ad752 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:33:58,222 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:33:58] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:34:00,341 - app - INFO - REQUEST_ID=a0f8384c-c1d3-480a-a090-aa5d300e30ed | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:00,342 - app - INFO - RESPONSE_ID=a0f8384c-c1d3-480a-a090-aa5d300e30ed | STATUS=200 | DURATION=0.001s
+2025-11-27 13:34:00,343 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:00] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:34:02,454 - app - INFO - REQUEST_ID=c9a8bf3f-1455-44fc-82aa-a47a601eec70 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:02,455 - app - INFO - RESPONSE_ID=c9a8bf3f-1455-44fc-82aa-a47a601eec70 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:34:02,457 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:02] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:34:03,164 - app - INFO - REQUEST_ID=4145697e-e542-429e-8fe7-f55aa259c186 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:34:03,176 - app - INFO - RESPONSE_ID=4145697e-e542-429e-8fe7-f55aa259c186 | STATUS=200 | DURATION=0.012s
+2025-11-27 13:34:03,177 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:03] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:34:04,539 - app - INFO - REQUEST_ID=623f066d-32df-4b92-8788-dc531b9331c7 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:04,540 - app - INFO - RESPONSE_ID=623f066d-32df-4b92-8788-dc531b9331c7 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:34:04,541 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:04] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:34:06,669 - app - INFO - REQUEST_ID=a7a24da1-7cf2-48bd-ba18-c779245ea5e9 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:06,670 - app - INFO - RESPONSE_ID=a7a24da1-7cf2-48bd-ba18-c779245ea5e9 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:34:06,671 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:06] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:34:08,767 - app - INFO - REQUEST_ID=9c488d60-5695-4831-a359-6be2ca7e14d8 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:08,768 - app - INFO - RESPONSE_ID=9c488d60-5695-4831-a359-6be2ca7e14d8 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:34:08,770 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:08] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:34:10,886 - app - INFO - REQUEST_ID=5908d597-36d0-4119-9466-4af695646cc9 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:10,887 - app - INFO - RESPONSE_ID=5908d597-36d0-4119-9466-4af695646cc9 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:34:10,888 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:10] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:34:13,013 - app - INFO - REQUEST_ID=b088a9b8-bd4e-4f37-9c5c-f121090d3e91 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:13,015 - app - INFO - RESPONSE_ID=b088a9b8-bd4e-4f37-9c5c-f121090d3e91 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:34:13,016 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:13] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:34:13,169 - app - INFO - REQUEST_ID=b6f5c7a0-16ec-4088-aca9-a38b17c31c4d | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:34:13,188 - app - INFO - RESPONSE_ID=b6f5c7a0-16ec-4088-aca9-a38b17c31c4d | STATUS=200 | DURATION=0.019s
+2025-11-27 13:34:13,190 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:13] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:34:15,126 - app - INFO - REQUEST_ID=10614ef5-dbaf-491f-a0fe-49bdb48eaf5b | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:15,127 - app - INFO - RESPONSE_ID=10614ef5-dbaf-491f-a0fe-49bdb48eaf5b | STATUS=200 | DURATION=0.001s
+2025-11-27 13:34:15,128 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:15] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:34:17,247 - app - INFO - REQUEST_ID=fcab3bc0-7af5-49ea-86a8-c3a99411f4f2 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:17,248 - app - INFO - RESPONSE_ID=fcab3bc0-7af5-49ea-86a8-c3a99411f4f2 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:34:17,249 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:17] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:34:19,354 - app - INFO - REQUEST_ID=c9297d9d-689e-4192-96cb-18f30e1cfcf2 | METHOD=GET | PATH=/health | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:19,355 - app - INFO - RESPONSE_ID=c9297d9d-689e-4192-96cb-18f30e1cfcf2 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:34:19,356 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:19] "GET /health HTTP/1.1" 200 -
+2025-11-27 13:34:21,463 - app - INFO - REQUEST_ID=dc0aec20-96ff-4ae9-a817-db1043d17912 | METHOD=GET | PATH=/ | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:21,465 - app - INFO - RESPONSE_ID=dc0aec20-96ff-4ae9-a817-db1043d17912 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:34:21,467 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:21] "GET / HTTP/1.1" 200 -
+2025-11-27 13:34:23,165 - app - INFO - REQUEST_ID=f9b16d42-c222-41c6-8165-cf82c18fd8b5 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:34:23,184 - app - INFO - RESPONSE_ID=f9b16d42-c222-41c6-8165-cf82c18fd8b5 | STATUS=200 | DURATION=0.019s
+2025-11-27 13:34:23,187 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:23] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:34:23,586 - app - INFO - REQUEST_ID=66faee31-b383-48ad-a189-07d23ceed402 | METHOD=GET | PATH=/ | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:23,587 - app - INFO - RESPONSE_ID=66faee31-b383-48ad-a189-07d23ceed402 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:34:23,589 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:23] "GET / HTTP/1.1" 200 -
+2025-11-27 13:34:25,701 - app - INFO - REQUEST_ID=a39da47a-78b7-439f-897d-66702d593a37 | METHOD=GET | PATH=/ | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:25,702 - app - INFO - RESPONSE_ID=a39da47a-78b7-439f-897d-66702d593a37 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:34:25,703 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:25] "GET / HTTP/1.1" 200 -
+2025-11-27 13:34:27,830 - app - INFO - REQUEST_ID=de8aff89-0d08-4a2e-afcf-91d7e765b3af | METHOD=GET | PATH=/ | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:27,832 - app - INFO - RESPONSE_ID=de8aff89-0d08-4a2e-afcf-91d7e765b3af | STATUS=200 | DURATION=0.001s
+2025-11-27 13:34:27,833 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:27] "GET / HTTP/1.1" 200 -
+2025-11-27 13:34:29,950 - app - INFO - REQUEST_ID=6db855f4-2162-40c3-a8f3-d0e36a71340a | METHOD=GET | PATH=/ | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:29,951 - app - INFO - RESPONSE_ID=6db855f4-2162-40c3-a8f3-d0e36a71340a | STATUS=200 | DURATION=0.001s
+2025-11-27 13:34:29,952 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:29] "GET / HTTP/1.1" 200 -
+2025-11-27 13:34:32,062 - app - INFO - REQUEST_ID=0115178c-d2da-4494-9edd-a64e062577d9 | METHOD=GET | PATH=/ | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:32,063 - app - INFO - RESPONSE_ID=0115178c-d2da-4494-9edd-a64e062577d9 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:34:32,065 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:32] "GET / HTTP/1.1" 200 -
+2025-11-27 13:34:33,167 - app - INFO - REQUEST_ID=9250b358-a8d5-4d75-ab4c-df3a26b76ed2 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:34:33,180 - app - INFO - RESPONSE_ID=9250b358-a8d5-4d75-ab4c-df3a26b76ed2 | STATUS=200 | DURATION=0.013s
+2025-11-27 13:34:33,181 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:33] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:34:34,201 - app - INFO - REQUEST_ID=fd767cf3-31f9-4260-9e5d-5f60aca26155 | METHOD=GET | PATH=/ | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:34,220 - app - INFO - RESPONSE_ID=fd767cf3-31f9-4260-9e5d-5f60aca26155 | STATUS=200 | DURATION=0.019s
+2025-11-27 13:34:34,242 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:34] "GET / HTTP/1.1" 200 -
+2025-11-27 13:34:36,364 - app - INFO - REQUEST_ID=606c4306-5fb1-4924-ad72-dddfc3456110 | METHOD=GET | PATH=/ | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:36,366 - app - INFO - RESPONSE_ID=606c4306-5fb1-4924-ad72-dddfc3456110 | STATUS=200 | DURATION=0.001s
+2025-11-27 13:34:36,367 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:36] "GET / HTTP/1.1" 200 -
+2025-11-27 13:34:38,485 - app - INFO - REQUEST_ID=7693efaf-6548-4afa-8c41-40bdd8559909 | METHOD=GET | PATH=/ | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:38,490 - app - INFO - RESPONSE_ID=7693efaf-6548-4afa-8c41-40bdd8559909 | STATUS=200 | DURATION=0.004s
+2025-11-27 13:34:38,526 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:38] "GET / HTTP/1.1" 200 -
+2025-11-27 13:34:40,679 - app - INFO - REQUEST_ID=6c6ea954-5a1c-4dc1-a3ab-a550f3a815f4 | METHOD=GET | PATH=/ | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:40,681 - app - INFO - RESPONSE_ID=6c6ea954-5a1c-4dc1-a3ab-a550f3a815f4 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:34:40,683 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:40] "GET / HTTP/1.1" 200 -
+2025-11-27 13:34:42,777 - app - INFO - REQUEST_ID=1f91b8c7-5344-4961-bd8a-278714d997a8 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:42,791 - app - INFO - RESPONSE_ID=1f91b8c7-5344-4961-bd8a-278714d997a8 | STATUS=200 | DURATION=0.013s
+2025-11-27 13:34:42,792 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:42] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:34:43,166 - app - INFO - REQUEST_ID=7efc4c6a-6487-4068-a757-e81dc3aa64a7 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:34:43,181 - app - INFO - RESPONSE_ID=7efc4c6a-6487-4068-a757-e81dc3aa64a7 | STATUS=200 | DURATION=0.014s
+2025-11-27 13:34:43,182 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:43] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:34:44,905 - app - INFO - REQUEST_ID=060f135d-4359-45e6-9269-7c0d42cbd44c | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:44,917 - app - INFO - RESPONSE_ID=060f135d-4359-45e6-9269-7c0d42cbd44c | STATUS=200 | DURATION=0.011s
+2025-11-27 13:34:44,919 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:44] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:34:47,016 - app - INFO - REQUEST_ID=4b885730-77f5-4132-95fb-1ef828b5ee50 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:47,087 - app - INFO - RESPONSE_ID=4b885730-77f5-4132-95fb-1ef828b5ee50 | STATUS=200 | DURATION=0.072s
+2025-11-27 13:34:47,091 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:47] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:34:49,199 - app - INFO - REQUEST_ID=17d3c0e2-c27a-405d-97cf-366bea4ea3f6 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:49,214 - app - INFO - RESPONSE_ID=17d3c0e2-c27a-405d-97cf-366bea4ea3f6 | STATUS=200 | DURATION=0.013s
+2025-11-27 13:34:49,216 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:49] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:34:51,320 - app - INFO - REQUEST_ID=4c82e363-a8f4-4456-a489-098cbdea1d69 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:51,339 - app - INFO - RESPONSE_ID=4c82e363-a8f4-4456-a489-098cbdea1d69 | STATUS=200 | DURATION=0.019s
+2025-11-27 13:34:51,341 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:51] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:34:53,164 - app - INFO - REQUEST_ID=245a0443-4ebe-4c25-9033-0d42912f016e | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:34:53,176 - app - INFO - RESPONSE_ID=245a0443-4ebe-4c25-9033-0d42912f016e | STATUS=200 | DURATION=0.011s
+2025-11-27 13:34:53,177 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:53] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:34:54,463 - app - INFO - REQUEST_ID=03d55bf8-c5e2-45e9-b67e-3d60cc5b5ba3 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:54,465 - app - INFO - RESPONSE_ID=03d55bf8-c5e2-45e9-b67e-3d60cc5b5ba3 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:34:54,466 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:54] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:34:56,547 - app - INFO - REQUEST_ID=ad90d424-0e0a-4325-99e7-c280a4339a92 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:56,549 - app - INFO - RESPONSE_ID=ad90d424-0e0a-4325-99e7-c280a4339a92 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:34:56,550 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:56] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:34:58,673 - app - INFO - REQUEST_ID=e548b726-1238-4eaf-b62e-0ab71c06550d | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:34:58,705 - app - INFO - RESPONSE_ID=e548b726-1238-4eaf-b62e-0ab71c06550d | STATUS=200 | DURATION=0.031s
+2025-11-27 13:34:58,706 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:34:58] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:00,809 - app - INFO - REQUEST_ID=e8377835-2481-4e31-85ad-4d05cf5d7714 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:00,812 - app - INFO - RESPONSE_ID=e8377835-2481-4e31-85ad-4d05cf5d7714 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:35:00,814 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:00] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:02,901 - app - INFO - REQUEST_ID=95b3b91d-bc95-4b3e-b649-85271d5993b3 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:02,905 - app - INFO - RESPONSE_ID=95b3b91d-bc95-4b3e-b649-85271d5993b3 | STATUS=200 | DURATION=0.004s
+2025-11-27 13:35:02,907 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:02] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:03,167 - app - INFO - REQUEST_ID=8dbd4727-9dab-41ab-8677-6eb3cf599269 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:35:03,180 - app - INFO - RESPONSE_ID=8dbd4727-9dab-41ab-8677-6eb3cf599269 | STATUS=200 | DURATION=0.013s
+2025-11-27 13:35:03,182 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:03] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:35:05,005 - app - INFO - REQUEST_ID=580a0675-2499-46e8-a341-2e9a1b08f12a | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:05,009 - app - INFO - RESPONSE_ID=580a0675-2499-46e8-a341-2e9a1b08f12a | STATUS=200 | DURATION=0.004s
+2025-11-27 13:35:05,010 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:05] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:07,122 - app - INFO - REQUEST_ID=178ca024-dd2b-464d-a287-097a5bb27f61 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:07,124 - app - INFO - RESPONSE_ID=178ca024-dd2b-464d-a287-097a5bb27f61 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:35:07,125 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:07] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:09,203 - app - INFO - REQUEST_ID=09acb3da-57ef-41d5-81d0-2b4874f47006 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:09,207 - app - INFO - RESPONSE_ID=09acb3da-57ef-41d5-81d0-2b4874f47006 | STATUS=200 | DURATION=0.004s
+2025-11-27 13:35:09,208 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:09] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:11,316 - app - INFO - REQUEST_ID=75e033fa-e3af-40cf-b52d-f18f34fc35f0 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:11,320 - app - INFO - RESPONSE_ID=75e033fa-e3af-40cf-b52d-f18f34fc35f0 | STATUS=200 | DURATION=0.004s
+2025-11-27 13:35:11,321 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:11] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:13,166 - app - INFO - REQUEST_ID=1b4d7865-9566-4a57-885e-fe7dca81653d | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:35:13,177 - app - INFO - RESPONSE_ID=1b4d7865-9566-4a57-885e-fe7dca81653d | STATUS=200 | DURATION=0.012s
+2025-11-27 13:35:13,180 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:13] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:35:13,435 - app - INFO - REQUEST_ID=8644b6be-f724-498a-bd96-a17699bb3261 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:13,438 - app - INFO - RESPONSE_ID=8644b6be-f724-498a-bd96-a17699bb3261 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:35:13,440 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:13] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:15,558 - app - INFO - REQUEST_ID=08d5d627-75ce-4b40-808d-2094f73c2cd7 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:15,560 - app - INFO - RESPONSE_ID=08d5d627-75ce-4b40-808d-2094f73c2cd7 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:35:15,562 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:15] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:17,681 - app - INFO - REQUEST_ID=db3082f0-770d-4111-90f5-cc9ebc6ea439 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:17,683 - app - INFO - RESPONSE_ID=db3082f0-770d-4111-90f5-cc9ebc6ea439 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:35:17,685 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:17] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:19,791 - app - INFO - REQUEST_ID=b9e4aabb-bbf2-43dd-8975-41c7b1b4a20f | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:19,794 - app - INFO - RESPONSE_ID=b9e4aabb-bbf2-43dd-8975-41c7b1b4a20f | STATUS=200 | DURATION=0.003s
+2025-11-27 13:35:19,795 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:19] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:21,896 - app - INFO - REQUEST_ID=40923338-0f06-46a5-8df9-0f0781718321 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:21,898 - app - INFO - RESPONSE_ID=40923338-0f06-46a5-8df9-0f0781718321 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:35:21,900 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:21] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:23,165 - app - INFO - REQUEST_ID=04bee31d-808f-4a59-8cf1-3468144098c5 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:35:23,179 - app - INFO - RESPONSE_ID=04bee31d-808f-4a59-8cf1-3468144098c5 | STATUS=200 | DURATION=0.014s
+2025-11-27 13:35:23,180 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:23] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:35:24,012 - app - INFO - REQUEST_ID=567ca1da-24f5-4c03-8545-41f99c780b51 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:24,016 - app - INFO - RESPONSE_ID=567ca1da-24f5-4c03-8545-41f99c780b51 | STATUS=200 | DURATION=0.004s
+2025-11-27 13:35:24,024 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:24] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:26,147 - app - INFO - REQUEST_ID=0450d6aa-2b50-44ae-877b-71db6f3f0cc9 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:26,159 - app - INFO - RESPONSE_ID=0450d6aa-2b50-44ae-877b-71db6f3f0cc9 | STATUS=200 | DURATION=0.012s
+2025-11-27 13:35:26,165 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:26] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:28,272 - app - INFO - REQUEST_ID=24604bd7-3989-4f59-9229-72d284a541f7 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:28,275 - app - INFO - RESPONSE_ID=24604bd7-3989-4f59-9229-72d284a541f7 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:35:28,276 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:28] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:30,371 - app - INFO - REQUEST_ID=d8f4782b-2500-45a4-a604-bf09d2f3e3c8 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:30,373 - app - INFO - RESPONSE_ID=d8f4782b-2500-45a4-a604-bf09d2f3e3c8 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:35:30,375 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:30] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:32,478 - app - INFO - REQUEST_ID=6def284d-753b-4f3c-8542-d83198af3e8b | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:32,480 - app - INFO - RESPONSE_ID=6def284d-753b-4f3c-8542-d83198af3e8b | STATUS=200 | DURATION=0.002s
+2025-11-27 13:35:32,482 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:32] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:33,163 - app - INFO - REQUEST_ID=0776ff25-4f62-4b22-b74f-9bac5f6a9285 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:35:33,174 - app - INFO - RESPONSE_ID=0776ff25-4f62-4b22-b74f-9bac5f6a9285 | STATUS=200 | DURATION=0.011s
+2025-11-27 13:35:33,175 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:33] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:35:34,584 - app - INFO - REQUEST_ID=0f4e4b2f-ffad-4f52-bf1e-0f8e4a58b65b | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:34,587 - app - INFO - RESPONSE_ID=0f4e4b2f-ffad-4f52-bf1e-0f8e4a58b65b | STATUS=200 | DURATION=0.003s
+2025-11-27 13:35:34,588 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:34] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:36,688 - app - INFO - REQUEST_ID=00dc6361-5ce6-4987-96d3-9917091d4d44 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:36,691 - app - INFO - RESPONSE_ID=00dc6361-5ce6-4987-96d3-9917091d4d44 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:35:36,693 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:36] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:38,781 - app - INFO - REQUEST_ID=26059f73-fcae-477c-8668-bcb8f298799c | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:38,784 - app - INFO - RESPONSE_ID=26059f73-fcae-477c-8668-bcb8f298799c | STATUS=200 | DURATION=0.003s
+2025-11-27 13:35:38,785 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:38] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:40,895 - app - INFO - REQUEST_ID=67a505c3-9e87-45bc-a472-79eef706ddae | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:40,898 - app - INFO - RESPONSE_ID=67a505c3-9e87-45bc-a472-79eef706ddae | STATUS=200 | DURATION=0.003s
+2025-11-27 13:35:40,900 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:40] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:43,011 - app - INFO - REQUEST_ID=d9bbb448-f1eb-4604-b1ad-efe9aa32f458 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:43,016 - app - INFO - RESPONSE_ID=d9bbb448-f1eb-4604-b1ad-efe9aa32f458 | STATUS=200 | DURATION=0.005s
+2025-11-27 13:35:43,025 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:43] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:43,167 - app - INFO - REQUEST_ID=2431e3dd-9699-45ea-bf1f-42100563ae9b | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:35:43,182 - app - INFO - RESPONSE_ID=2431e3dd-9699-45ea-bf1f-42100563ae9b | STATUS=200 | DURATION=0.015s
+2025-11-27 13:35:43,185 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:43] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:35:45,124 - app - INFO - REQUEST_ID=ee44e6fd-342d-42e1-9afd-bffa82c962bc | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:45,127 - app - INFO - RESPONSE_ID=ee44e6fd-342d-42e1-9afd-bffa82c962bc | STATUS=200 | DURATION=0.003s
+2025-11-27 13:35:45,130 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:45] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:47,240 - app - INFO - REQUEST_ID=d8bb2ea9-4d0d-481c-b9a8-4628d16a24c9 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:47,242 - app - INFO - RESPONSE_ID=d8bb2ea9-4d0d-481c-b9a8-4628d16a24c9 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:35:47,243 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:47] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:49,370 - app - INFO - REQUEST_ID=1a3f4124-1459-432a-b5a1-2934bd3be191 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:49,373 - app - INFO - RESPONSE_ID=1a3f4124-1459-432a-b5a1-2934bd3be191 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:35:49,374 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:49] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:51,504 - app - INFO - REQUEST_ID=fb4bf263-9cd7-4e40-ac75-e5380a5f0a1b | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:51,506 - app - INFO - RESPONSE_ID=fb4bf263-9cd7-4e40-ac75-e5380a5f0a1b | STATUS=200 | DURATION=0.002s
+2025-11-27 13:35:51,508 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:51] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:53,167 - app - INFO - REQUEST_ID=03fc4a83-fcdd-4757-96b8-758c9974cf4d | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:35:53,177 - app - INFO - RESPONSE_ID=03fc4a83-fcdd-4757-96b8-758c9974cf4d | STATUS=200 | DURATION=0.010s
+2025-11-27 13:35:53,178 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:53] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:35:53,625 - app - INFO - REQUEST_ID=1b8e7b88-3563-4a69-98e0-eaabe88d67ee | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:53,627 - app - INFO - RESPONSE_ID=1b8e7b88-3563-4a69-98e0-eaabe88d67ee | STATUS=200 | DURATION=0.002s
+2025-11-27 13:35:53,629 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:53] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:55,786 - app - INFO - REQUEST_ID=943afbaa-6c33-46ef-bf2a-0eaca6f2989d | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:55,790 - app - INFO - RESPONSE_ID=943afbaa-6c33-46ef-bf2a-0eaca6f2989d | STATUS=200 | DURATION=0.004s
+2025-11-27 13:35:55,792 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:55] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:57,891 - app - INFO - REQUEST_ID=5c2c47ea-63b0-4e44-86ba-92330be7a8f8 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:35:57,894 - app - INFO - RESPONSE_ID=5c2c47ea-63b0-4e44-86ba-92330be7a8f8 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:35:57,895 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:35:57] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:35:59,998 - app - INFO - REQUEST_ID=292f3472-3544-4c9b-880c-46981fdc2bfc | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:36:00,001 - app - INFO - RESPONSE_ID=292f3472-3544-4c9b-880c-46981fdc2bfc | STATUS=200 | DURATION=0.002s
+2025-11-27 13:36:00,002 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:36:00] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:36:02,118 - app - INFO - REQUEST_ID=1a9b73a0-3f11-427d-ae1d-8a21c42f480e | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:36:02,121 - app - INFO - RESPONSE_ID=1a9b73a0-3f11-427d-ae1d-8a21c42f480e | STATUS=200 | DURATION=0.003s
+2025-11-27 13:36:02,123 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:36:02] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:36:03,167 - app - INFO - REQUEST_ID=185feb6b-efe0-451d-9b19-3a8c887752c4 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:36:03,182 - app - INFO - RESPONSE_ID=185feb6b-efe0-451d-9b19-3a8c887752c4 | STATUS=200 | DURATION=0.015s
+2025-11-27 13:36:03,183 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:36:03] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:36:04,235 - app - INFO - REQUEST_ID=798ee239-cdf0-4844-8cc6-e7056695398d | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:36:04,237 - app - INFO - RESPONSE_ID=798ee239-cdf0-4844-8cc6-e7056695398d | STATUS=200 | DURATION=0.002s
+2025-11-27 13:36:04,238 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:36:04] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:36:06,354 - app - INFO - REQUEST_ID=16f30d3c-564a-4075-a4b1-1a37f9427422 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:36:06,357 - app - INFO - RESPONSE_ID=16f30d3c-564a-4075-a4b1-1a37f9427422 | STATUS=200 | DURATION=0.002s
+2025-11-27 13:36:06,358 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:36:06] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:36:08,449 - app - INFO - REQUEST_ID=e743ca29-9276-4b6a-98a7-248a1547add8 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:36:08,459 - app - INFO - RESPONSE_ID=e743ca29-9276-4b6a-98a7-248a1547add8 | STATUS=200 | DURATION=0.010s
+2025-11-27 13:36:08,462 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:36:08] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:36:10,585 - app - INFO - REQUEST_ID=4c3bab23-8c6f-48ab-9029-249f9e65fc54 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:36:10,590 - app - INFO - RESPONSE_ID=4c3bab23-8c6f-48ab-9029-249f9e65fc54 | STATUS=200 | DURATION=0.005s
+2025-11-27 13:36:10,592 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:36:10] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:36:12,721 - app - INFO - REQUEST_ID=e280ec39-320b-4224-9401-fc015af456d3 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:36:12,724 - app - INFO - RESPONSE_ID=e280ec39-320b-4224-9401-fc015af456d3 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:36:12,726 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:36:12] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:36:13,165 - app - INFO - REQUEST_ID=6ffcfd31-ec8c-47a9-9a5e-828d3ec96038 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:36:13,176 - app - INFO - RESPONSE_ID=6ffcfd31-ec8c-47a9-9a5e-828d3ec96038 | STATUS=200 | DURATION=0.011s
+2025-11-27 13:36:13,177 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:36:13] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:36:14,831 - app - INFO - REQUEST_ID=d24e4277-5b93-494a-bbe5-6f1a2132ac1f | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:36:14,834 - app - INFO - RESPONSE_ID=d24e4277-5b93-494a-bbe5-6f1a2132ac1f | STATUS=200 | DURATION=0.002s
+2025-11-27 13:36:14,835 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:36:14] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:36:16,925 - app - INFO - REQUEST_ID=eca1f531-593f-4ca5-91cb-4249af5f364e | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:36:16,928 - app - INFO - RESPONSE_ID=eca1f531-593f-4ca5-91cb-4249af5f364e | STATUS=200 | DURATION=0.002s
+2025-11-27 13:36:16,929 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:36:16] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:36:19,043 - app - INFO - REQUEST_ID=38f7cb69-9e2e-43b4-b084-b50172fb4c3c | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:36:19,045 - app - INFO - RESPONSE_ID=38f7cb69-9e2e-43b4-b084-b50172fb4c3c | STATUS=200 | DURATION=0.002s
+2025-11-27 13:36:19,046 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:36:19] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:36:21,149 - app - INFO - REQUEST_ID=d133d122-00b0-4d30-a5da-a4bb1aafb8ee | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:36:21,152 - app - INFO - RESPONSE_ID=d133d122-00b0-4d30-a5da-a4bb1aafb8ee | STATUS=200 | DURATION=0.003s
+2025-11-27 13:36:21,154 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:36:21] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:36:23,169 - app - INFO - REQUEST_ID=ed93450f-5d60-406b-8623-48f4dd065a01 | METHOD=GET | PATH=/metrics | IP=127.0.0.1 | USER_AGENT=Prometheus/3.7.3
+2025-11-27 13:36:23,181 - app - INFO - RESPONSE_ID=ed93450f-5d60-406b-8623-48f4dd065a01 | STATUS=200 | DURATION=0.012s
+2025-11-27 13:36:23,182 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:36:23] "GET /metrics HTTP/1.1" 200 -
+2025-11-27 13:36:23,260 - app - INFO - REQUEST_ID=1d692020-df3f-4402-9c9c-7ff1ad250a74 | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:36:23,262 - app - INFO - RESPONSE_ID=1d692020-df3f-4402-9c9c-7ff1ad250a74 | STATUS=200 | DURATION=0.003s
+2025-11-27 13:36:23,264 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:36:23] "GET /api/v2/books HTTP/1.1" 200 -
+2025-11-27 13:36:25,386 - app - INFO - REQUEST_ID=5992c3a9-7315-468f-902c-b9259a63521a | METHOD=GET | PATH=/api/v2/books | IP=127.0.0.1 | USER_AGENT=python-requests/2.31.0
+2025-11-27 13:36:25,389 - app - INFO - RESPONSE_ID=5992c3a9-7315-468f-902c-b9259a63521a | STATUS=200 | DURATION=0.003s
+2025-11-27 13:36:25,390 - werkzeug - INFO - 127.0.0.1 - - [27/Nov/2025 13:36:25] "GET /api/v2/books HTTP/1.1" 200 -

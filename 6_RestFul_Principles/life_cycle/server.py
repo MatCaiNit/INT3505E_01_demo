@@ -216,9 +216,6 @@ def logout():
     unset_jwt_cookies(response) 
     return response, 200
 
-# ==========================================
-# STRATEGY 1: URL VERSIONING (BOOKS)
-# ==========================================
 
 @app.route('/api/v1/books', methods=['GET'])
 def get_books_v1():
@@ -271,9 +268,6 @@ def get_books_v2():
         }
     })
 
-# ==========================================
-# STRATEGY 2: HEADER VERSIONING (AUTHORS)
-# ==========================================
 
 @app.route('/api/authors', methods=['GET'])
 def get_authors():
@@ -375,10 +369,6 @@ def update_author(author_id):
         response.headers['API-Version'] = '2'
         return response
 
-# ==========================================
-# STRATEGY 3: QUERY PARAMETER VERSIONING (USERS)
-# ==========================================
-
 @app.route('/api/users', methods=['GET'])
 @jwt_required()
 def get_users():
@@ -416,9 +406,6 @@ def get_user(user_id):
     else:
         return jsonify({"data": format_user_v2(user)})
 
-# ==========================================
-# STRATEGY 4: CONTENT NEGOTIATION (REPORTS)
-# ==========================================
 
 @app.route('/api/reports/borrowings', methods=['GET'])
 @jwt_required()
@@ -584,9 +571,6 @@ def get_book_report():
         response.headers['Content-Type'] = 'application/vnd.library.v2+json'
         return response
 
-# ==========================================
-# BORROWING OPERATIONS
-# ==========================================
 
 @app.route('/users/<int:user_id>/borrowings', methods=['GET'])
 def get_user_borrowings(user_id):
@@ -675,9 +659,6 @@ def return_book(user_id):
 
     return jsonify({"message": "Book returned successfully", "record": record})
 
-# ==========================================
-# HOME
-# ==========================================
 
 @app.route('/')
 def home():
